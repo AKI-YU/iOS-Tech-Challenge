@@ -20,16 +20,38 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGr-oj-IRb">
+                    <rect key="frame" x="514" y="514" width="56" height="56"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ar7-zY-Leo">
+                            <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Ar7-zY-Leo" firstAttribute="leading" secondItem="eGr-oj-IRb" secondAttribute="leading" id="3wq-QX-EmU"/>
+                        <constraint firstAttribute="trailing" secondItem="Ar7-zY-Leo" secondAttribute="trailing" id="66T-M2-b45"/>
+                        <constraint firstAttribute="bottom" secondItem="Ar7-zY-Leo" secondAttribute="bottom" id="6NF-LN-wFn"/>
+                        <constraint firstAttribute="height" constant="56" id="JLj-Zb-eL4"/>
+                        <constraint firstAttribute="width" constant="56" id="b8q-hL-2WZ"/>
+                        <constraint firstItem="Ar7-zY-Leo" firstAttribute="top" secondItem="eGr-oj-IRb" secondAttribute="top" id="trw-NN-i49"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="vTB-g9-yYl" secondAttribute="bottom" id="9AS-97-5cM"/>
                 <constraint firstAttribute="trailing" secondItem="vTB-g9-yYl" secondAttribute="trailing" id="DSS-ct-u01"/>
                 <constraint firstItem="vTB-g9-yYl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PAF-Wl-Pdp"/>
+                <constraint firstAttribute="bottom" secondItem="eGr-oj-IRb" secondAttribute="bottom" constant="30" id="bUd-y7-nm6"/>
                 <constraint firstItem="vTB-g9-yYl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="lhB-m6-BFp"/>
+                <constraint firstAttribute="trailing" secondItem="eGr-oj-IRb" secondAttribute="trailing" constant="30" id="n92-qM-b2a"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <point key="canvasLocation" x="578" y="438"/>
         </view>
     </objects>
+    <resources>
+        <image name="add.png" width="42" height="42"/>
+    </resources>
 </document>

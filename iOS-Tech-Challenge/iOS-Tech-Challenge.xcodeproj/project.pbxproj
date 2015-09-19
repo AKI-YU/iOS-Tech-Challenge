@@ -38,6 +38,9 @@
 		F969D9A71BAD903A00F8A532 /* PurchaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F969D9A51BAD903A00F8A532 /* PurchaseTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		F969D9A81BAD903A00F8A532 /* PurchaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F969D9A61BAD903A00F8A532 /* PurchaseTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		F969D9A91BADA89A00F8A532 /* PurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F99FC9BB1BAD7B4400A34994 /* PurchaseViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F969D9AD1BADAD7500F8A532 /* PurchaseDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F969D9AB1BADAD7500F8A532 /* PurchaseDetailTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		F969D9AE1BADAD7500F8A532 /* PurchaseDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F969D9AC1BADAD7500F8A532 /* PurchaseDetailTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		F969D9AF1BADEC1600F8A532 /* PurchaseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99FC9C11BAD7B7500A34994 /* PurchaseDetailViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		F99FC9BE1BAD7B4400A34994 /* PurchaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99FC9BC1BAD7B4400A34994 /* PurchaseViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		F99FC9C21BAD7B7500A34994 /* PurchaseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F99FC9C01BAD7B7500A34994 /* PurchaseDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -93,6 +96,9 @@
 		F969D9A41BAD903A00F8A532 /* PurchaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseTableViewCell.h; sourceTree = "<group>"; };
 		F969D9A51BAD903A00F8A532 /* PurchaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseTableViewCell.m; sourceTree = "<group>"; };
 		F969D9A61BAD903A00F8A532 /* PurchaseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseTableViewCell.xib; sourceTree = "<group>"; };
+		F969D9AA1BADAD7500F8A532 /* PurchaseDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseDetailTableViewCell.h; sourceTree = "<group>"; };
+		F969D9AB1BADAD7500F8A532 /* PurchaseDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseDetailTableViewCell.m; sourceTree = "<group>"; };
+		F969D9AC1BADAD7500F8A532 /* PurchaseDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseDetailTableViewCell.xib; sourceTree = "<group>"; };
 		F99FC9BA1BAD7B4400A34994 /* PurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseViewController.h; sourceTree = "<group>"; };
 		F99FC9BB1BAD7B4400A34994 /* PurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseViewController.m; sourceTree = "<group>"; };
 		F99FC9BC1BAD7B4400A34994 /* PurchaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseViewController.xib; sourceTree = "<group>"; };
@@ -267,6 +273,9 @@
 				F969D9A41BAD903A00F8A532 /* PurchaseTableViewCell.h */,
 				F969D9A51BAD903A00F8A532 /* PurchaseTableViewCell.m */,
 				F969D9A61BAD903A00F8A532 /* PurchaseTableViewCell.xib */,
+				F969D9AA1BADAD7500F8A532 /* PurchaseDetailTableViewCell.h */,
+				F969D9AB1BADAD7500F8A532 /* PurchaseDetailTableViewCell.m */,
+				F969D9AC1BADAD7500F8A532 /* PurchaseDetailTableViewCell.xib */,
 			);
 			path = PurchaseView;
 			sourceTree = "<group>";
@@ -330,6 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F969D9AF1BADEC1600F8A532 /* PurchaseDetailViewController.xib in Resources */,
 				610F653C1BAD8B250083CC61 /* QntView.xib in Resources */,
 				61704E381BAD619400617704 /* logo.png in Resources */,
 				6114968C1BAD9D5500E4AF04 /* ViewController.xib in Resources */,
@@ -337,6 +347,7 @@
 				611496891BAD8ECA00E4AF04 /* add.png in Resources */,
 				61704E2C1BAD619400617704 /* 6.jpg in Resources */,
 				61704E291BAD619400617704 /* 5.jpg in Resources */,
+				F969D9AE1BADAD7500F8A532 /* PurchaseDetailTableViewCell.xib in Resources */,
 				61704E261BAD619400617704 /* 4.jpg in Resources */,
 				6114968A1BAD8ECA00E4AF04 /* minus.png in Resources */,
 				61704E1D1BAD619400617704 /* 1.jpg in Resources */,
@@ -399,6 +410,7 @@
 				610F653A1BAD8A5F0083CC61 /* QntView.m in Sources */,
 				61704E4D1BAD75F500617704 /* UULineChart.m in Sources */,
 				61704DE11BAD605A00617704 /* ViewController.m in Sources */,
+				F969D9AD1BADAD7500F8A532 /* PurchaseDetailTableViewCell.m in Sources */,
 				6114968F1BADA47500E4AF04 /* mNav.m in Sources */,
 				61704DDE1BAD605A00617704 /* AppDelegate.m in Sources */,
 				61704E4B1BAD75F500617704 /* UUChartLabel.m in Sources */,

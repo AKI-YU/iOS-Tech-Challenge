@@ -8,6 +8,7 @@
 //  進貨單編號　進貨日期
 
 #import "PurchaseViewController.h"
+#import "PurchaseDetailViewController.h"
 #import "Parse.h"
 #import "HFTableViewBindingHelper.h"
 #import <RACEXTScope.h>
@@ -41,8 +42,13 @@
         self.helper = [HFTableViewBindingHelper
                        bindingForTableView:self.tableView
                        sourceList:data
-                         didSelectionBlock:^(id model) {
-                                                             
+                         didSelectionBlock:^(KVOMutableArray* model) {
+                             if ([model isKindOfClass:[KVOMutableArray class]]) {
+                                 // Lono
+                                 PurchaseDetailViewController* viewController = [[PurchaseDetailViewController alloc] initWithNibName:@"PurchaseDetailViewController" bundle:nil];
+                                 viewController.data = model;
+                                 [self.navigationController pushViewController:viewController animated:YES];
+                             }
                          }
                               templateCell:nib
                                   isNested:NO];

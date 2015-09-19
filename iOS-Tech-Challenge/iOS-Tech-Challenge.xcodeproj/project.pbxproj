@@ -31,6 +31,10 @@
 		61704E4C1BAD75F500617704 /* UUColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704E451BAD75F500617704 /* UUColor.m */; settings = {ASSET_TAGS = (); }; };
 		61704E4D1BAD75F500617704 /* UULineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704E471BAD75F500617704 /* UULineChart.m */; settings = {ASSET_TAGS = (); }; };
 		97F9EA688F924E00E284840B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 673C5616CED4C1F9B61E0753 /* libPods.a */; };
+		F99FC9BD1BAD7B4400A34994 /* PurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F99FC9BB1BAD7B4400A34994 /* PurchaseViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F99FC9BE1BAD7B4400A34994 /* PurchaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99FC9BC1BAD7B4400A34994 /* PurchaseViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		F99FC9C21BAD7B7500A34994 /* PurchaseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F99FC9C01BAD7B7500A34994 /* PurchaseDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F99FC9C31BAD7B7500A34994 /* PurchaseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99FC9C11BAD7B7500A34994 /* PurchaseDetailViewController.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +79,12 @@
 		673C5616CED4C1F9B61E0753 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B603D15988D12116523EF210 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D2D0FB9F3FA752C7E234A5E8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F99FC9BA1BAD7B4400A34994 /* PurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseViewController.h; sourceTree = "<group>"; };
+		F99FC9BB1BAD7B4400A34994 /* PurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseViewController.m; sourceTree = "<group>"; };
+		F99FC9BC1BAD7B4400A34994 /* PurchaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseViewController.xib; sourceTree = "<group>"; };
+		F99FC9BF1BAD7B7500A34994 /* PurchaseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseDetailViewController.h; sourceTree = "<group>"; };
+		F99FC9C01BAD7B7500A34994 /* PurchaseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseDetailViewController.m; sourceTree = "<group>"; };
+		F99FC9C11BAD7B7500A34994 /* PurchaseDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				61704E3B1BAD75F500617704 /* UUChart */,
+				F99FC9B91BAD7B4400A34994 /* PurchaseView */,
 				61704E121BAD619400617704 /* asw-images */,
 				61704E0C1BAD607300617704 /* SideMenu */,
 				61704DDC1BAD605A00617704 /* AppDelegate.h */,
@@ -216,6 +227,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F99FC9B91BAD7B4400A34994 /* PurchaseView */ = {
+			isa = PBXGroup;
+			children = (
+				F99FC9BA1BAD7B4400A34994 /* PurchaseViewController.h */,
+				F99FC9BB1BAD7B4400A34994 /* PurchaseViewController.m */,
+				F99FC9BC1BAD7B4400A34994 /* PurchaseViewController.xib */,
+				F99FC9BF1BAD7B7500A34994 /* PurchaseDetailViewController.h */,
+				F99FC9C01BAD7B7500A34994 /* PurchaseDetailViewController.m */,
+				F99FC9C11BAD7B7500A34994 /* PurchaseDetailViewController.xib */,
+			);
+			path = PurchaseView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -276,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61704E381BAD619400617704 /* logo.png in Resources */,
+				F99FC9C31BAD7B7500A34994 /* PurchaseDetailViewController.xib in Resources */,
 				61704E321BAD619400617704 /* 8.jpg in Resources */,
 				61704E2C1BAD619400617704 /* 6.jpg in Resources */,
 				61704DE91BAD605A00617704 /* LaunchScreen.storyboard in Resources */,
@@ -284,6 +309,7 @@
 				61704E1D1BAD619400617704 /* 1.jpg in Resources */,
 				61704E201BAD619400617704 /* 2.jpg in Resources */,
 				61704E231BAD619400617704 /* 3.jpg in Resources */,
+				F99FC9BE1BAD7B4400A34994 /* PurchaseViewController.xib in Resources */,
 				61704E2F1BAD619400617704 /* 7.jpg in Resources */,
 				61704E351BAD619400617704 /* 9.jpg in Resources */,
 				61704DE61BAD605A00617704 /* Assets.xcassets in Resources */,
@@ -331,12 +357,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F99FC9C21BAD7B7500A34994 /* PurchaseDetailViewController.m in Sources */,
 				61704E0F1BAD607300617704 /* RNBlurredSideViewController.m in Sources */,
 				61704E481BAD75F500617704 /* UUBar.m in Sources */,
 				61704E4C1BAD75F500617704 /* UUColor.m in Sources */,
 				61704E491BAD75F500617704 /* UUBarChart.m in Sources */,
 				61704E4D1BAD75F500617704 /* UULineChart.m in Sources */,
 				61704DE11BAD605A00617704 /* ViewController.m in Sources */,
+				F99FC9BD1BAD7B4400A34994 /* PurchaseViewController.m in Sources */,
 				61704DDE1BAD605A00617704 /* AppDelegate.m in Sources */,
 				61704E4B1BAD75F500617704 /* UUChartLabel.m in Sources */,
 				61704E4A1BAD75F500617704 /* UUChart.m in Sources */,

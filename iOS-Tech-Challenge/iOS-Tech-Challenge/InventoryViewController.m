@@ -8,6 +8,7 @@
 
 #import "InventoryViewController.h"
 #import "SJDataTableView.h"
+#import "Constants.h"
 
 @interface InventoryViewController ()
 
@@ -35,16 +36,5 @@
 	[table setHeaderArray:headerAarray dataArray:dataArray];
 	[self.view addSubview:table];
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

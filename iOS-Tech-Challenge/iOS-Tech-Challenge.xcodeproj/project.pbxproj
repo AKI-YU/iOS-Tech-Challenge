@@ -97,6 +97,7 @@
 		DB076D3D1BADA32400E5AD6F /* SJDataTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJDataTableViewCell.m; sourceTree = "<group>"; };
 		DB076D411BADA35A00E5AD6F /* InventoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InventoryViewController.h; sourceTree = "<group>"; };
 		DB076D421BADA35A00E5AD6F /* InventoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InventoryViewController.m; sourceTree = "<group>"; };
+		DB076D441BADA93500E5AD6F /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +162,7 @@
 				61704DDD1BAD605A00617704 /* AppDelegate.m */,
 				DB076D411BADA35A00E5AD6F /* InventoryViewController.h */,
 				DB076D421BADA35A00E5AD6F /* InventoryViewController.m */,
+				DB076D441BADA93500E5AD6F /* Constants.h */,
 				DB076D371BADA2EB00E5AD6F /* SJDataTableView */,
 				61704DDF1BAD605A00617704 /* ViewController.h */,
 				61704DE01BAD605A00617704 /* ViewController.m */,

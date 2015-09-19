@@ -10,6 +10,8 @@
 
 #import "QntView.h"
 
+#import "InventoryViewController.h"
+
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
@@ -95,6 +97,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+	if (indexPath.row == 2) {
+		InventoryViewController *vc = [[InventoryViewController alloc] init];
+		vc.view.backgroundColor = [UIColor blueColor];
+		[self.navigationController pushViewController:vc animated:YES];
+	}
+
     [self closeSideView:YES];
 }
 

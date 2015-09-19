@@ -34,6 +34,10 @@
 		61704E4C1BAD75F500617704 /* UUColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704E451BAD75F500617704 /* UUColor.m */; settings = {ASSET_TAGS = (); }; };
 		61704E4D1BAD75F500617704 /* UULineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704E471BAD75F500617704 /* UULineChart.m */; settings = {ASSET_TAGS = (); }; };
 		97F9EA688F924E00E284840B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 673C5616CED4C1F9B61E0753 /* libPods.a */; };
+		DB076D3E1BADA32400E5AD6F /* SJDataFixItemTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB076D391BADA32400E5AD6F /* SJDataFixItemTableView.m */; settings = {ASSET_TAGS = (); }; };
+		DB076D3F1BADA32400E5AD6F /* SJDataTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB076D3B1BADA32400E5AD6F /* SJDataTableView.m */; settings = {ASSET_TAGS = (); }; };
+		DB076D401BADA32400E5AD6F /* SJDataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB076D3D1BADA32400E5AD6F /* SJDataTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		DB076D431BADA35A00E5AD6F /* InventoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB076D421BADA35A00E5AD6F /* InventoryViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +86,14 @@
 		673C5616CED4C1F9B61E0753 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B603D15988D12116523EF210 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D2D0FB9F3FA752C7E234A5E8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		DB076D381BADA32400E5AD6F /* SJDataFixItemTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJDataFixItemTableView.h; sourceTree = "<group>"; };
+		DB076D391BADA32400E5AD6F /* SJDataFixItemTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJDataFixItemTableView.m; sourceTree = "<group>"; };
+		DB076D3A1BADA32400E5AD6F /* SJDataTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJDataTableView.h; sourceTree = "<group>"; };
+		DB076D3B1BADA32400E5AD6F /* SJDataTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJDataTableView.m; sourceTree = "<group>"; };
+		DB076D3C1BADA32400E5AD6F /* SJDataTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJDataTableViewCell.h; sourceTree = "<group>"; };
+		DB076D3D1BADA32400E5AD6F /* SJDataTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJDataTableViewCell.m; sourceTree = "<group>"; };
+		DB076D411BADA35A00E5AD6F /* InventoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InventoryViewController.h; sourceTree = "<group>"; };
+		DB076D421BADA35A00E5AD6F /* InventoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InventoryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +156,9 @@
 				61704E0C1BAD607300617704 /* SideMenu */,
 				61704DDC1BAD605A00617704 /* AppDelegate.h */,
 				61704DDD1BAD605A00617704 /* AppDelegate.m */,
+				DB076D411BADA35A00E5AD6F /* InventoryViewController.h */,
+				DB076D421BADA35A00E5AD6F /* InventoryViewController.m */,
+				DB076D371BADA2EB00E5AD6F /* SJDataTableView */,
 				61704DDF1BAD605A00617704 /* ViewController.h */,
 				61704DE01BAD605A00617704 /* ViewController.m */,
 				6114968B1BAD9D5500E4AF04 /* ViewController.xib */,
@@ -233,6 +248,19 @@
 				673C5616CED4C1F9B61E0753 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB076D371BADA2EB00E5AD6F /* SJDataTableView */ = {
+			isa = PBXGroup;
+			children = (
+				DB076D381BADA32400E5AD6F /* SJDataFixItemTableView.h */,
+				DB076D391BADA32400E5AD6F /* SJDataFixItemTableView.m */,
+				DB076D3A1BADA32400E5AD6F /* SJDataTableView.h */,
+				DB076D3B1BADA32400E5AD6F /* SJDataTableView.m */,
+				DB076D3C1BADA32400E5AD6F /* SJDataTableViewCell.h */,
+				DB076D3D1BADA32400E5AD6F /* SJDataTableViewCell.m */,
+			);
+			name = SJDataTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,14 +383,18 @@
 				61704E0F1BAD607300617704 /* RNBlurredSideViewController.m in Sources */,
 				61704E481BAD75F500617704 /* UUBar.m in Sources */,
 				61704E4C1BAD75F500617704 /* UUColor.m in Sources */,
+				DB076D3F1BADA32400E5AD6F /* SJDataTableView.m in Sources */,
 				61704E491BAD75F500617704 /* UUBarChart.m in Sources */,
 				610F653A1BAD8A5F0083CC61 /* QntView.m in Sources */,
 				61704E4D1BAD75F500617704 /* UULineChart.m in Sources */,
 				61704DE11BAD605A00617704 /* ViewController.m in Sources */,
+				DB076D401BADA32400E5AD6F /* SJDataTableViewCell.m in Sources */,
+				DB076D3E1BADA32400E5AD6F /* SJDataFixItemTableView.m in Sources */,
 				61704DDE1BAD605A00617704 /* AppDelegate.m in Sources */,
 				61704E4B1BAD75F500617704 /* UUChartLabel.m in Sources */,
 				61704E4A1BAD75F500617704 /* UUChart.m in Sources */,
 				61704DDB1BAD605A00617704 /* main.m in Sources */,
+				DB076D431BADA35A00E5AD6F /* InventoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 #import <Parse/Parse.h>
 
@@ -15,12 +16,26 @@
 @end
 
 @implementation AppDelegate
-
+@synthesize nav;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [Parse setApplicationId:@"zrQUiI5qp6fg75Vfzw5J1aXwBz4iV6ixZjzi1syR"
-                  clientKey:@"1rVOXTheReUe8VIGByiBmAvxILdHiDs3iJZnnkl8"];
+    
+    self.window=[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    ViewController *viewC = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    
+    nav = [[UINavigationController alloc] initWithRootViewController:viewC];
+    
+    [self.window setRootViewController:nav];
+    
+    
+    [self.window makeKeyAndVisible];
+
+    
+    
+    [Parse setApplicationId:@"J5WZOPN3ntsHOZqeuU6Mx5ciAGgsYNoIAPBhfCmT"
+                  clientKey:@"D5U8OOsxPREgxjaLEYRSnnVoN9j3zBWwNS9s8eoY"];
     
     [PFUser enableAutomaticUser];
     

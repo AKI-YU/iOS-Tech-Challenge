@@ -9,21 +9,28 @@
 #import "QntView.h"
 
 @implementation QntView
-@synthesize Qnt;
 
 
 - (id)initWithCoder:(NSCoder*)aDecoder
 {
     if(self = [super initWithCoder:aDecoder])
     {
+        UIView *thisView = [[[NSBundle mainBundle] loadNibNamed:@"QntView" owner:self options:nil] objectAtIndex:0];
+        [self addSubview:thisView];
+        
     }
     return self;
 }
 
 -(id)initWithFrame:(CGRect)frame{
     
+    //width = 150   height 60
+    
     if(self = [super initWithFrame:frame])
     {
+        UIView *thisView = [[[NSBundle mainBundle] loadNibNamed:@"QntView" owner:self options:nil] objectAtIndex:0];
+        
+        [self addSubview:thisView];
         
     }
     return self;
@@ -31,15 +38,27 @@
 }
 
 -(void)Add{
-    Qnt+=1;
+    
+    ((UILabel *)[self viewWithTag:2]).text = [NSString stringWithFormat:@"%ld",[((UILabel *)[self viewWithTag:2]).text integerValue] + 1];
+    
 }
 
 -(void)Minus{
-    if (Qnt<=0) {
-        Qnt = 0;
-    }else{
-        Qnt -=1;
+    if ([((UILabel *)[self viewWithTag:2]).text integerValue]<=0) {
+        return;
     }
+   
+    ((UILabel *)[self viewWithTag:2]).text = [NSString stringWithFormat:@"%ld",[((UILabel *)[self viewWithTag:2]).text integerValue] - 1];
+    
 }
+
+-(void)setQntValue:(NSInteger)qnt{
+    ((UILabel *)[self viewWithTag:2]).text = [NSString stringWithFormat:@"%ld",qnt];
+}
+
+-(void)setColor:(UIColor *)color{
+    [((UILabel *)[self viewWithTag:2]) setTextColor:color];
+}
+
 
 @end

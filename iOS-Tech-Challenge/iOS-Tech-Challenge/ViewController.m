@@ -10,6 +10,8 @@
 #import "ParseAPI.h"
 #import "QntView.h"
 
+#import "InventoryViewController.h"
+
 
 @interface ViewController ()
 
@@ -88,14 +90,5 @@
         [self.optionIndices removeIndex:index];
     }
 }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-
 
 @end

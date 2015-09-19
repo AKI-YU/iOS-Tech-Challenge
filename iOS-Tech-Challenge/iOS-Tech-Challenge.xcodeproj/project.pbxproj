@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		610F653A1BAD8A5F0083CC61 /* QntView.m in Sources */ = {isa = PBXBuildFile; fileRef = 610F65391BAD8A5F0083CC61 /* QntView.m */; settings = {ASSET_TAGS = (); }; };
+		610F653C1BAD8B250083CC61 /* QntView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 610F653B1BAD8B250083CC61 /* QntView.xib */; settings = {ASSET_TAGS = (); }; };
 		61704DDB1BAD605A00617704 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704DDA1BAD605A00617704 /* main.m */; };
 		61704DDE1BAD605A00617704 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704DDD1BAD605A00617704 /* AppDelegate.m */; };
 		61704DE11BAD605A00617704 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704DE01BAD605A00617704 /* ViewController.m */; };
@@ -34,6 +36,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		610F65381BAD8A5F0083CC61 /* QntView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QntView.h; sourceTree = "<group>"; };
+		610F65391BAD8A5F0083CC61 /* QntView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QntView.m; sourceTree = "<group>"; };
+		610F653B1BAD8B250083CC61 /* QntView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QntView.xib; sourceTree = "<group>"; };
 		61704DD61BAD605A00617704 /* iOS-Tech-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Tech-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61704DDA1BAD605A00617704 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		61704DDC1BAD605A00617704 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -98,6 +103,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		610F65371BAD8A5F0083CC61 /* QntView */ = {
+			isa = PBXGroup;
+			children = (
+				610F65381BAD8A5F0083CC61 /* QntView.h */,
+				610F65391BAD8A5F0083CC61 /* QntView.m */,
+				610F653B1BAD8B250083CC61 /* QntView.xib */,
+			);
+			path = QntView;
+			sourceTree = "<group>";
+		};
 		61704DCD1BAD605A00617704 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +136,7 @@
 		61704DD81BAD605A00617704 /* iOS-Tech-Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				610F65371BAD8A5F0083CC61 /* QntView */,
 				61704E3B1BAD75F500617704 /* UUChart */,
 				61704E121BAD619400617704 /* asw-images */,
 				61704E0C1BAD607300617704 /* SideMenu */,
@@ -275,6 +291,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				610F653C1BAD8B250083CC61 /* QntView.xib in Resources */,
 				61704E381BAD619400617704 /* logo.png in Resources */,
 				61704E321BAD619400617704 /* 8.jpg in Resources */,
 				61704E2C1BAD619400617704 /* 6.jpg in Resources */,
@@ -335,6 +352,7 @@
 				61704E481BAD75F500617704 /* UUBar.m in Sources */,
 				61704E4C1BAD75F500617704 /* UUColor.m in Sources */,
 				61704E491BAD75F500617704 /* UUBarChart.m in Sources */,
+				610F653A1BAD8A5F0083CC61 /* QntView.m in Sources */,
 				61704E4D1BAD75F500617704 /* UULineChart.m in Sources */,
 				61704DE11BAD605A00617704 /* ViewController.m in Sources */,
 				61704DDE1BAD605A00617704 /* AppDelegate.m in Sources */,

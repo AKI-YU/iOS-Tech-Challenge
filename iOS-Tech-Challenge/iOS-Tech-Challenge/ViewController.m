@@ -21,7 +21,7 @@
 {
     if(self = [super initWithCoder:aDecoder])
     {
-        self.backgroundImage = [UIImage imageNamed:@"logo.png"];
+        self.backgroundImage = [UIImage imageNamed:@"1.jpg"];
         self.leftWidth = 250;
         tableArr = [[NSArray alloc] initWithObjects:@"管理",@"進貨訂貨",@"庫存盤點",@"其他", nil];
         

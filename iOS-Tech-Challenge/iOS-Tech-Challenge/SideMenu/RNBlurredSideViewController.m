@@ -147,6 +147,7 @@
     
     backgroundView = [[UIView alloc] initWithFrame:self.view.frame];
     backgroundView.backgroundColor = [UIColor colorWithPatternImage:self.backgroundImage];
+    [self.view setBackgroundColor:[UIColor colorWithRed:3.0f/255.0f green:48.0f/255.0f blue:30.f/266.0f alpha:1]];
     [self.view addSubview:backgroundView];
     
     blurredImage = [self.backgroundImage blurredImageWithRadius:20 iterations:10 tintColor:nil];

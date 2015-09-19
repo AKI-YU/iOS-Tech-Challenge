@@ -7,9 +7,11 @@
 //
 
 #import "PurchaseDetailViewController.h"
+#import "HFTableViewBindingHelper.h"
 
+// ☒☑☐
 @interface PurchaseDetailViewController ()
-
+@property (nonatomic) HFTableViewBindingHelper* helper;
 @end
 
 @implementation PurchaseDetailViewController
@@ -18,12 +20,29 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:nil];
+    UINib* nib = [UINib nibWithNibName:@"PurchaseDetailTableViewCell" bundle:nil];
+    self.helper = [HFTableViewBindingHelper
+                   bindingForTableView:self.tableView
+                            sourceList:self.data
+                     didSelectionBlock:^(id model) {
+        
+                    }
+                          templateCell:nib
+                              isNested:NO];
+    
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:nil];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancel:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"修改" style:UIBarButtonItemStylePlain target:self action:nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)cancel:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "KVOMutableArray.h"
 @interface PurchaseDetailViewController : UIViewController
-
+@property (nonatomic) KVOMutableArray* data;
+@property (nonatomic) IBOutlet UITableView* tableView;
 @end

@@ -27,7 +27,7 @@
 //                            sourceList:nil
 //                     didSelectionBlock:^(id model) {
 //    
-//    } cellReuseIdentifier:@"CELL" isNested:NO];
+//    } cellReuseIdentifier:@"PurchaseTableViewCell" isNested:NO];
 }
 
 - (void)didReceiveMemoryWarning {

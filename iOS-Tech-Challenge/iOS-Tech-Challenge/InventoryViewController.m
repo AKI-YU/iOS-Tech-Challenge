@@ -10,6 +10,7 @@
 #import "SJDataTableView.h"
 #import "Constants.h"
 #import "Masonry.h"
+#import <Parse/Parse.h>
 
 @interface InventoryViewController ()
 
@@ -45,6 +46,15 @@
 	}];
 
 	self.view.backgroundColor = [UIColor whiteColor];
+}
+
+#define ParseClassWareHouse @"warehouse"
+- (void)queryWareHouse
+{
+	PFQuery *query = [[PFQuery alloc] initWithClassName:ParseClassWareHouse];
+	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
+
+	}];
 }
 
 @end

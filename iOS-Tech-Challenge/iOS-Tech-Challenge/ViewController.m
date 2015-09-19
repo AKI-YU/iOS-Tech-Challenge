@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 
+#import "QntView.h"
+
+
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
     UITableView *leftTableView;
@@ -17,9 +20,9 @@
 
 @implementation ViewController
 
-- (id)initWithCoder:(NSCoder*)aDecoder
-{
-    if(self = [super initWithCoder:aDecoder])
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    
+    if(self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])
     {
         self.backgroundImage = [UIImage imageNamed:@"1.jpg"];
         self.leftWidth = 250;
@@ -30,8 +33,11 @@
 }
 
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.navigationController.navigationBar setHidden:YES];
     
     //add left sidebar
     leftTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, self.leftContentView.frame.size.width, self.leftContentView.frame.size.height-20)];
@@ -41,9 +47,28 @@
     leftTableView.delegate = self;
     [self.leftContentView addSubview:leftTableView];
     
+    QntView *view = [[QntView alloc] initWithFrame:CGRectMake(150, 150, 150, 60)];
+    UIButton *btnAdd = (UIButton *)[[view viewWithTag:99] viewWithTag:3];
+    [btnAdd addTarget:self action:@selector(btnAdd:) forControlEvents:UIControlEventTouchUpInside];
     
     
+    UIButton *btnMinus = (UIButton *)[[view viewWithTag:99] viewWithTag:1];
+    [btnMinus addTarget:self action:@selector(btnMinus:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:view];
+    
+    
+    [view setColor:[UIColor redColor]];
 }
+
+-(void)btnAdd:(id)sender{
+    [((QntView *)[[sender superview] superview])Add];
+}
+
+-(void)btnMinus:(id)sender{
+    [((QntView *)[[sender superview] superview])Minus];
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

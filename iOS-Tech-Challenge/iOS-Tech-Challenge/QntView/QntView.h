@@ -10,10 +10,11 @@
 
 @interface QntView : UIView
 
-@property (nonatomic, assign) NSInteger Qnt;
-
-
 -(void)Add;
 -(void)Minus;
+
+
+-(void)setQntValue:(NSInteger)qnt;
+-(void)setColor:(UIColor *)color;
 
 @end

@@ -7,15 +7,14 @@
 //
 
 #import "ViewController.h"
-
+#import "ParseAPI.h"
 #import "QntView.h"
 
 
-@interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
-{
-    UITableView *leftTableView;
-    NSArray *tableArr;
-}
+@interface ViewController ()
+
+@property (nonatomic, strong) NSMutableIndexSet *optionIndices;
+
 @end
 
 @implementation ViewController
@@ -24,9 +23,6 @@
     
     if(self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])
     {
-        self.backgroundImage = [UIImage imageNamed:@"1.jpg"];
-        self.leftWidth = 250;
-        tableArr = [[NSArray alloc] initWithObjects:@"管理",@"進貨訂貨",@"庫存盤點",@"其他", nil];
         
     }
     return self;
@@ -39,35 +35,59 @@
     
     [self.navigationController.navigationBar setHidden:YES];
     
-    //add left sidebar
-    leftTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, self.leftContentView.frame.size.width, self.leftContentView.frame.size.height-20)];
-    leftTableView.backgroundColor = [UIColor clearColor];
-    leftTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    leftTableView.dataSource = self;
-    leftTableView.delegate = self;
-    [self.leftContentView addSubview:leftTableView];
-    
-    QntView *view = [[QntView alloc] initWithFrame:CGRectMake(150, 150, 150, 60)];
-    UIButton *btnAdd = (UIButton *)[[view viewWithTag:99] viewWithTag:3];
-    [btnAdd addTarget:self action:@selector(btnAdd:) forControlEvents:UIControlEventTouchUpInside];
     
     
-    UIButton *btnMinus = (UIButton *)[[view viewWithTag:99] viewWithTag:1];
-    [btnMinus addTarget:self action:@selector(btnMinus:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:view];
-    
-    
-    [view setColor:[UIColor redColor]];
+    self.optionIndices = [NSMutableIndexSet indexSetWithIndex:1];
+
+
+  
 }
 
--(void)btnAdd:(id)sender{
-    [((QntView *)[[sender superview] superview])Add];
+
+- (IBAction)onBurger:(id)sender {
+    NSArray *images = @[
+                        [UIImage imageNamed:@"gear"],
+                        [UIImage imageNamed:@"globe"],
+                        [UIImage imageNamed:@"profile"],
+                        [UIImage imageNamed:@"star"],
+                        ];
+    NSArray *titles = @[
+                        @"1",
+                        @"globe",
+                        @"profile",
+                        @"star",
+                        ];
+    NSArray *colors = @[
+                        [UIColor colorWithRed:240/255.f green:159/255.f blue:254/255.f alpha:1],
+                        [UIColor colorWithRed:255/255.f green:137/255.f blue:167/255.f alpha:1],
+                        [UIColor colorWithRed:126/255.f green:242/255.f blue:195/255.f alpha:1],
+                        [UIColor colorWithRed:119/255.f green:152/255.f blue:255/255.f alpha:1],
+                        ];
+    
+    RNFrostedSidebar *callout = [[RNFrostedSidebar alloc] initWithImages:images titles:titles selectedIndices:self.optionIndices borderColors:colors];
+    //    RNFrostedSidebar *callout = [[RNFrostedSidebar alloc] initWithImages:images];
+    callout.delegate = self;
+    //    callout.showFromRight = YES;
+    [callout show];
 }
 
--(void)btnMinus:(id)sender{
-    [((QntView *)[[sender superview] superview])Minus];
+#pragma mark - RNFrostedSidebarDelegate
+
+- (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index {
+    NSLog(@"Tapped item at index %ld",index);
+    if (index == 3) {
+        [sidebar dismiss];
+    }
 }
 
+- (void)sidebar:(RNFrostedSidebar *)sidebar didEnable:(BOOL)itemEnabled itemAtIndex:(NSUInteger)index {
+    if (itemEnabled) {
+        [self.optionIndices addIndex:index];
+    }
+    else {
+        [self.optionIndices removeIndex:index];
+    }
+}
 
 
 - (void)didReceiveMemoryWarning {
@@ -75,28 +95,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    
-    if (cell == nil){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-        cell.backgroundColor = [UIColor clearColor];
-        cell.textLabel.textColor = [UIColor whiteColor];
-    }
-    
-    cell.textLabel.text = [tableArr objectAtIndex:indexPath.row];
-    
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self closeSideView:YES];
-}
 
 
 

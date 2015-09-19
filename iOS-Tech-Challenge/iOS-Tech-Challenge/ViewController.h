@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RNBlurredSideViewController.h"
+#import "RNFrostedSidebar.h"
 
-@interface ViewController : RNBlurredSideViewController
+@interface ViewController : UIViewController<RNFrostedSidebarDelegate>
 
 
 

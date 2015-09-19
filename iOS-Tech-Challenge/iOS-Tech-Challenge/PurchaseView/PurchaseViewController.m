@@ -10,9 +10,12 @@
 #import "PurchaseViewController.h"
 #import "Parse.h"
 #import "HFTableViewBindingHelper.h"
+#import <RACEXTScope.h>
+#import <Parse.h>
 @interface PurchaseViewController ()
 @property (nonatomic) HFTableViewBindingHelper* helper;
 @property (nonatomic) IBOutlet UITableView* tableView;
+@property (nonatomic) KVOMutableArray* data;
 @end
 
 @implementation PurchaseViewController
@@ -22,12 +25,50 @@
     // Do any additional setup after loading the view from its nib.
     
     self.title = @"進貨管理";
-//    self.helper = [HFTableViewBindingHelper
-//                   bindingForTableView:self.tableView
-//                            sourceList:nil
-//                     didSelectionBlock:^(id model) {
-//    
-//    } cellReuseIdentifier:@"PurchaseTableViewCell" isNested:NO];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"purchase"];
+    @weakify(self);
+//    query whereKey:equalTo:
+    [query orderByDescending:@"arrive_date"];
+    [query addAscendingOrder:@"item_index"];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        
+        @strongify(self);
+        KVOMutableArray* data = [self mergeSameOrderId:objects];
+        self.data = data;
+        UINib* nib = [UINib nibWithNibName:@"PurchaseTableViewCell" bundle:nil];
+        self.helper = [HFTableViewBindingHelper
+                       bindingForTableView:self.tableView
+                       sourceList:data
+                         didSelectionBlock:^(id model) {
+                                                             
+                         }
+                              templateCell:nib
+                                  isNested:NO];
+    }];
+}
+
+- (KVOMutableArray*)mergeSameOrderId:(NSArray*)data
+{
+    KVOMutableArray* res = [KVOMutableArray new];
+    NSMutableDictionary* orderIdMap = [NSMutableDictionary new];
+    for (PFObject* obj in data) {
+        NSNumber* orderId = obj[@"order_id"];
+        if (!orderId) {
+            continue;
+        }
+        
+        if (!orderIdMap[orderId]) {
+            orderIdMap[orderId] = [KVOMutableArray new];
+            [res addObject:orderIdMap[orderId]];
+        }
+        if (orderIdMap[orderId]) {
+            KVOMutableArray* array = orderIdMap[orderId];
+            [array addObject:obj];
+        }
+    }
+    return res;
 }
 
 - (void)didReceiveMemoryWarning {

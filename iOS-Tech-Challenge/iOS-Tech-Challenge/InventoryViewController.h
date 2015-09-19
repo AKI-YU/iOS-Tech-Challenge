@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RNBlurredSideViewController.h"
 
-@interface InventoryViewController : RNBlurredSideViewController
+@interface InventoryViewController : UIViewController
 
 @end

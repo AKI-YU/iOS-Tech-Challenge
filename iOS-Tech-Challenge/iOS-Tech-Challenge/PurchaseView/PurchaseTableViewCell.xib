@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PurchaseTableViewCell" id="KGk-i7-Jjw" customClass="PurchaseTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="po_20150920001" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SP1-zQ-Qgz">
+                        <rect key="frame" x="18" y="8" width="134" height="27.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015 09 20 12:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bG-VD-uvN">
+                        <rect key="frame" x="172" y="8" width="135" height="27.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="店長" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVN-Cj-Mlr">
+                        <rect key="frame" x="327" y="8" width="34" height="27.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="牛奶、馬肉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eR4-9F-vBw">
+                        <rect key="frame" x="381" y="8" width="85" height="27.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="LVN-Cj-Mlr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="11Q-jE-UDH"/>
+                    <constraint firstItem="eR4-9F-vBw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="2FX-Gf-LzV"/>
+                    <constraint firstItem="SP1-zQ-Qgz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="3OL-Ns-hAB"/>
+                    <constraint firstItem="4bG-VD-uvN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="5V5-Vh-4Gt"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="4bG-VD-uvN" secondAttribute="bottom" id="KhX-1V-1Ca"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="LVN-Cj-Mlr" secondAttribute="bottom" id="O34-EB-aQ2"/>
+                    <constraint firstItem="SP1-zQ-Qgz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="Tdb-0c-xgP"/>
+                    <constraint firstItem="eR4-9F-vBw" firstAttribute="leading" secondItem="LVN-Cj-Mlr" secondAttribute="trailing" constant="20" id="bNl-Tw-FS4"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="eR4-9F-vBw" secondAttribute="bottom" id="e25-GZ-tSp"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="SP1-zQ-Qgz" secondAttribute="bottom" id="nPO-dm-fx8"/>
+                    <constraint firstItem="LVN-Cj-Mlr" firstAttribute="leading" secondItem="4bG-VD-uvN" secondAttribute="trailing" constant="20" id="rGY-UH-ywA"/>
+                    <constraint firstItem="4bG-VD-uvN" firstAttribute="leading" secondItem="SP1-zQ-Qgz" secondAttribute="trailing" constant="20" id="wpk-79-3co"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="eR4-9F-vBw" secondAttribute="trailing" priority="900" constant="10" id="ynB-a8-0ZZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="checker" destination="LVN-Cj-Mlr" id="bTQ-ec-be6"/>
+                <outlet property="itemNames" destination="eR4-9F-vBw" id="3Cs-N4-0rj"/>
+                <outlet property="purchaseDateLabel" destination="4bG-VD-uvN" id="cua-h9-bzT"/>
+                <outlet property="purchaseOrderIdLabel" destination="SP1-zQ-Qgz" id="djD-a0-uf3"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

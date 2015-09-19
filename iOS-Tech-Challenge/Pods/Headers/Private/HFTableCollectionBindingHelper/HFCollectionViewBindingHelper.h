@@ -1,1 +1,0 @@
-../../../HFTableCollectionBindingHelper/Pod/Classes/HFCollectionViewBindingHelper.h

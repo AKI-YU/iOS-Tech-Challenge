@@ -9,6 +9,7 @@
 #import "InventoryViewController.h"
 #import "SJDataTableView.h"
 #import "Constants.h"
+#import "Masonry.h"
 
 @interface InventoryViewController ()
 
@@ -20,7 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-	NSArray * headerAarray = [[NSArray alloc] initWithObjects:@"Name", @"value1", @"value2", @"value3", @"value4", nil];
+	NSArray * headerAarray = @[@"品項", @"現有數量", @"最近到期日", @"單位"];
 	NSMutableArray *dataArray = [NSMutableArray new];
 	for (int i = 0 ; i< 20; i++) {
 		NSMutableDictionary *dataDict = [NSMutableDictionary new];
@@ -28,13 +29,22 @@
 		[dataDict setObject:[NSString stringWithFormat:@"value1_%d",i] forKey:[headerAarray objectAtIndex:1]];
 		[dataDict setObject:[NSString stringWithFormat:@"value2_%d",i] forKey:[headerAarray objectAtIndex:2]];
 		[dataDict setObject:[NSString stringWithFormat:@"value3_%d",i] forKey:[headerAarray objectAtIndex:3]];
-		[dataDict setObject:[NSString stringWithFormat:@"value4_%d",i] forKey:[headerAarray objectAtIndex:4]];
 		[dataArray addObject:dataDict];
 	}
 
-	SJDataTableView * table =[[SJDataTableView alloc] initWithFrame:self.view.bounds headerSize:CGSizeMake(100, 70)];
+	CGRect rect = CGRectMake(100, 0, self.view.frame.size.width, self.view.frame.size.height);
+	SJDataTableView *table =[[SJDataTableView alloc] initWithFrame:rect
+														 headerSize:CGSizeMake(100, 70)];
 	[table setHeaderArray:headerAarray dataArray:dataArray];
 	[self.view addSubview:table];
+	[table mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.leading.equalTo(self.view.mas_leading).offset(100);
+		make.trailing.equalTo(@0);
+		make.top.equalTo(@0);
+		make.bottom.equalTo(@0);
+	}];
+
+	self.view.backgroundColor = [UIColor whiteColor];
 }
 
 @end

@@ -100,7 +100,6 @@
 
 	if (indexPath.row == 2) {
 		InventoryViewController *vc = [[InventoryViewController alloc] init];
-		vc.view.backgroundColor = [UIColor blueColor];
 		[self.navigationController pushViewController:vc animated:YES];
 	}
 

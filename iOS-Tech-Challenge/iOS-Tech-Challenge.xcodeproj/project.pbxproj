@@ -12,6 +12,7 @@
 		611496891BAD8ECA00E4AF04 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 611496871BAD8ECA00E4AF04 /* add.png */; settings = {ASSET_TAGS = (); }; };
 		6114968A1BAD8ECA00E4AF04 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = 611496881BAD8ECA00E4AF04 /* minus.png */; settings = {ASSET_TAGS = (); }; };
 		6114968C1BAD9D5500E4AF04 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6114968B1BAD9D5500E4AF04 /* ViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		6114968F1BADA47500E4AF04 /* mNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 6114968E1BADA47500E4AF04 /* mNav.m */; settings = {ASSET_TAGS = (); }; };
 		61704DDB1BAD605A00617704 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704DDA1BAD605A00617704 /* main.m */; };
 		61704DDE1BAD605A00617704 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704DDD1BAD605A00617704 /* AppDelegate.m */; };
 		61704DE11BAD605A00617704 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704DE01BAD605A00617704 /* ViewController.m */; };
@@ -47,6 +48,8 @@
 		611496871BAD8ECA00E4AF04 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		611496881BAD8ECA00E4AF04 /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = "<group>"; };
 		6114968B1BAD9D5500E4AF04 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewController.xib; path = ../ViewController.xib; sourceTree = "<group>"; };
+		6114968D1BADA47500E4AF04 /* mNav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mNav.h; sourceTree = "<group>"; };
+		6114968E1BADA47500E4AF04 /* mNav.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mNav.m; sourceTree = "<group>"; };
 		61704DD61BAD605A00617704 /* iOS-Tech-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Tech-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61704DDA1BAD605A00617704 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		61704DDC1BAD605A00617704 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -165,6 +168,8 @@
 				61704DE51BAD605A00617704 /* Assets.xcassets */,
 				61704DEA1BAD605A00617704 /* Info.plist */,
 				61704DD91BAD605A00617704 /* Supporting Files */,
+				6114968D1BADA47500E4AF04 /* mNav.h */,
+				6114968E1BADA47500E4AF04 /* mNav.m */,
 			);
 			path = "iOS-Tech-Challenge";
 			sourceTree = "<group>";
@@ -390,6 +395,7 @@
 				61704DE11BAD605A00617704 /* ViewController.m in Sources */,
 				DB076D401BADA32400E5AD6F /* SJDataTableViewCell.m in Sources */,
 				DB076D3E1BADA32400E5AD6F /* SJDataFixItemTableView.m in Sources */,
+				6114968F1BADA47500E4AF04 /* mNav.m in Sources */,
 				61704DDE1BAD605A00617704 /* AppDelegate.m in Sources */,
 				61704E4B1BAD75F500617704 /* UUChartLabel.m in Sources */,
 				61704E4A1BAD75F500617704 /* UUChart.m in Sources */,

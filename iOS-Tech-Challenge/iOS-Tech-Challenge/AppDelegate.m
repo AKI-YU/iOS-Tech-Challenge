@@ -25,14 +25,13 @@
     
     ViewController *viewC = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     
-    nav = [[UINavigationController alloc] initWithRootViewController:viewC];
+    nav = [[mNav alloc] initWithRootViewController:viewC];
     
     [self.window setRootViewController:nav];
     
     
     [self.window makeKeyAndVisible];
 
-    
     
     [Parse setApplicationId:@"J5WZOPN3ntsHOZqeuU6Mx5ciAGgsYNoIAPBhfCmT"
                   clientKey:@"D5U8OOsxPREgxjaLEYRSnnVoN9j3zBWwNS9s8eoY"];

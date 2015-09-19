@@ -30,6 +30,8 @@
 		61704E4B1BAD75F500617704 /* UUChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704E431BAD75F500617704 /* UUChartLabel.m */; settings = {ASSET_TAGS = (); }; };
 		61704E4C1BAD75F500617704 /* UUColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704E451BAD75F500617704 /* UUColor.m */; settings = {ASSET_TAGS = (); }; };
 		61704E4D1BAD75F500617704 /* UULineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704E471BAD75F500617704 /* UULineChart.m */; settings = {ASSET_TAGS = (); }; };
+		8B07EE1B1BAD8729006FBD6C /* ASWOrderMagVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B07EE191BAD8729006FBD6C /* ASWOrderMagVC.m */; settings = {ASSET_TAGS = (); }; };
+		8B07EE1C1BAD8729006FBD6C /* ASWOrderMagVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B07EE1A1BAD8729006FBD6C /* ASWOrderMagVC.xib */; settings = {ASSET_TAGS = (); }; };
 		97F9EA688F924E00E284840B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 673C5616CED4C1F9B61E0753 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +75,9 @@
 		61704E461BAD75F500617704 /* UULineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UULineChart.h; sourceTree = "<group>"; };
 		61704E471BAD75F500617704 /* UULineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UULineChart.m; sourceTree = "<group>"; };
 		673C5616CED4C1F9B61E0753 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B07EE181BAD8729006FBD6C /* ASWOrderMagVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASWOrderMagVC.h; sourceTree = "<group>"; };
+		8B07EE191BAD8729006FBD6C /* ASWOrderMagVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASWOrderMagVC.m; sourceTree = "<group>"; };
+		8B07EE1A1BAD8729006FBD6C /* ASWOrderMagVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ASWOrderMagVC.xib; sourceTree = "<group>"; };
 		B603D15988D12116523EF210 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D2D0FB9F3FA752C7E234A5E8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +133,7 @@
 				61704DDD1BAD605A00617704 /* AppDelegate.m */,
 				61704DDF1BAD605A00617704 /* ViewController.h */,
 				61704DE01BAD605A00617704 /* ViewController.m */,
+				8B07EE171BAD8654006FBD6C /* New Group */,
 				61704DE21BAD605A00617704 /* Main.storyboard */,
 				61704DE51BAD605A00617704 /* Assets.xcassets */,
 				61704DE71BAD605A00617704 /* LaunchScreen.storyboard */,
@@ -216,6 +222,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8B07EE171BAD8654006FBD6C /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				8B07EE181BAD8729006FBD6C /* ASWOrderMagVC.h */,
+				8B07EE191BAD8729006FBD6C /* ASWOrderMagVC.m */,
+				8B07EE1A1BAD8729006FBD6C /* ASWOrderMagVC.xib */,
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -278,6 +294,7 @@
 				61704E381BAD619400617704 /* logo.png in Resources */,
 				61704E321BAD619400617704 /* 8.jpg in Resources */,
 				61704E2C1BAD619400617704 /* 6.jpg in Resources */,
+				8B07EE1C1BAD8729006FBD6C /* ASWOrderMagVC.xib in Resources */,
 				61704DE91BAD605A00617704 /* LaunchScreen.storyboard in Resources */,
 				61704E291BAD619400617704 /* 5.jpg in Resources */,
 				61704E261BAD619400617704 /* 4.jpg in Resources */,
@@ -336,6 +353,7 @@
 				61704E4C1BAD75F500617704 /* UUColor.m in Sources */,
 				61704E491BAD75F500617704 /* UUBarChart.m in Sources */,
 				61704E4D1BAD75F500617704 /* UULineChart.m in Sources */,
+				8B07EE1B1BAD8729006FBD6C /* ASWOrderMagVC.m in Sources */,
 				61704DE11BAD605A00617704 /* ViewController.m in Sources */,
 				61704DDE1BAD605A00617704 /* AppDelegate.m in Sources */,
 				61704E4B1BAD75F500617704 /* UUChartLabel.m in Sources */,

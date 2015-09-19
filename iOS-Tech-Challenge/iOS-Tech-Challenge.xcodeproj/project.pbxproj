@@ -24,6 +24,12 @@
 		61704E321BAD619400617704 /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61704E1A1BAD619400617704 /* 8.jpg */; settings = {ASSET_TAGS = (); }; };
 		61704E351BAD619400617704 /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61704E1B1BAD619400617704 /* 9.jpg */; settings = {ASSET_TAGS = (); }; };
 		61704E381BAD619400617704 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 61704E1C1BAD619400617704 /* logo.png */; settings = {ASSET_TAGS = (); }; };
+		61704E481BAD75F500617704 /* UUBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704E3D1BAD75F500617704 /* UUBar.m */; settings = {ASSET_TAGS = (); }; };
+		61704E491BAD75F500617704 /* UUBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704E3F1BAD75F500617704 /* UUBarChart.m */; settings = {ASSET_TAGS = (); }; };
+		61704E4A1BAD75F500617704 /* UUChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704E411BAD75F500617704 /* UUChart.m */; settings = {ASSET_TAGS = (); }; };
+		61704E4B1BAD75F500617704 /* UUChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704E431BAD75F500617704 /* UUChartLabel.m */; settings = {ASSET_TAGS = (); }; };
+		61704E4C1BAD75F500617704 /* UUColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704E451BAD75F500617704 /* UUColor.m */; settings = {ASSET_TAGS = (); }; };
+		61704E4D1BAD75F500617704 /* UULineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704E471BAD75F500617704 /* UULineChart.m */; settings = {ASSET_TAGS = (); }; };
 		97F9EA688F924E00E284840B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 673C5616CED4C1F9B61E0753 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +60,18 @@
 		61704E1A1BAD619400617704 /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.jpg; sourceTree = "<group>"; };
 		61704E1B1BAD619400617704 /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpg; sourceTree = "<group>"; };
 		61704E1C1BAD619400617704 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		61704E3C1BAD75F500617704 /* UUBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUBar.h; sourceTree = "<group>"; };
+		61704E3D1BAD75F500617704 /* UUBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUBar.m; sourceTree = "<group>"; };
+		61704E3E1BAD75F500617704 /* UUBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUBarChart.h; sourceTree = "<group>"; };
+		61704E3F1BAD75F500617704 /* UUBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUBarChart.m; sourceTree = "<group>"; };
+		61704E401BAD75F500617704 /* UUChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUChart.h; sourceTree = "<group>"; };
+		61704E411BAD75F500617704 /* UUChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUChart.m; sourceTree = "<group>"; };
+		61704E421BAD75F500617704 /* UUChartLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUChartLabel.h; sourceTree = "<group>"; };
+		61704E431BAD75F500617704 /* UUChartLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUChartLabel.m; sourceTree = "<group>"; };
+		61704E441BAD75F500617704 /* UUColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUColor.h; sourceTree = "<group>"; };
+		61704E451BAD75F500617704 /* UUColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUColor.m; sourceTree = "<group>"; };
+		61704E461BAD75F500617704 /* UULineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UULineChart.h; sourceTree = "<group>"; };
+		61704E471BAD75F500617704 /* UULineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UULineChart.m; sourceTree = "<group>"; };
 		673C5616CED4C1F9B61E0753 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B603D15988D12116523EF210 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D2D0FB9F3FA752C7E234A5E8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +121,7 @@
 		61704DD81BAD605A00617704 /* iOS-Tech-Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				61704E3B1BAD75F500617704 /* UUChart */,
 				61704E121BAD619400617704 /* asw-images */,
 				61704E0C1BAD607300617704 /* SideMenu */,
 				61704DDC1BAD605A00617704 /* AppDelegate.h */,
@@ -168,6 +187,25 @@
 				61704E1C1BAD619400617704 /* logo.png */,
 			);
 			path = "asw-images";
+			sourceTree = "<group>";
+		};
+		61704E3B1BAD75F500617704 /* UUChart */ = {
+			isa = PBXGroup;
+			children = (
+				61704E3C1BAD75F500617704 /* UUBar.h */,
+				61704E3D1BAD75F500617704 /* UUBar.m */,
+				61704E3E1BAD75F500617704 /* UUBarChart.h */,
+				61704E3F1BAD75F500617704 /* UUBarChart.m */,
+				61704E401BAD75F500617704 /* UUChart.h */,
+				61704E411BAD75F500617704 /* UUChart.m */,
+				61704E421BAD75F500617704 /* UUChartLabel.h */,
+				61704E431BAD75F500617704 /* UUChartLabel.m */,
+				61704E441BAD75F500617704 /* UUColor.h */,
+				61704E451BAD75F500617704 /* UUColor.m */,
+				61704E461BAD75F500617704 /* UULineChart.h */,
+				61704E471BAD75F500617704 /* UULineChart.m */,
+			);
+			path = UUChart;
 			sourceTree = "<group>";
 		};
 		7E3B27588718C843DF35AD81 /* Frameworks */ = {
@@ -294,8 +332,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				61704E0F1BAD607300617704 /* RNBlurredSideViewController.m in Sources */,
+				61704E481BAD75F500617704 /* UUBar.m in Sources */,
+				61704E4C1BAD75F500617704 /* UUColor.m in Sources */,
+				61704E491BAD75F500617704 /* UUBarChart.m in Sources */,
+				61704E4D1BAD75F500617704 /* UULineChart.m in Sources */,
 				61704DE11BAD605A00617704 /* ViewController.m in Sources */,
 				61704DDE1BAD605A00617704 /* AppDelegate.m in Sources */,
+				61704E4B1BAD75F500617704 /* UUChartLabel.m in Sources */,
+				61704E4A1BAD75F500617704 /* UUChart.m in Sources */,
 				61704DDB1BAD605A00617704 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

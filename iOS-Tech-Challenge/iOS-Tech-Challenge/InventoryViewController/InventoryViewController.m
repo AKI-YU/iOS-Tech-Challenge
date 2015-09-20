@@ -12,11 +12,15 @@
 #import "UIImage+ImageEffects.h"
 #import "Masonry.h"
 #import <Parse/Parse.h>
+#import "MLClass.h"
 
 #define ParseClassWareHouse @"warehouse"
 #define ParseClassWareHouseProduct @"product_name"
 #define ParseClassWareHouseAmount @"amount"
 #define ParseClassWareHouseFresh @"p_fresh_time"
+#define ParseClassWareHousePurchase @"purchase"
+
+#define ParseClassPurchaseArriveDate @"arrive_date"
 
 @interface InventoryViewController () <SJDataTableViewDelegate>
 @property (nonatomic, strong) SJDataTableView *table;
@@ -84,11 +88,22 @@
 #pragma mark -
 - (void)didTapDiscardButton:(UIButton *)sender
 {
-	NSLog(@"%s %ld", __PRETTY_FUNCTION__, sender.tag);
 	PFObject *obj = self.dataResult[sender.tag];
 	obj[ParseClassWareHouseAmount] = @0;
 
 	[self setTableWithPFObjectsArr:self.dataResult];
+
+	PFObject *purchaseObj = obj[ParseClassWareHousePurchase];
+	if (purchaseObj) {
+		NSDate *arrivedDate = purchaseObj[ParseClassPurchaseArriveDate];
+		NSLog(@"%@", arrivedDate);
+		NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:arrivedDate];
+		NSInteger day = (NSInteger)interval / (24.0 * 60 * 60);
+		NSLog(@"%s %ld %ld", __PRETTY_FUNCTION__, sender.tag, day);
+
+		[MLClass saveUsage:obj[ParseClassWareHouseProduct] :(int)day];
+		[MLClass queryAWS_Ingredients:obj[ParseClassWareHouseProduct] :(int)day];
+	}
 }
 
 #pragma mark -
@@ -97,6 +112,7 @@
 - (void)queryWareHouse
 {
 	PFQuery *query = [[PFQuery alloc] initWithClassName:ParseClassWareHouse];
+	[query includeKey:ParseClassWareHousePurchase];
 	query.cachePolicy = kPFCachePolicyCacheThenNetwork;
 	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
 		if (!error) {

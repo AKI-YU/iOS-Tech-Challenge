@@ -9,12 +9,14 @@
 #import "InventoryViewController.h"
 #import "SJDataTableView.h"
 #import "Constants.h"
+#import "UIImage+ImageEffects.h"
 #import "Masonry.h"
 #import <Parse/Parse.h>
 
 @interface InventoryViewController ()
 @property (nonatomic, strong) SJDataTableView *table;
 @property (nonatomic, strong) NSArray *headerAarray;
+@property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 @end
 
 @implementation InventoryViewController
@@ -49,6 +51,13 @@
 	//self.view.backgroundColor = [UIColor whiteColor];
 	self.table.backgroundColor = [UIColor clearColor];
 	[self queryWareHouse];
+
+	[self uiSetting];
+}
+
+- (void)uiSetting
+{
+	self.bgImageView.image = [self blurWithImageEffects:[UIImage imageNamed:@"Order2.jpg"]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -88,6 +97,12 @@
 }
 - (IBAction)showMenuInventory:(id)sender {
 	[self showMenu];
+}
+
+#pragma mark - blur
+- (UIImage *)blurWithImageEffects:(UIImage *)image
+{
+	return [image applyBlurWithRadius:10 tintColor:[UIColor colorWithWhite:1 alpha:0.1] saturationDeltaFactor:1.5 maskImage:nil];
 }
 
 @end

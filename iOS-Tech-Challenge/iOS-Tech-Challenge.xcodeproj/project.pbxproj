@@ -72,6 +72,7 @@
 		DB076D401BADA32400E5AD6F /* SJDataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB076D3D1BADA32400E5AD6F /* SJDataTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		DB076D431BADA35A00E5AD6F /* InventoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB076D421BADA35A00E5AD6F /* InventoryViewController.m */; settings = {ASSET_TAGS = (); }; };
 		DB076D461BAE690800E5AD6F /* InventoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB076D451BAE690700E5AD6F /* InventoryViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		DB076D4A1BAE7ACA00E5AD6F /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = DB076D491BAE7ACA00E5AD6F /* UIImage+ImageEffects.m */; settings = {ASSET_TAGS = (); }; };
 		F969D9A71BAD903A00F8A532 /* PurchaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F969D9A51BAD903A00F8A532 /* PurchaseTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		F969D9A81BAD903A00F8A532 /* PurchaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F969D9A61BAD903A00F8A532 /* PurchaseTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		F969D9A91BADA89A00F8A532 /* PurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F99FC9BB1BAD7B4400A34994 /* PurchaseViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -183,6 +184,8 @@
 		DB076D421BADA35A00E5AD6F /* InventoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InventoryViewController.m; sourceTree = "<group>"; };
 		DB076D441BADA93500E5AD6F /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		DB076D451BAE690700E5AD6F /* InventoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InventoryViewController.xib; sourceTree = "<group>"; };
+		DB076D481BAE7ACA00E5AD6F /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		DB076D491BAE7ACA00E5AD6F /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		F969D9A41BAD903A00F8A532 /* PurchaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseTableViewCell.h; sourceTree = "<group>"; };
 		F969D9A51BAD903A00F8A532 /* PurchaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseTableViewCell.m; sourceTree = "<group>"; };
 		F969D9A61BAD903A00F8A532 /* PurchaseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseTableViewCell.xib; sourceTree = "<group>"; };
@@ -286,6 +289,7 @@
 		61704DD81BAD605A00617704 /* iOS-Tech-Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				DB076D471BAE7ACA00E5AD6F /* UIImage+ImageEffects */,
 				61F84DAE1BAE503100096733 /* order */,
 				611496CA1BAE477F00E4AF04 /* Sell */,
 				611496C61BADB28F00E4AF04 /* MBProgressHUD */,
@@ -452,6 +456,15 @@
 			name = SJDataTableView;
 			sourceTree = "<group>";
 		};
+		DB076D471BAE7ACA00E5AD6F /* UIImage+ImageEffects */ = {
+			isa = PBXGroup;
+			children = (
+				DB076D481BAE7ACA00E5AD6F /* UIImage+ImageEffects.h */,
+				DB076D491BAE7ACA00E5AD6F /* UIImage+ImageEffects.m */,
+			);
+			path = "UIImage+ImageEffects";
+			sourceTree = "<group>";
+		};
 		F99FC9B91BAD7B4400A34994 /* PurchaseView */ = {
 			isa = PBXGroup;
 			children = (
@@ -608,6 +621,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB076D4A1BAE7ACA00E5AD6F /* UIImage+ImageEffects.m in Sources */,
 				F99FC9C21BAD7B7500A34994 /* PurchaseDetailViewController.m in Sources */,
 				F969D9A71BAD903A00F8A532 /* PurchaseTableViewCell.m in Sources */,
 				61704E481BAD75F500617704 /* UUBar.m in Sources */,

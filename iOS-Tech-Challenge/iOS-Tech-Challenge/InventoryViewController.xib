@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InventoryViewController">
             <connections>
+                <outlet property="bgImageView" destination="FMB-23-xwA" id="EIb-dY-zPQ"/>
                 <outlet property="view" destination="iN0-l3-epB" id="G2F-pq-5hu"/>
             </connections>
         </placeholder>
@@ -15,8 +16,15 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nJ-o9-56s">
-                    <rect key="frame" x="31" y="44" width="73" height="77"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Order2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="FMB-23-xwA" userLabel="bgImageView">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nJ-o9-56s">
+                    <rect key="frame" x="50" y="50" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="6xi-fL-JBz"/>
+                        <constraint firstAttribute="width" constant="70" id="9qw-9c-Mbm"/>
+                    </constraints>
                     <state key="normal" image="burger.png"/>
                     <connections>
                         <action selector="showMenuInventory:" destination="-1" eventType="touchUpInside" id="Gem-rj-gqD"/>
@@ -24,10 +32,19 @@
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.01176470588" green="0.18823529410000001" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="5nJ-o9-56s" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="2Iu-dp-daa"/>
+                <constraint firstAttribute="trailing" secondItem="FMB-23-xwA" secondAttribute="trailing" id="P25-O2-TRO"/>
+                <constraint firstItem="FMB-23-xwA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Rpj-4k-aXA"/>
+                <constraint firstAttribute="bottom" secondItem="FMB-23-xwA" secondAttribute="bottom" id="SbY-hs-m7Y"/>
+                <constraint firstItem="5nJ-o9-56s" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="gxH-Hu-ssN"/>
+                <constraint firstItem="FMB-23-xwA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vJE-A8-1o5"/>
+            </constraints>
             <point key="canvasLocation" x="216" y="193"/>
         </view>
     </objects>
     <resources>
+        <image name="Order2.jpg" width="523" height="613"/>
         <image name="burger.png" width="19" height="17"/>
     </resources>
 </document>

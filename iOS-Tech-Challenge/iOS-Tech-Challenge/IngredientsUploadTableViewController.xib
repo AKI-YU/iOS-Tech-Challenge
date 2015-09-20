@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IngredientsUploadTableViewController">
             <connections>
+                <outlet property="m_tableview" destination="WHK-wM-EbA" id="VkV-ZF-AzZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,8 +16,11 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WHK-wM-EbA">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="aVP-7z-ABB">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
+                <tableView clipsSubviews="YES" alpha="0.59999999999999998" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WHK-wM-EbA">
+                    <rect key="frame" x="50" y="50" width="550" height="550"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="fBL-dy-WUy"/>
@@ -25,7 +29,20 @@
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="33" y="412"/>
+            <constraints>
+                <constraint firstItem="aVP-7z-ABB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5Y5-7e-Yca"/>
+                <constraint firstItem="WHK-wM-EbA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="BKN-9V-Dns"/>
+                <constraint firstAttribute="trailing" secondItem="aVP-7z-ABB" secondAttribute="trailing" id="MYL-DM-uul"/>
+                <constraint firstAttribute="bottom" secondItem="aVP-7z-ABB" secondAttribute="bottom" id="OSb-Za-jh2"/>
+                <constraint firstAttribute="trailing" secondItem="WHK-wM-EbA" secondAttribute="trailing" id="P1q-J1-Euq"/>
+                <constraint firstAttribute="bottom" secondItem="WHK-wM-EbA" secondAttribute="bottom" id="hbD-BK-YNE"/>
+                <constraint firstItem="aVP-7z-ABB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jmi-Th-mDf"/>
+                <constraint firstItem="WHK-wM-EbA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="qWf-Pi-pJA"/>
+            </constraints>
+            <point key="canvasLocation" x="-271" y="259"/>
         </view>
     </objects>
+    <resources>
+        <image name="6.jpg" width="1080" height="1080"/>
+    </resources>
 </document>

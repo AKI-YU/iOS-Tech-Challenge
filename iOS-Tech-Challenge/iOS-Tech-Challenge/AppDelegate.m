@@ -40,6 +40,7 @@
     self.aryDevices = [[NSMutableArray alloc] init];
     [self.blunoManager scan];
     self.lbReceivedMsg = [UILabel new];
+    [self actionSend:nil];
 
     
 //    self.window=[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -184,7 +185,6 @@
         
         //        NSString* strTemp = @"T 1442262933\n";
         NSString * strTemp = [[NSString alloc]initWithFormat:@"T %lld\n",dTime ];
-        NSLog(@"%@",strTemp);
         NSData* data = [strTemp dataUsingEncoding:NSUTF8StringEncoding];
         [self.blunoManager writeDataToDevice:data Device:self.blunoDev];
     }

@@ -11,6 +11,7 @@
 #import "QntView.h"
 #import "PurchaseViewController.h"
 #import "InventoryViewController.h"
+#import "ASWOrderMagVC.h"
 
 
 @interface ViewController ()
@@ -35,7 +36,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.navigationController.navigationBar setHidden:YES];
+    //[self.navigationController.navigationBar setHidden:YES];
     
     
     
@@ -54,8 +55,8 @@
                         [UIImage imageNamed:@"star"],
                         ];
     NSArray *titles = @[
-                        @"進貨管理",
-                        @"globe",
+                        @"進貨",
+                        @"訂單",
                         @"profile",
                         @"star",
                         ];
@@ -81,7 +82,10 @@
         PurchaseViewController *purchase = [[PurchaseViewController alloc] initWithNibName:@"PurchaseViewController" bundle:nil];
         [self.navigationController pushViewController:purchase animated:YES];
         
-    }else if (index == 3) {
+    }else if (index == 1) {
+        ASWOrderMagVC *order = [[ASWOrderMagVC alloc] initWithNibName:@"ASWOrderMagVC" bundle:nil];
+        [self.navigationController pushViewController:order animated:YES];
+        
     }
     
     [sidebar dismiss];

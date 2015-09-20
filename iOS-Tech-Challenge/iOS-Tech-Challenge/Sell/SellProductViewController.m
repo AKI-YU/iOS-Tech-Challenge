@@ -1,26 +1,22 @@
 //
-//  mNav.m
+//  SellProductViewController.m
 //  iOS-Tech-Challenge
 //
-//  Created by AKI on 2015/9/19.
+//  Created by AKI on 2015/9/20.
 //  Copyright © 2015年 AKI. All rights reserved.
 //
 
-#import "mNav.h"
+#import "SellProductViewController.h"
 
-@interface mNav ()
+@interface SellProductViewController ()
 
 @end
 
-@implementation mNav
+@implementation SellProductViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self.navigationBar setHidden:YES];
-    
-    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        self.interactivePopGestureRecognizer.enabled = NO;
-    }
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {

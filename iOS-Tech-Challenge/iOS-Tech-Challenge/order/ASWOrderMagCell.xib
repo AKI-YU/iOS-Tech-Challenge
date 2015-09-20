@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ASWOrderMagCell">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N1Y-ng-z03" userLabel="layout_TableTitle">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXr-KY-lV2">
+                                <rect key="frame" x="8" y="8" width="80" height="27"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="2Jq-Ad-ahw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQa-gB-XtL">
+                                <rect key="frame" x="96" y="8" width="80" height="27"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="B7s-xy-PAz"/>
+                                    <constraint firstAttribute="width" constant="80" id="Ecb-oE-AhP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="B7s-xy-PAz"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcw-N1-A3k">
+                                <rect key="frame" x="184" y="8" width="120" height="27"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="o5s-ag-zk3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRb-eu-JLh">
+                                <rect key="frame" x="312" y="8" width="280" height="27"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="beK-mj-USw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="beK-mj-USw"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qXr-KY-lV2" firstAttribute="top" secondItem="N1Y-ng-z03" secondAttribute="top" constant="8" id="1qV-mT-27I"/>
+                            <constraint firstItem="Wcw-N1-A3k" firstAttribute="top" secondItem="N1Y-ng-z03" secondAttribute="top" constant="8" id="2we-YK-FKC"/>
+                            <constraint firstItem="qXr-KY-lV2" firstAttribute="leading" secondItem="N1Y-ng-z03" secondAttribute="leading" constant="8" id="4jE-TU-nRj"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="635-lq-tys"/>
+                            <constraint firstItem="eQa-gB-XtL" firstAttribute="leading" secondItem="qXr-KY-lV2" secondAttribute="trailing" constant="8" id="9LX-R8-U2b"/>
+                            <constraint firstAttribute="trailing" secondItem="VRb-eu-JLh" secondAttribute="trailing" constant="8" id="Au2-C8-gr4"/>
+                            <constraint firstAttribute="bottom" secondItem="eQa-gB-XtL" secondAttribute="bottom" constant="8" id="C9k-AS-rNF"/>
+                            <constraint firstItem="VRb-eu-JLh" firstAttribute="top" secondItem="N1Y-ng-z03" secondAttribute="top" constant="8" id="CmU-0h-nhc"/>
+                            <constraint firstItem="eQa-gB-XtL" firstAttribute="top" secondItem="N1Y-ng-z03" secondAttribute="top" constant="8" id="GYj-FF-o69"/>
+                            <constraint firstAttribute="bottom" secondItem="VRb-eu-JLh" secondAttribute="bottom" constant="8" id="Hv9-vH-dhf"/>
+                            <constraint firstAttribute="height" constant="44" id="LeV-Wp-K88"/>
+                            <constraint firstItem="Wcw-N1-A3k" firstAttribute="leading" secondItem="eQa-gB-XtL" secondAttribute="trailing" constant="8" id="UtR-cP-3QX"/>
+                            <constraint firstAttribute="bottom" secondItem="qXr-KY-lV2" secondAttribute="bottom" constant="8" id="ZwP-Bi-Jze"/>
+                            <constraint firstAttribute="bottom" secondItem="Wcw-N1-A3k" secondAttribute="bottom" constant="8" id="gxe-4H-2qY"/>
+                            <constraint firstItem="VRb-eu-JLh" firstAttribute="leading" secondItem="Wcw-N1-A3k" secondAttribute="trailing" constant="8" id="rrc-X8-EeZ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="635-lq-tys"/>
+                                <exclude reference="LeV-Wp-K88"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="N1Y-ng-z03" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="9fj-8t-udM"/>
+                    <constraint firstAttribute="bottom" secondItem="N1Y-ng-z03" secondAttribute="bottom" id="iHh-UP-qm9"/>
+                    <constraint firstAttribute="trailing" secondItem="N1Y-ng-z03" secondAttribute="trailing" id="wqa-sI-JeJ"/>
+                    <constraint firstItem="N1Y-ng-z03" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ySd-vq-9Ys"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="m_lbEODate" destination="eQa-gB-XtL" id="GxO-d4-cRn"/>
+                <outlet property="m_lbEONumber" destination="qXr-KY-lV2" id="lw6-RQ-pnX"/>
+                <outlet property="m_lbEOStatus" destination="Wcw-N1-A3k" id="Fzy-lD-XbE"/>
+                <outlet property="m_lbEOSummary" destination="VRb-eu-JLh" id="w3y-W0-TzS"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

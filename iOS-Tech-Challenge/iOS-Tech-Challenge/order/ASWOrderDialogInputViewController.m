@@ -1,26 +1,22 @@
 //
-//  mNav.m
+//  ASWOrderDialogInputViewController.m
 //  iOS-Tech-Challenge
 //
-//  Created by AKI on 2015/9/19.
+//  Created by LaiKuan Wen on 2015/9/19.
 //  Copyright © 2015年 AKI. All rights reserved.
 //
 
-#import "mNav.h"
+#import "ASWOrderDialogInputViewController.h"
 
-@interface mNav ()
+@interface ASWOrderDialogInputViewController ()
 
 @end
 
-@implementation mNav
+@implementation ASWOrderDialogInputViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self.navigationBar setHidden:YES];
-    
-    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        self.interactivePopGestureRecognizer.enabled = NO;
-    }
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {

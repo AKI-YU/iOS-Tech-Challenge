@@ -11,6 +11,9 @@
 #import "ASWOrderModel.h"
 #import "ASWOrderDraftSelectVC.h"
 
+#define ASW_KEY_LastEONumber @"LastEONumber"
+#define ASW_KEY_EODate @"EODate"
+
 @interface ASWOrderVC ()
 @property (weak, nonatomic) IBOutlet UIView *m_viewLine;
 @property (weak, nonatomic) IBOutlet UITableView *m_tableView;
@@ -20,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *m_btnAddNew;
 @property (strong, nonatomic) ASWOrderModel *m_model;
 @property (strong, nonatomic) NSArray *m_aryTableData;
+@property (nonatomic) BOOL m_isEditing;
 @end
 
 @interface ASWOrderVC (UITableView_Delegate)<UITableViewDelegate>
@@ -37,6 +41,28 @@
 
 @implementation ASWOrderVC
 
+//可編輯
+- (instancetype) init
+{
+    self = [super init];
+    if (nil != self)
+    {
+        self.m_isEditing = YES;
+    }
+    return self;
+}
+
+/** 檢視 */
+- (instancetype) initWithEONumber
+{
+    self = [self init];
+    if (nil != self)
+    {
+        self.m_isEditing = NO;
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -51,16 +77,37 @@
     self.m_lbEODate.text = strDate;
     
     formater.dateFormat = @"yyyyMMdd";
-    NSString *strEONumber = [NSString stringWithFormat:@"EO%@%.3d",[formater stringFromDate:date],[self.m_model aswGetTodaySerialNo]];
+    strDate = [formater stringFromDate:date];
+    NSInteger iSerial = [self aswGetTodaySerialNoWithDate:[strDate integerValue]];
+    NSString *strEONumber = [NSString stringWithFormat:@"EO%@%.3d",strDate,[self aswGetTodaySerialNoWithDate:iSerial]];
     self.m_lbEONumber.text = strEONumber;
     
     self.m_btnAddNew.layer.cornerRadius = self.m_btnAddNew.frame.size.width/2;
     self.m_viewLine.layer.cornerRadius = 16;
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self aswReloadData];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSInteger) aswGetTodaySerialNoWithDate:(NSInteger)today
+{
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    NSString *strEONo = [userDefault objectForKey:ASW_KEY_LastEONumber];
+    NSInteger iDate = [[strEONo substringToIndex:8] integerValue];
+    NSInteger iSerial =[[strEONo substringFromIndex:9] integerValue];
+    if (iDate < today)//今日第一版
+    {
+        iSerial = 1;
+    }
+    return iSerial;
 }
 
 /*
@@ -73,14 +120,12 @@
 }
 */
 
-#pragma mark - Public Method
+#pragma mark - Private Method
 
-- (void) aswUpdateDataWithEONumber:(NSString *)strEONumber
+- (void) aswReloadData
 {
     
 }
-
-#pragma mark - Private Method
 
 - (void) setNavigationBar
 {
@@ -123,6 +168,8 @@
     [dic setObject:self.m_aryTableData forKey:[NSString stringWithFormat: @"%@",self.m_lbEONumber.text]];
     
     [userDefaults setObject:dic forKey:ASW_KEY_DicOrderEditing];
+    [userDefaults setObject:self.m_lbEONumber forKey:ASW_KEY_LastEONumber];
+    [userDefaults setObject:self.m_lbEODate forKey:ASW_KEY_EODate];
     [userDefaults synchronize];
 }
 
@@ -223,7 +270,11 @@
 
 - (void) aswDidSelectDraft:(NSString *)strEONumber
 {
-    [self aswUpdateDataWithEONumber:strEONumber];
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    self.m_lbEODate = [userDefault objectForKey:ASW_KEY_EODate];
+    self.m_lbEONumber = [userDefault objectForKey:ASW_KEY_LastEONumber];
+    self.m_aryTableData = [userDefault objectForKey:ASW_KEY_DicOrderEditing];
+    [self.m_tableView reloadData];
 }
 
 @end

@@ -82,7 +82,7 @@
         
         NSString * headStr = [_headerArray objectAtIndex:0];
         self.itemView=[[SJDataFixItemTableView alloc]initWithFrame:CGRectMake(0, 10, _headerWidth - 20, _contentView.frame.size.height - 20) items:_dataArray headstr:headStr itemSize:CGSizeMake(_headerWidth, _headerHeight)];
-		self.itemView.backgroundColor = [UIColor clearColor];
+		self.itemView.backgroundColor = [UIColor colorFirstColumnBg];
         [self.itemView setScrollTableView:tableView];
         [self.itemView setDelegate:self];
         [_contentView addSubview:self.itemView];

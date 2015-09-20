@@ -30,7 +30,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-	self.headerAarray = @[@"品項", @"現有數量", @"最近保存期限", @"單位"];
+	self.headerAarray = @[@"品項", @"現有數量", @"最近保存期限", @"功能"];
 	NSMutableArray *dataArray = [NSMutableArray new];
 	for (int i = 0 ; i< 20; i++) {
 		NSMutableDictionary *dataDict = [NSMutableDictionary new];
@@ -43,7 +43,7 @@
 
 	//CGRect rect = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
 	self.table =[[SJDataTableView alloc] initWithFrame:self.view.bounds
-														headerSize:CGSizeMake(100, 70)];
+														headerSize:CGSizeMake(150, 70)];
 	self.table.cjDelegate = self;
 	[self.table setHeaderArray:self.headerAarray dataArray:dataArray];
 	[self.view addSubview:self.table];

@@ -22,7 +22,7 @@
 - (NSString*)numberToCheckedSymbol:(NSNumber*)number
 {
     
-    NSString* value = @"☐";
+    NSString* value = @"　";
     if (number) {
         switch (number.integerValue) {
             case 0:
@@ -30,6 +30,8 @@
                 break;
             case 1:
                 return @"☑";
+            case 2:
+                return @"☐";
         }
     }
     

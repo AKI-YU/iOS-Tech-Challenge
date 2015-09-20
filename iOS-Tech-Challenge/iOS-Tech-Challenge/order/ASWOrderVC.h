@@ -11,5 +11,5 @@
 
 
 @interface ASWOrderVC : UIViewController
-- (void) aswUpdateDataWithEONumber:(NSString *)strEONumber;
+- (instancetype) initWithEONumber:(NSString *)strEONumber;
 @end

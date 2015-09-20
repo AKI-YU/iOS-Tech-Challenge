@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ParseAPI.h"
 
 @interface ASWOrderCell : UITableViewCell
 
-- (void) aswUpdateWithDictionary:(NSDictionary *)dictionary;
+- (void) aswUpdateWithDictionary:(PFObject *)dictionary;
 @end

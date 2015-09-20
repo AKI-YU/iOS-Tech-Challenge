@@ -17,18 +17,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *m_lbPrice;//!<單價
 @property (weak, nonatomic) IBOutlet UILabel *m_lbSubTotal;//!<小計
 
-@property (strong, nonatomic) NSArray *m_aryLbsNeedUpdate;
-@property (strong, nonatomic) NSArray *m_aryDicKeys;
 @end
 
 @implementation ASWOrderCell
-
-- (void)awakeFromNib
-{
-    // Initialization code
-    self.m_aryLbsNeedUpdate = @[self.m_lbItemNo, self.m_lbName, self.m_lbpAriveDate, self.m_lbVolum, self.m_lbPrice, self.m_lbSubTotal];
-    self.m_aryDicKeys = @[@"",@"",@"",@"",@"",@"",@""];
-}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
@@ -37,13 +28,25 @@
     // Configure the view for the selected state
 }
 
-- (void) aswUpdateWithDictionary:(NSDictionary *)dictionary
+- (void) aswUpdateWithDictionary:(PFObject *)dictionary
 {
-    for (NSInteger iCount = 0; iCount < self.m_aryLbsNeedUpdate.count; iCount ++)
-    {
-        UILabel *lb = self.m_aryLbsNeedUpdate[iCount];
-        lb.text = [dictionary objectForKey:self.m_aryDicKeys[iCount]];
-    }
+    NSString *strItem = [NSString stringWithFormat:@"%d",[[dictionary objectForKey:@"item_index"] integerValue]];
+    self.m_lbItemNo.text = strItem;
+    
+    NSInteger v, p ;
+    v = [[dictionary objectForKey:@"amount"] integerValue];
+    p = [[dictionary objectForKey:@"price"] integerValue];
+    self.m_lbVolum.text = [NSString stringWithFormat:@"%d",v];
+    self.m_lbPrice.text = [NSString stringWithFormat:@"%d",p];
+    self.m_lbSubTotal.text = [NSString stringWithFormat:@"%d",p*v];
+    
+    self.m_lbName.text = dictionary[@"name"];
+    
+    NSDate *date = dictionary[@"p_arrive"];
+    NSDateFormatter *f = [[NSDateFormatter alloc] init];
+    f.dateFormat = @"yyyy/MM/dd";
+    self.m_lbpAriveDate.text = [f stringFromDate:date];
+    
 }
 
 @end

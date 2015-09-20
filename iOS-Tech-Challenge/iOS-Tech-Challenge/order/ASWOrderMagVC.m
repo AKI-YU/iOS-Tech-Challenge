@@ -163,7 +163,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ASWOrderMagVC *pushVC = [[ASWOrderMagVC alloc] init];
+    PFObject *obj = [self.m_aryTableData[indexPath.row] objectAtIndex:0];
+    NSInteger a = [obj[@"order_id"] integerValue];
+    NSString *str = [NSString stringWithFormat:@"%d",a] ;
+    ASWOrderVC *pushVC = [[ASWOrderVC alloc] initWithEONumber:str];
     [self.navigationController pushViewController:pushVC animated:YES];
 }
 

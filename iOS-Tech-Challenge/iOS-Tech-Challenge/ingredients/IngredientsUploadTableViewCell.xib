@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XcB-XE-x8m">
@@ -20,6 +21,13 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fh8-oa-hyL">
+                        <rect key="frame" x="539" y="0.0" width="240" height="43.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="240" id="wsY-7K-uYv"/>
+                        </constraints>
+                    </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWU-EJ-Haw">
                         <rect key="frame" x="539" y="0.0" width="43" height="43"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,7 +50,7 @@
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdr-pJ-odr">
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdr-pJ-odr">
                         <rect key="frame" x="668" y="0.0" width="100" height="43"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -69,10 +77,12 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="jdr-pJ-odr" secondAttribute="bottom" id="14g-C0-WNM"/>
                     <constraint firstItem="4Aw-Lk-Bw2" firstAttribute="leading" secondItem="ETA-JF-iSK" secondAttribute="trailing" id="6bc-Q9-V9b"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Fh8-oa-hyL" secondAttribute="bottom" constant="-8" id="8pt-tU-yCX"/>
                     <constraint firstItem="WWU-EJ-Haw" firstAttribute="leading" secondItem="XcB-XE-x8m" secondAttribute="trailing" id="DnE-qR-WNW"/>
                     <constraint firstItem="WWU-EJ-Haw" firstAttribute="leading" secondItem="XcB-XE-x8m" secondAttribute="trailing" id="HZn-fd-oah"/>
                     <constraint firstAttribute="bottom" secondItem="4Aw-Lk-Bw2" secondAttribute="bottom" id="JhD-5F-HEm"/>
                     <constraint firstAttribute="bottom" secondItem="ETA-JF-iSK" secondAttribute="bottom" id="RYy-Hs-tYk"/>
+                    <constraint firstItem="Fh8-oa-hyL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="SCF-vf-J7I"/>
                     <constraint firstAttribute="bottom" secondItem="XcB-XE-x8m" secondAttribute="bottom" id="SXx-Kz-dAS"/>
                     <constraint firstItem="ETA-JF-iSK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ULJ-6x-V9t"/>
                     <constraint firstAttribute="bottom" secondItem="WWU-EJ-Haw" secondAttribute="bottom" id="YgE-ic-oJR"/>
@@ -83,6 +93,7 @@
                     <constraint firstItem="ETA-JF-iSK" firstAttribute="leading" secondItem="WWU-EJ-Haw" secondAttribute="trailing" id="kf8-IM-pkt"/>
                     <constraint firstAttribute="trailing" secondItem="jdr-pJ-odr" secondAttribute="trailing" id="m8c-gt-omk"/>
                     <constraint firstItem="XcB-XE-x8m" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="oKM-EO-N68"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Fh8-oa-hyL" secondAttribute="trailing" constant="-19" id="ro5-7L-08R"/>
                     <constraint firstItem="jdr-pJ-odr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="slo-7J-PTm"/>
                     <constraint firstItem="jdr-pJ-odr" firstAttribute="leading" secondItem="4Aw-Lk-Bw2" secondAttribute="trailing" id="uic-6n-XnA"/>
                     <constraint firstItem="4Aw-Lk-Bw2" firstAttribute="leading" secondItem="ETA-JF-iSK" secondAttribute="trailing" id="zK3-Rr-gbU"/>

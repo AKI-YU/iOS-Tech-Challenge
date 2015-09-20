@@ -20,8 +20,46 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h8Q-N0-tIx" userLabel="Head View">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mb-Gb-wZh">
+                            <rect key="frame" x="0.0" y="1" width="70" height="70"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="R8b-H2-bRM"/>
+                                <constraint firstAttribute="width" constant="70" id="kDw-ns-I0A"/>
+                            </constraints>
+                            <state key="normal" image="burger.png">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnMenu:" destination="-1" eventType="touchUpInside" id="bn7-br-OMt"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="訂單管理" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQg-3d-u36">
+                            <rect key="frame" x="244" y="12" width="112" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="8Xp-NX-6be"/>
+                                <constraint firstAttribute="width" constant="112" id="Fch-ae-Kxn"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.01176470588" green="0.18823529410000001" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="64" id="6JT-mu-gYn"/>
+                        <constraint firstItem="dQg-3d-u36" firstAttribute="centerX" secondItem="h8Q-N0-tIx" secondAttribute="centerX" id="Lb6-Ke-dqd"/>
+                        <constraint firstItem="dQg-3d-u36" firstAttribute="top" secondItem="h8Q-N0-tIx" secondAttribute="top" constant="12" id="SFw-gx-Alg"/>
+                        <constraint firstAttribute="height" constant="64" id="V0p-lS-ApW"/>
+                        <constraint firstItem="5mb-Gb-wZh" firstAttribute="top" secondItem="h8Q-N0-tIx" secondAttribute="top" constant="1" id="Yci-Db-TNx"/>
+                        <constraint firstItem="5mb-Gb-wZh" firstAttribute="leading" secondItem="h8Q-N0-tIx" secondAttribute="leading" id="eoW-Wz-jVy"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="fHp-y8-KMv"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NXV-Sg-ArR">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Order.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="g9V-2x-aoM">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -194,14 +232,17 @@
             <constraints>
                 <constraint firstItem="SL9-c8-oFc" firstAttribute="top" secondItem="K5z-xC-FSl" secondAttribute="top" constant="72" id="1Qs-Fm-AMP"/>
                 <constraint firstAttribute="bottom" secondItem="SL9-c8-oFc" secondAttribute="bottom" id="3N5-K7-rkf"/>
+                <constraint firstAttribute="trailing" secondItem="h8Q-N0-tIx" secondAttribute="trailing" id="7lI-Ma-Z9B"/>
                 <constraint firstAttribute="trailing" secondItem="NXV-Sg-ArR" secondAttribute="trailing" id="FJs-uo-Tt6"/>
                 <constraint firstItem="KZz-dj-YBI" firstAttribute="leading" secondItem="SL9-c8-oFc" secondAttribute="leading" id="JxT-rB-II3"/>
-                <constraint firstAttribute="bottom" secondItem="NXV-Sg-ArR" secondAttribute="bottom" id="TAB-p6-PXy"/>
+                <constraint firstItem="h8Q-N0-tIx" firstAttribute="leading" secondItem="K5z-xC-FSl" secondAttribute="leading" id="Q1m-g6-WX0"/>
+                <constraint firstAttribute="bottom" secondItem="NXV-Sg-ArR" secondAttribute="bottom" constant="-64" id="TAB-p6-PXy"/>
                 <constraint firstItem="NXV-Sg-ArR" firstAttribute="leading" secondItem="K5z-xC-FSl" secondAttribute="leading" id="VdE-ru-4EV"/>
                 <constraint firstAttribute="bottom" secondItem="7kF-oC-wEQ" secondAttribute="bottom" constant="16" id="W6Q-jb-921"/>
                 <constraint firstAttribute="trailing" secondItem="7kF-oC-wEQ" secondAttribute="trailing" constant="16" id="aaU-eO-ArD"/>
                 <constraint firstAttribute="trailing" secondItem="SL9-c8-oFc" secondAttribute="trailing" id="gtD-n0-Wb2"/>
-                <constraint firstItem="NXV-Sg-ArR" firstAttribute="top" secondItem="K5z-xC-FSl" secondAttribute="top" id="s3b-lu-nKP"/>
+                <constraint firstItem="h8Q-N0-tIx" firstAttribute="top" secondItem="K5z-xC-FSl" secondAttribute="top" id="kAk-KG-ijs"/>
+                <constraint firstItem="NXV-Sg-ArR" firstAttribute="top" secondItem="K5z-xC-FSl" secondAttribute="top" constant="64" id="s3b-lu-nKP"/>
                 <constraint firstItem="SL9-c8-oFc" firstAttribute="leading" secondItem="K5z-xC-FSl" secondAttribute="leading" id="vJC-wB-gVq"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -215,5 +256,6 @@
     </objects>
     <resources>
         <image name="Order.jpg" width="1024" height="575"/>
+        <image name="burger.png" width="19" height="17"/>
     </resources>
 </document>

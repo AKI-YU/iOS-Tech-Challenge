@@ -16,6 +16,7 @@
 
 @property (nonatomic,strong) NSMutableArray *m_products;
 @property (weak, nonatomic) IBOutlet UITableView *m_tableview;
+- (IBAction)totalUpload:(id)sender;
 
 @end
 
@@ -142,11 +143,14 @@
                              amount:amount.integerValue
                         andCallback:^(BOOL result){
         
-                            if (result) {
-                                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"上傳成功" message:nil
-                                                delegate:self cancelButtonTitle:@"確定" otherButtonTitles:nil];
-                                [alert show];
-                            }
+    if (result) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"上傳成功" message:nil
+                        delegate:self cancelButtonTitle:@"確定" otherButtonTitles:nil];
+        [alert show];
+    }
+                            
+    cell.i_displayLabel.text = @"0";
+                 
             
     }];
  
@@ -161,4 +165,37 @@
     [self showMenu];
 }
 
+- (IBAction)totalUpload:(id)sender {
+    
+    
+    
+    for (int i = 0 ; i < [self.m_products count]; i++) {
+        
+        NSIndexPath *index = [NSIndexPath indexPathForRow:i inSection:0];
+        
+        IngredientsUploadTableViewCell *cell = (IngredientsUploadTableViewCell*)[self.m_tableview cellForRowAtIndexPath:index];
+        
+    
+        NSString *productName =  cell.i_productLable.text;
+        NSString *amount =  cell.i_displayLabel.text;
+        if (amount.integerValue > 0) {
+            
+            [ParseAPI aws_uploadUsingRecord:productName
+                                     amount:amount.integerValue
+                                andCallback:^(BOOL result){
+                                    
+                                    if (result) {
+                                        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"上傳成功" message:nil
+                                                                                      delegate:self cancelButtonTitle:@"確定" otherButtonTitles:nil];
+                                        [alert show];
+                                    }
+                                    
+                                    cell.i_displayLabel.text = @"0";
+                                    
+                                    
+                                }];
+
+        }
+    }
+}
 @end

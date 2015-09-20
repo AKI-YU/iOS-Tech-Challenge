@@ -192,6 +192,11 @@
     }];
 }
 
+
+-(IBAction)btnBack:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 /** 按建議鍵 */
 - (void) onBtnAdviceClick:(UIButton *)btn
 {

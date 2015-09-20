@@ -89,7 +89,16 @@
     }
 }
 
-#pragma mark
+#pragma mark -
+- (void)didTapDiscardBtn:(UIButton *)sender
+{
+	//NSLog(@"%s %ld", __PRETTY_FUNCTION__, sender.tag);
+	if (self.cjDelegate) {
+		[self.cjDelegate didTapDiscardButton:sender];
+	}
+}
+
+#pragma mark -
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -109,8 +118,12 @@
                                            headerArray:_headerArray];
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
     }
+	cell.discardBtn.hidden = NO;
     cell.dataDict=[_dataArray objectAtIndex:indexPath.row];
-    
+	cell.discardBtn.tag = indexPath.row;
+	[cell.discardBtn addTarget:self
+						action:@selector(didTapDiscardBtn:)
+			  forControlEvents:UIControlEventTouchUpInside];
     return cell;
 }
 

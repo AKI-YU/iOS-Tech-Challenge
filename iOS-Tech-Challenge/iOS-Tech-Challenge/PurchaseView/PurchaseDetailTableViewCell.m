@@ -10,7 +10,7 @@
 #import "HFBindingViewDelegate.h"
 #import <Parse.h>
 
-@interface PurchaseDetailTableViewCell()<HFBindingViewDelegate>
+@interface PurchaseDetailTableViewCell()<HFBindingViewDelegate, UITextFieldDelegate>
 @property PFObject* model;
 @end
 @implementation PurchaseDetailTableViewCell
@@ -23,6 +23,28 @@
     tap.numberOfTapsRequired = 1;
     
     [self.checkBoxLabel addGestureRecognizer:tap];
+    self.contentView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.8];
+    self.backgroundColor = [UIColor clearColor];
+    self.itemCountLabel.delegate = self;
+
+    
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    
+    if (textField == self.itemCountLabel) {
+        NSNumber* num = @(textField.text.integerValue);
+        self.model[@"amount"] = num;
+    } else if (textField == self.itemExpirationDateLabel) {
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"yyyy/MM/dd"];
+        NSDate *date = [dateFormat dateFromString:textField.text];
+
+        if (date) {
+            self.model[@"p_fresh_time"] = date;
+        }
+    }
 }
 
 - (void)checked:(id)sender

@@ -73,6 +73,8 @@
 - (void)queryWareHouse
 {
 	PFQuery *query = [[PFQuery alloc] initWithClassName:ParseClassWareHouse];
+    
+    
 	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
 		if (!error) {
 			NSMutableArray *dataArray = [[NSMutableArray alloc] initWithCapacity:objects.count];

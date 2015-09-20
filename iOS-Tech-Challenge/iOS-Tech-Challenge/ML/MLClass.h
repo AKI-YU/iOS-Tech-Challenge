@@ -13,8 +13,11 @@
 
 }
 
+//local machine learning
 +(void)saveUsage:(NSString *)productName :(int)freshDayCount;
-+(void)setFreshDate:(NSString *)productName :(int)freshDayCount;
+
+
+//remote machine learning and update parse if invaid
 +(void)queryAWS_Ingredients:(NSString *)productName :(int)freshDayCount;
 
 @end

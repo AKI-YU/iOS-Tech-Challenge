@@ -13,6 +13,8 @@
 @implementation MLClass
 
 
+#define ParseClassAWS_Ingredients @"AWS_Ingredients"
+
 
 +(void)saveUsage:(NSString *)productName :(int)freshDayCount{
     
@@ -88,6 +90,20 @@
                         if ([ownGroup isEqualToString:@"過期"]) {
                             //updateFreshDate
                             
+                            PFQuery *query = [PFQuery queryWithClassName:ParseClassAWS_Ingredients];
+                            [query whereKey:@"name" equalTo:productName];
+                            [query getFirstObjectInBackgroundWithBlock:^(PFObject * userStats, NSError *error) {
+                                if (!error) {
+                                    
+                                    [userStats setObject:[NSNumber numberWithInt:freshDayCount] forKey:@"fresh_date"];
+                                    
+                                    // Save
+                                    [userStats saveInBackground];
+                                } else {
+                                    // Did not find any UserStats for the current user
+                                    NSLog(@"Error: %@", error);
+                                }
+                            }];
                             
                             
                         }
@@ -99,7 +115,6 @@
     
 }
 
-#define ParseClassAWS_Ingredients @"AWS_Ingredients"
 +(void)queryAWS_Ingredients:(NSString *)productName :(int)freshDayCount
 {
     PFQuery *query = [[PFQuery alloc] initWithClassName:ParseClassAWS_Ingredients];

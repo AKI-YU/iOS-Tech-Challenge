@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 
-#import "MLClass.h"
 
 @interface ViewController ()
 
@@ -30,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-   
+    [self.navigationController.navigationBar setHidden:YES];
     
 
   

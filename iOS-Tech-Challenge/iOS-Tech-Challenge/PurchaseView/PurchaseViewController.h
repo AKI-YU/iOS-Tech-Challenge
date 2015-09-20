@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface PurchaseViewController : UIViewController
-
+#import "ViewControllerBase.h"
+@interface PurchaseViewController : ViewControllerBase
+@property IBOutlet UINavigationBar* naviItem;
 @end

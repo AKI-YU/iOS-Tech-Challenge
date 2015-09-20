@@ -34,6 +34,9 @@
 {
     [super viewDidLoad];
     
+    self.navigationController.navigationBar.hidden = NO;
+    CGRect frame = self.navigationController.navigationBar.frame;
+    NSLog(@"Navlocation: %f %f, %f %f",frame.origin.x,frame.origin.y,frame.size.height, frame.size.width);
     
     // Do any additional setup after loading the view from its nib.
     self.title = @"訂單管理";
@@ -123,7 +126,6 @@
     
     [cell aswUpdateWithDictionary:self.m_aryTableData[indexPath.row]];
     return cell;
-    
 }
 
 @end

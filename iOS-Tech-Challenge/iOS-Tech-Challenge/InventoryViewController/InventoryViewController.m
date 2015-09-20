@@ -90,6 +90,7 @@
 {
 	PFObject *obj = self.dataResult[sender.tag];
 	obj[ParseClassWareHouseAmount] = @0;
+	[obj saveEventually:nil];
 
 	[self setTableWithPFObjectsArr:self.dataResult];
 

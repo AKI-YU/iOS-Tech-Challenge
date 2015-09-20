@@ -7,6 +7,7 @@
 //
 
 #import "SJDataTableView.h"
+#import "UIColor+Inventory.h"
 
 @interface SJDataTableView ()
 {
@@ -67,6 +68,7 @@
         tableView.dataSource=self;
         tableView.bounces=NO;
         self.myTableView=tableView;
+		tableView.backgroundColor = [UIColor clearColor];
         tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         
         UIScrollView *myScrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(_headerWidth - 20, 10, _contentView.frame.size.width - (_headerWidth - 20), _contentView.frame.size.height - 20)];
@@ -75,10 +77,12 @@
         [myScrollView setShowsHorizontalScrollIndicator:NO];
         myScrollView.contentSize=CGSizeMake(headerTotalWidth, 0);
         //        [myScrollView showBorder];
+		myScrollView.backgroundColor = [UIColor clearColor];
         [_contentView addSubview:myScrollView];
         
         NSString * headStr = [_headerArray objectAtIndex:0];
         self.itemView=[[SJDataFixItemTableView alloc]initWithFrame:CGRectMake(0, 10, _headerWidth - 20, _contentView.frame.size.height - 20) items:_dataArray headstr:headStr itemSize:CGSizeMake(_headerWidth, _headerHeight)];
+		self.itemView.backgroundColor = [UIColor clearColor];
         [self.itemView setScrollTableView:tableView];
         [self.itemView setDelegate:self];
         [_contentView addSubview:self.itemView];
@@ -113,11 +117,13 @@
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *tableViewHeadView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, [_headerArray count]*_headerWidth, _headerHeight)];
-    [tableViewHeadView setBackgroundColor:[UIColor whiteColor]];
+    [tableViewHeadView setBackgroundColor:[UIColor clearColor]];
     for(int i = 1 ; i < [_headerArray count] ; i++){
         UILabel *headLabel=[[UILabel alloc]initWithFrame:CGRectMake((i-1)*_headerWidth, 0, _headerWidth, _headerHeight)];
         [headLabel setText:[_headerArray objectAtIndex:i]];
         [headLabel setTextAlignment:NSTextAlignmentCenter];
+		headLabel.backgroundColor = [UIColor colorFirstRowBg];
+		headLabel.textColor = [UIColor colorFirstRowText];
         [tableViewHeadView addSubview:headLabel];
     }
     

@@ -11,7 +11,6 @@
 #import <Parse.h>
 #import "AppDelegate.h"
 
-// ☒☑☐
 @interface PurchaseDetailViewController ()
 @property (nonatomic) HFTableViewBindingHelper* helper;
 

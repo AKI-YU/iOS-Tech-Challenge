@@ -74,6 +74,10 @@
     }];
 }
 
+-(IBAction)btnMenu:(id)sender{
+    [self showMenu];
+}
+
 - (BOOL)isDay:(NSDate*)day1 equalTo:(NSDate*)day2
 {
     NSTimeInterval secs = [day2 timeIntervalSinceDate:day2];

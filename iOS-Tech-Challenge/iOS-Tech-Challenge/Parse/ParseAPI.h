@@ -47,6 +47,10 @@
 //取得menu
 +(void)aws_productMenu:(void (^)(NSArray *))callback;
 
+//上傳客人訂單紀錄
++(void)aws_uploadUsingRecord:(NSString*)product //產品名稱
+                      amount:(NSInteger)amount //當前產品數量
+                 andCallback:(void (^)(BOOL))callback;
 
 
 @end

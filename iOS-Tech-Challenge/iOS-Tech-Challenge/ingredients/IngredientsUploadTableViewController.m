@@ -157,5 +157,8 @@
     
 }
 
+-(IBAction)btnMenu:(id)sender{
+    [self showMenu];
+}
 
 @end

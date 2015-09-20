@@ -28,6 +28,10 @@
 		611496C91BADB28F00E4AF04 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 611496C81BADB28F00E4AF04 /* MBProgressHUD.m */; settings = {ASSET_TAGS = (); }; };
 		611496CE1BAE479A00E4AF04 /* SellProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 611496CC1BAE479A00E4AF04 /* SellProductViewController.m */; settings = {ASSET_TAGS = (); }; };
 		611496CF1BAE479A00E4AF04 /* SellProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 611496CD1BAE479A00E4AF04 /* SellProductViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		61169D7D1BAE957600A3A6B0 /* IngredientsUploadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61169D781BAE957600A3A6B0 /* IngredientsUploadTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		61169D7E1BAE957600A3A6B0 /* IngredientsUploadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61169D791BAE957600A3A6B0 /* IngredientsUploadTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		61169D7F1BAE957600A3A6B0 /* IngredientsUploadTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61169D7B1BAE957600A3A6B0 /* IngredientsUploadTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		61169D801BAE957600A3A6B0 /* IngredientsUploadTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61169D7C1BAE957600A3A6B0 /* IngredientsUploadTableViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		61704DDB1BAD605A00617704 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704DDA1BAD605A00617704 /* main.m */; };
 		61704DDE1BAD605A00617704 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704DDD1BAD605A00617704 /* AppDelegate.m */; };
 		61704DE11BAD605A00617704 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704DE01BAD605A00617704 /* ViewController.m */; };
@@ -120,6 +124,12 @@
 		611496CB1BAE479A00E4AF04 /* SellProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellProductViewController.h; sourceTree = "<group>"; };
 		611496CC1BAE479A00E4AF04 /* SellProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellProductViewController.m; sourceTree = "<group>"; };
 		611496CD1BAE479A00E4AF04 /* SellProductViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SellProductViewController.xib; sourceTree = "<group>"; };
+		61169D771BAE957600A3A6B0 /* IngredientsUploadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientsUploadTableViewCell.h; sourceTree = "<group>"; };
+		61169D781BAE957600A3A6B0 /* IngredientsUploadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientsUploadTableViewCell.m; sourceTree = "<group>"; };
+		61169D791BAE957600A3A6B0 /* IngredientsUploadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientsUploadTableViewCell.xib; sourceTree = "<group>"; };
+		61169D7A1BAE957600A3A6B0 /* IngredientsUploadTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientsUploadTableViewController.h; sourceTree = "<group>"; };
+		61169D7B1BAE957600A3A6B0 /* IngredientsUploadTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientsUploadTableViewController.m; sourceTree = "<group>"; };
+		61169D7C1BAE957600A3A6B0 /* IngredientsUploadTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientsUploadTableViewController.xib; sourceTree = "<group>"; };
 		61704DD61BAD605A00617704 /* iOS-Tech-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Tech-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61704DDA1BAD605A00617704 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		61704DDC1BAD605A00617704 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -292,6 +302,19 @@
 			path = Sell;
 			sourceTree = "<group>";
 		};
+		61169D761BAE957600A3A6B0 /* ingredients */ = {
+			isa = PBXGroup;
+			children = (
+				61169D771BAE957600A3A6B0 /* IngredientsUploadTableViewCell.h */,
+				61169D781BAE957600A3A6B0 /* IngredientsUploadTableViewCell.m */,
+				61169D791BAE957600A3A6B0 /* IngredientsUploadTableViewCell.xib */,
+				61169D7A1BAE957600A3A6B0 /* IngredientsUploadTableViewController.h */,
+				61169D7B1BAE957600A3A6B0 /* IngredientsUploadTableViewController.m */,
+				61169D7C1BAE957600A3A6B0 /* IngredientsUploadTableViewController.xib */,
+			);
+			path = ingredients;
+			sourceTree = "<group>";
+		};
 		61704DCD1BAD605A00617704 = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +338,7 @@
 		61704DD81BAD605A00617704 /* iOS-Tech-Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				61169D761BAE957600A3A6B0 /* ingredients */,
 				DB076D551BAE807300E5AD6F /* InventoryViewController */,
 				DB076D471BAE7ACA00E5AD6F /* UIImage+ImageEffects */,
 				61F84DAE1BAE503100096733 /* order */,
@@ -632,6 +656,7 @@
 				61F84DD21BAE503100096733 /* ASWOrderVC.xib in Resources */,
 				F969D9A81BAD903A00F8A532 /* PurchaseTableViewCell.xib in Resources */,
 				61704E201BAD619400617704 /* 2.jpg in Resources */,
+				61169D801BAE957600A3A6B0 /* IngredientsUploadTableViewController.xib in Resources */,
 				61704E231BAD619400617704 /* 3.jpg in Resources */,
 				61F84DCF1BAE503100096733 /* ASWOrderMagVC.xib in Resources */,
 				61F84DCD1BAE503100096733 /* ASWOrderMagCell.xib in Resources */,
@@ -641,6 +666,7 @@
 				DB076D5C1BAE807300E5AD6F /* InventoryViewController.xib in Resources */,
 				611496C41BADB1D600E4AF04 /* burger.png in Resources */,
 				61704E351BAD619400617704 /* 9.jpg in Resources */,
+				61169D7E1BAE957600A3A6B0 /* IngredientsUploadTableViewCell.xib in Resources */,
 				611496BE1BADB0BF00E4AF04 /* star@2x.png in Resources */,
 				61704DE61BAD605A00617704 /* Assets.xcassets in Resources */,
 			);
@@ -713,6 +739,7 @@
 				61F84DCA1BAE503100096733 /* ASWOrderDraftSelectVC.m in Sources */,
 				F969D9BD1BAE5FFD00F8A532 /* DFBlunoManager.m in Sources */,
 				F969D9AD1BADAD7500F8A532 /* PurchaseDetailTableViewCell.m in Sources */,
+				61169D7F1BAE957600A3A6B0 /* IngredientsUploadTableViewController.m in Sources */,
 				6114968F1BADA47500E4AF04 /* mNav.m in Sources */,
 				61F84E1D1BAE7C7400096733 /* MLClass.m in Sources */,
 				61704DDE1BAD605A00617704 /* AppDelegate.m in Sources */,
@@ -724,6 +751,7 @@
 				F969D9A91BADA89A00F8A532 /* PurchaseViewController.m in Sources */,
 				61704E4A1BAD75F500617704 /* UUChart.m in Sources */,
 				61704DDB1BAD605A00617704 /* main.m in Sources */,
+				61169D7D1BAE957600A3A6B0 /* IngredientsUploadTableViewCell.m in Sources */,
 				61F84DD11BAE503100096733 /* ASWOrderVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

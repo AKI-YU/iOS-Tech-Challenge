@@ -9,6 +9,7 @@
 #import "PurchaseDetailViewController.h"
 #import "HFTableViewBindingHelper.h"
 #import <Parse.h>
+#import "AppDelegate.h"
 
 // ☒☑☐
 @interface PurchaseDetailViewController ()
@@ -86,10 +87,27 @@
         KVOMutableArray* newRow = [self mergeSameOrderId:toBeAdded];
         if (newRow.firstObject) {
             [self.parentData insertObject:newRow.firstObject atIndex:0];
+            [self sendDataToNotAbomb:newRow.firstObject[0]];
         }
+
         [self.navigationController popViewControllerAnimated:YES];
     }
     [self hideHud];
+}
+
+- (void)sendDataToNotAbomb:(PFObject*)ob
+{
+    AppDelegate* delegate = [[UIApplication sharedApplication] delegate];
+    delegate.itemName = [NSString stringWithFormat:@"%@到期!", ob[@"name"]];
+    
+    if (delegate.blunoDev.bReadyToWrite)
+    {
+        //        NSString* strTemp = self.txtSendMsg.text;
+        NSString* strTemp = @"S 10\n";
+        NSLog(@"%@",strTemp);
+        NSData* data = [strTemp dataUsingEncoding:NSUTF8StringEncoding];
+        [delegate.blunoManager writeDataToDevice:data Device:delegate.blunoDev];
+    }
 }
 
 - (KVOMutableArray*)mergeSameOrderId:(NSArray*)data

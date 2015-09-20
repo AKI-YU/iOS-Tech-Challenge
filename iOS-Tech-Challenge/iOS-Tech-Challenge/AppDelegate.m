@@ -11,8 +11,23 @@
 
 #import <Parse/Parse.h>
 
-@interface AppDelegate ()
+@interface AppDelegate () <DFBlunoDelegate>
+@property(strong, nonatomic) NSMutableArray* aryDevices;
 
+@property (strong, nonatomic) IBOutlet UILabel *lbReceivedMsg;
+@property (weak, nonatomic) IBOutlet UITextField *txtSendMsg;
+@property (weak, nonatomic) IBOutlet UILabel *lbReady;
+
+@property (strong, nonatomic) IBOutlet UIView *viewDevices;
+@property (weak, nonatomic) IBOutlet UITableView *tbDevices;
+
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *SearchIndicator;
+@property (strong, nonatomic) IBOutlet UITableViewCell *cellDevices;
+
+- (IBAction)actionSearch:(id)sender;
+- (IBAction)actionReturn:(id)sender;
+- (IBAction)actionSend:(id)sender;
+- (IBAction)actionDidEnd:(id)sender;
 @end
 
 @implementation AppDelegate
@@ -20,6 +35,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    self.blunoManager = [DFBlunoManager sharedInstance];
+    self.blunoManager.delegate = self;
+    self.aryDevices = [[NSMutableArray alloc] init];
+    [self.blunoManager scan];
+    self.lbReceivedMsg = [UILabel new];
+
     
 //    self.window=[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //    
@@ -129,6 +150,168 @@
     if (application.applicationState == UIApplicationStateInactive) {
         [PFAnalytics trackAppOpenedWithRemoteNotificationPayload:userInfo];
     }
+}
+
+#pragma mark- Actions
+
+- (IBAction)actionSearch:(id)sender
+{
+    [self.aryDevices removeAllObjects];
+    [self.tbDevices reloadData];
+    [self.SearchIndicator startAnimating];
+    self.viewDevices.hidden = NO;
+    
+    [self.blunoManager scan];
+}
+
+- (IBAction)actionReturn:(id)sender
+{
+    [self.SearchIndicator stopAnimating];
+    [self.blunoManager stop];
+    self.viewDevices.hidden = YES;
+}
+
+- (IBAction)actionSend:(id)sender
+{
+    [self.txtSendMsg resignFirstResponder];
+    NSTimeInterval time = [[NSDate date] timeIntervalSince1970];
+    long long dTime = [[NSNumber numberWithDouble:time] longLongValue];
+    NSLog(@"%lld",dTime);
+    
+    if (self.blunoDev.bReadyToWrite)
+    {
+        //        NSString* strTemp = self.txtSendMsg.text;
+        
+        //        NSString* strTemp = @"T 1442262933\n";
+        NSString * strTemp = [[NSString alloc]initWithFormat:@"T %lld\n",dTime ];
+        NSLog(@"%@",strTemp);
+        NSData* data = [strTemp dataUsingEncoding:NSUTF8StringEncoding];
+        [self.blunoManager writeDataToDevice:data Device:self.blunoDev];
+    }
+}
+
+- (IBAction)actionSendSetime:(id)sender
+{
+    [self.txtSendMsg resignFirstResponder];
+    if (self.blunoDev.bReadyToWrite)
+    {
+        //        NSString* strTemp = self.txtSendMsg.text;
+        NSString* strTemp = @"S 10\n";
+        NSLog(@"%@",strTemp);
+        NSData* data = [strTemp dataUsingEncoding:NSUTF8StringEncoding];
+        [self.blunoManager writeDataToDevice:data Device:self.blunoDev];
+    }
+}
+
+
+- (IBAction)actionDidEnd:(id)sender
+{
+    [self.txtSendMsg resignFirstResponder];
+}
+
+#pragma mark- DFBlunoDelegate
+
+-(void)bleDidUpdateState:(BOOL)bleSupported
+{
+    if(bleSupported)
+    {
+        [self.blunoManager scan];
+    }
+}
+-(void)didDiscoverDevice:(DFBlunoDevice*)dev
+{
+    BOOL bRepeat = NO;
+    for (DFBlunoDevice* bleDevice in self.aryDevices)
+    {
+        if ([bleDevice isEqual:dev])
+        {
+            bRepeat = YES;
+            break;
+        }
+    }
+    if (!bRepeat)
+    {
+        [self.aryDevices addObject:dev];
+    }
+    //[self.tbDevices reloadData];
+    DFBlunoDevice* device = [self.aryDevices objectAtIndex:0];
+    //裝置不存在
+    if (self.blunoDev == nil)
+    {
+        self.blunoDev = device;
+        [self.blunoManager connectToDevice:self.blunoDev];
+    }
+    //裝置等於
+    else if ([device isEqual:self.blunoDev])
+    {
+        if (!self.blunoDev.bReadyToWrite)
+        {
+            [self.blunoManager connectToDevice:self.blunoDev];
+        }
+    }
+    else
+    {
+        if (self.blunoDev.bReadyToWrite)
+        {
+            [self.blunoManager disconnectToDevice:self.blunoDev];
+            self.blunoDev = nil;
+        }
+        
+        [self.blunoManager connectToDevice:device];
+    }
+    self.viewDevices.hidden = YES;
+    [self.SearchIndicator stopAnimating];
+    
+    
+    
+}
+-(void)readyToCommunicate:(DFBlunoDevice*)dev
+{
+    self.blunoDev = dev;
+    self.lbReady.text = @"Ready!";
+    
+    NSTimeInterval time = [[NSDate date] timeIntervalSince1970] + 32*60*60;
+    long long dTime = [[NSNumber numberWithDouble:time] longLongValue];
+    NSLog(@"%lld",dTime);
+    
+    if (self.blunoDev.bReadyToWrite)
+    {
+        //        NSString* strTemp = self.txtSendMsg.text;
+        
+        //        NSString* strTemp = @"T 1442262933\n";
+        NSString * strTemp = [[NSString alloc]initWithFormat:@"T %lld\n",dTime ];
+        NSLog(@"%@",strTemp);
+        NSData* data = [strTemp dataUsingEncoding:NSUTF8StringEncoding];
+        [self.blunoManager writeDataToDevice:data Device:self.blunoDev];
+    }
+}
+-(void)didDisconnectDevice:(DFBlunoDevice*)dev
+{
+    self.lbReady.text = @"Not Ready!";
+}
+-(void)didWriteData:(DFBlunoDevice*)dev
+{
+    
+}
+-(void)didReceiveData:(NSData*)data Device:(DFBlunoDevice*)dev
+{
+    NSString* itemName = self.itemName;
+    self.lbReceivedMsg.text = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"%@",self.lbReceivedMsg.text);
+    if([self.lbReceivedMsg.text isEqualToString:@"Timer Alarm!!\r\n"]){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示"
+                              //上面是標題的設定
+                                                        message:itemName  //警告訊息內文的設定
+                                                       delegate:self // 叫出AlertView之後，要給該ViewController去處理
+                              
+                                              cancelButtonTitle:@"OK"  //cancel按鈕文字的設定
+                                              otherButtonTitles: nil]; // 其他按鈕的設定
+        // 如果要多個其他按鈕 >> otherButtonTitles: @"check1", @"check2", nil];
+        
+        [alert show];  // 把alert這個物件秀出來
+    }
+    //    [alert release]; //釋放alert這個物件
+    
 }
 
 @end

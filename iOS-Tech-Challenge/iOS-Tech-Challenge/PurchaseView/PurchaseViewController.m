@@ -52,6 +52,9 @@
                              if ([model isKindOfClass:[KVOMutableArray class]]) {
                                  // Lono
                                  PurchaseDetailViewController* viewController = [[PurchaseDetailViewController alloc] initWithNibName:@"PurchaseDetailViewController" bundle:nil];
+                                 for (PFObject* ob in model) {
+                                     ob[@"checked"] = @(3);
+                                 }
                                  viewController.data = model;
                                  [self.navigationController pushViewController:viewController animated:YES];
                              }
@@ -63,16 +66,22 @@
 
 - (BOOL)isDay:(NSDate*)day1 equalTo:(NSDate*)day2
 {
-    NSCalendar *cal = [NSCalendar currentCalendar];
-    NSDateComponents *components = [cal components:(NSCalendarUnitEra | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:day1];
-    NSDate *today = [cal dateFromComponents:components];
-    components = [cal components:(NSCalendarUnitEra | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:day2];
-    NSDate *otherDate = [cal dateFromComponents:components];
-    
-    if([today isEqualToDate:otherDate]) {
+    NSTimeInterval secs = [day2 timeIntervalSinceDate:day2];
+    if (fabs(secs) <= 86400.0 ) {
         return YES;
     }
+    
     return NO;
+//    NSCalendar *cal = [NSCalendar currentCalendar];
+//    NSDateComponents *components = [cal components:(NSCalendarUnitEra | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:day1];
+//    NSDate *today = [cal dateFromComponents:components];
+//    components = [cal components:(NSCalendarUnitEra | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:day2];
+//    NSDate *otherDate = [cal dateFromComponents:components];
+//    
+//    if([today isEqualToDate:otherDate]) {
+//        return YES;
+//    }
+//    return NO;
 }
 - (IBAction)add:(id)sender
 {
@@ -104,11 +113,12 @@
        
        PFQuery *pQuery = [PFQuery queryWithClassName:@"purchase"];
        //    query whereKey:equalTo:
-       [pQuery orderByDescending:@"arrive_date"];
-       [pQuery addAscendingOrder:@"item_index"];
+       [pQuery orderByDescending:@"purchase_id"];
        @weakify(self);
        [pQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
            @strongify(self);
+           NSString* purchaseId = [self purchaseId:objects];
+           
            NSMutableArray* todayPurchase = [NSMutableArray new];
            for (PFObject* ob in objects) {
                NSDate* date = ob[@"arrive_date"];
@@ -128,16 +138,21 @@
                        NSInteger purchaseAmount = [purchase[@"amount"] integerValue];
                        
                        orderAmount -= purchaseAmount;
-                       if (orderAmount > 0) {
                            order[@"amount"] = @(orderAmount);
-                           [expectedOrder addObject:order];
-                       }
-                       
+                       break;
                    }
+               }
+               NSNumber* amount = order[@"amount"];
+               if (amount.integerValue > 0) {
+                   [expectedOrder addObject:order];
                }
            }
            
            viewController.data = [self purchaseFromOrder:expectedOrder];
+           
+           viewController.purchaseId = purchaseId;
+           
+           viewController.isNewPurchase = YES;
             [self.navigationController pushViewController:viewController animated:YES];
            
        }];
@@ -145,9 +160,47 @@
    }];
 }
 
-- (KVOMutableArray*)purchaseFromOrder:(KVOMutableArray*)order
+- (NSString*)purchaseId:(NSArray*)orderedPurchases
 {
-    return [KVOMutableArray new];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"YYYYMMdd"];
+    NSString *purchaseDate = [formatter stringFromDate:[NSDate date]];
+    PFObject* ob = orderedPurchases.firstObject;
+    NSString* maxId = ob[@"purchase_id"];
+    NSInteger index = 1;
+    NSString* res = [NSString stringWithFormat:@"po_%@%03ld", purchaseDate, (long)index];
+    NSComparisonResult isLarger = [res compare:maxId];
+    while (isLarger != NSOrderedDescending) {
+        ++index;
+        res = [NSString stringWithFormat:@"po_%@%03ld", purchaseDate, (long)index];
+        isLarger = [res compare:maxId];
+    }
+    return res;
+}
+
+- (KVOMutableArray*)purchaseFromOrder:(KVOMutableArray*)orders
+{
+    NSDate* arrivaleDate = [NSDate date];
+    NSDate* today = [NSDate date];
+    NSDate* nextWeek = [today dateByAddingTimeInterval: 1209600.0];
+    
+    KVOMutableArray* res = [KVOMutableArray new];
+    NSInteger index = 1;
+    for (PFObject* order in orders) {
+        PFObject* purchase = [[PFObject alloc] initWithClassName:@"purchase"];
+        purchase[@"order_id"] = order[@"order_id"];
+        purchase[@"name"] = order[@"name"];
+        purchase[@"amount"] = order[@"amount"];
+        purchase[@"checked"] = @(2); // unchecked
+        purchase[@"p_fresh_time"] = nextWeek;
+//        purchase[@"purchase_id"] = purchaseId;
+        purchase[@"arrive_date"] = arrivaleDate;
+        purchase[@"item_index"] = @(index);
+        ++index;
+        
+        [res addObject:purchase];
+    }
+    return res;
 }
 
 - (KVOMutableArray*)mergeSameOrderId:(NSArray*)data

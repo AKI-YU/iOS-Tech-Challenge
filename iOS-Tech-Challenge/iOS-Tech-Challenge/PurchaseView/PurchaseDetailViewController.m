@@ -8,10 +8,12 @@
 
 #import "PurchaseDetailViewController.h"
 #import "HFTableViewBindingHelper.h"
+#import <Parse.h>
 
 // ☒☑☐
 @interface PurchaseDetailViewController ()
 @property (nonatomic) HFTableViewBindingHelper* helper;
+
 @end
 
 @implementation PurchaseDetailViewController
@@ -19,6 +21,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    PFObject* ob = self.data.firstObject;
+    
+    NSDate* date = ob[@"arrive_date"];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"YYYY/MM/dd"];
+    NSString *purchaseDate = [formatter stringFromDate:date];
+    
+    self.purchaseDateLabel.text = purchaseDate;
+    self.purchaseIdLabel.text = self.purchaseId ?: ob[@"purchase_id"];
     
     UINib* nib = [UINib nibWithNibName:@"PurchaseDetailTableViewCell" bundle:nil];
     self.helper = [HFTableViewBindingHelper
@@ -32,7 +44,10 @@
     
 //    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:nil];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancel:)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"修改" style:UIBarButtonItemStylePlain target:self action:nil];
+    
+    if (self.isNewPurchase) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"新增" style:UIBarButtonItemStylePlain target:self action:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

@@ -11,4 +11,8 @@
 @interface PurchaseDetailViewController : UIViewController
 @property (nonatomic) KVOMutableArray* data;
 @property (nonatomic) IBOutlet UITableView* tableView;
+@property IBOutlet UILabel* purchaseIdLabel;
+@property IBOutlet UILabel* purchaseDateLabel;
+@property BOOL isNewPurchase;
+@property NSString* purchaseId;
 @end

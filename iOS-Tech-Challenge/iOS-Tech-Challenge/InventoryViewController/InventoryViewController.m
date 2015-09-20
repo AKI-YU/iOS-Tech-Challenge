@@ -17,6 +17,7 @@
 @property (nonatomic, strong) SJDataTableView *table;
 @property (nonatomic, strong) NSArray *headerAarray;
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
+@property (strong, nonatomic) NSDateFormatter *dateFormatter;
 @end
 
 @implementation InventoryViewController
@@ -25,7 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-	self.headerAarray = @[@"品項", @"現有數量", @"最近到期日", @"單位"];
+	self.headerAarray = @[@"品項", @"現有數量", @"最近保存期限", @"單位"];
 	NSMutableArray *dataArray = [NSMutableArray new];
 	for (int i = 0 ; i< 20; i++) {
 		NSMutableDictionary *dataDict = [NSMutableDictionary new];
@@ -60,6 +61,12 @@
 	self.bgImageView.image = [self blurWithImageEffects:[UIImage imageNamed:@"Order2.jpg"]];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	[self queryWareHouse];
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
 	[super viewDidAppear:animated];
@@ -70,9 +77,11 @@
 #define ParseClassWareHouse @"warehouse"
 #define ParseClassWareHouseProduct @"product_name"
 #define ParseClassWareHouseAmount @"amount"
+#define ParseClassWareHouseFresh @"p_fresh_time"
 - (void)queryWareHouse
 {
 	PFQuery *query = [[PFQuery alloc] initWithClassName:ParseClassWareHouse];
+	query.cachePolicy = kPFCachePolicyCacheThenNetwork;
 	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
 		if (!error) {
 			NSMutableArray *dataArray = [[NSMutableArray alloc] initWithCapacity:objects.count];
@@ -81,9 +90,16 @@
 				NSMutableDictionary *dataDict = [NSMutableDictionary new];
 				NSString *productName = obj[ParseClassWareHouseProduct];
 				NSString *amount = [NSString stringWithFormat:@"%@", obj[ParseClassWareHouseAmount]];
+
+				NSDate *freshDate = obj[ParseClassWareHouseFresh];
+				NSString *strDate = @"";
+				if (freshDate) {
+					strDate = [self.dateFormatter stringFromDate:freshDate];
+				}
+
 				[dataDict setObject:productName forKey:[self.headerAarray objectAtIndex:0]];
 				[dataDict setObject:amount forKey:[self.headerAarray objectAtIndex:1]];
-				[dataDict setObject:[NSString stringWithFormat:@"value2_%ld",i] forKey:[self.headerAarray objectAtIndex:2]];
+				[dataDict setObject:strDate forKey:[self.headerAarray objectAtIndex:2]];
 				[dataDict setObject:[NSString stringWithFormat:@"value3_%ld",i] forKey:[self.headerAarray objectAtIndex:3]];
 				[dataArray addObject:dataDict];
 			}
@@ -95,6 +111,17 @@
 		}
 	}];
 }
+
+- (NSDateFormatter *)dateFormatter
+{
+	if (!_dateFormatter) {
+		_dateFormatter = [[NSDateFormatter alloc] init];
+		//[_dateFormatter setDateFormat:@"yyyy-MM-dd"];
+		[_dateFormatter setDateFormat:@"MM/dd"];
+	}
+	return _dateFormatter;
+}
+
 - (IBAction)showMenuInventory:(id)sender {
 	[self showMenu];
 }

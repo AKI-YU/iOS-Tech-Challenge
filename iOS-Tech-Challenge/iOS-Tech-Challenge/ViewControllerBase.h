@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RNFrostedSidebar.h"
 
-@interface ViewControllerBase : UIViewController
+@interface ViewControllerBase : UIViewController<RNFrostedSidebarDelegate>
+
+-(void)showMenu;
+
+-(void)showHud;
+-(void)hideHud;
 
 @end

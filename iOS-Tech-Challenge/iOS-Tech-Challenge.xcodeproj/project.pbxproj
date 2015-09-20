@@ -71,7 +71,10 @@
 		DB076D3E1BADA32400E5AD6F /* SJDataFixItemTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB076D391BADA32400E5AD6F /* SJDataFixItemTableView.m */; settings = {ASSET_TAGS = (); }; };
 		DB076D3F1BADA32400E5AD6F /* SJDataTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB076D3B1BADA32400E5AD6F /* SJDataTableView.m */; settings = {ASSET_TAGS = (); }; };
 		DB076D401BADA32400E5AD6F /* SJDataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB076D3D1BADA32400E5AD6F /* SJDataTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		DB076D431BADA35A00E5AD6F /* InventoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB076D421BADA35A00E5AD6F /* InventoryViewController.m */; settings = {ASSET_TAGS = (); }; };
+		DB076D4A1BAE7ACA00E5AD6F /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = DB076D491BAE7ACA00E5AD6F /* UIImage+ImageEffects.m */; settings = {ASSET_TAGS = (); }; };
+		DB076D5B1BAE807300E5AD6F /* InventoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB076D571BAE807300E5AD6F /* InventoryViewController.m */; settings = {ASSET_TAGS = (); }; };
+		DB076D5C1BAE807300E5AD6F /* InventoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB076D581BAE807300E5AD6F /* InventoryViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		DB076D5D1BAE807300E5AD6F /* UIColor+Inventory.m in Sources */ = {isa = PBXBuildFile; fileRef = DB076D5A1BAE807300E5AD6F /* UIColor+Inventory.m */; settings = {ASSET_TAGS = (); }; };
 		F969D9A71BAD903A00F8A532 /* PurchaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F969D9A51BAD903A00F8A532 /* PurchaseTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		F969D9A81BAD903A00F8A532 /* PurchaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F969D9A61BAD903A00F8A532 /* PurchaseTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		F969D9A91BADA89A00F8A532 /* PurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F99FC9BB1BAD7B4400A34994 /* PurchaseViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -188,9 +191,14 @@
 		DB076D3B1BADA32400E5AD6F /* SJDataTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJDataTableView.m; sourceTree = "<group>"; };
 		DB076D3C1BADA32400E5AD6F /* SJDataTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJDataTableViewCell.h; sourceTree = "<group>"; };
 		DB076D3D1BADA32400E5AD6F /* SJDataTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJDataTableViewCell.m; sourceTree = "<group>"; };
-		DB076D411BADA35A00E5AD6F /* InventoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InventoryViewController.h; sourceTree = "<group>"; };
-		DB076D421BADA35A00E5AD6F /* InventoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InventoryViewController.m; sourceTree = "<group>"; };
 		DB076D441BADA93500E5AD6F /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		DB076D481BAE7ACA00E5AD6F /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		DB076D491BAE7ACA00E5AD6F /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		DB076D561BAE807300E5AD6F /* InventoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InventoryViewController.h; sourceTree = "<group>"; };
+		DB076D571BAE807300E5AD6F /* InventoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InventoryViewController.m; sourceTree = "<group>"; };
+		DB076D581BAE807300E5AD6F /* InventoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InventoryViewController.xib; sourceTree = "<group>"; };
+		DB076D591BAE807300E5AD6F /* UIColor+Inventory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Inventory.h"; sourceTree = "<group>"; };
+		DB076D5A1BAE807300E5AD6F /* UIColor+Inventory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Inventory.m"; sourceTree = "<group>"; };
 		F969D9A41BAD903A00F8A532 /* PurchaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseTableViewCell.h; sourceTree = "<group>"; };
 		F969D9A51BAD903A00F8A532 /* PurchaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseTableViewCell.m; sourceTree = "<group>"; };
 		F969D9A61BAD903A00F8A532 /* PurchaseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseTableViewCell.xib; sourceTree = "<group>"; };
@@ -307,6 +315,8 @@
 		61704DD81BAD605A00617704 /* iOS-Tech-Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				DB076D551BAE807300E5AD6F /* InventoryViewController */,
+				DB076D471BAE7ACA00E5AD6F /* UIImage+ImageEffects */,
 				61F84DAE1BAE503100096733 /* order */,
 				611496CA1BAE477F00E4AF04 /* Sell */,
 				611496C61BADB28F00E4AF04 /* MBProgressHUD */,
@@ -320,8 +330,6 @@
 				61704E0C1BAD607300617704 /* SideMenu */,
 				61704DDC1BAD605A00617704 /* AppDelegate.h */,
 				61704DDD1BAD605A00617704 /* AppDelegate.m */,
-				DB076D411BADA35A00E5AD6F /* InventoryViewController.h */,
-				DB076D421BADA35A00E5AD6F /* InventoryViewController.m */,
 				DB076D441BADA93500E5AD6F /* Constants.h */,
 				DB076D371BADA2EB00E5AD6F /* SJDataTableView */,
 				61704DDF1BAD605A00617704 /* ViewController.h */,
@@ -473,6 +481,27 @@
 			name = SJDataTableView;
 			sourceTree = "<group>";
 		};
+		DB076D471BAE7ACA00E5AD6F /* UIImage+ImageEffects */ = {
+			isa = PBXGroup;
+			children = (
+				DB076D481BAE7ACA00E5AD6F /* UIImage+ImageEffects.h */,
+				DB076D491BAE7ACA00E5AD6F /* UIImage+ImageEffects.m */,
+			);
+			path = "UIImage+ImageEffects";
+			sourceTree = "<group>";
+		};
+		DB076D551BAE807300E5AD6F /* InventoryViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DB076D561BAE807300E5AD6F /* InventoryViewController.h */,
+				DB076D571BAE807300E5AD6F /* InventoryViewController.m */,
+				DB076D581BAE807300E5AD6F /* InventoryViewController.xib */,
+				DB076D591BAE807300E5AD6F /* UIColor+Inventory.h */,
+				DB076D5A1BAE807300E5AD6F /* UIColor+Inventory.m */,
+			);
+			path = InventoryViewController;
+			sourceTree = "<group>";
+		};
 		F969D9B01BAE5FFD00F8A532 /* Bluno */ = {
 			isa = PBXGroup;
 			children = (
@@ -609,6 +638,7 @@
 				61F84DC91BAE503100096733 /* ASWOrderDialogInputViewController.xib in Resources */,
 				F99FC9BE1BAD7B4400A34994 /* PurchaseViewController.xib in Resources */,
 				61704E2F1BAD619400617704 /* 7.jpg in Resources */,
+				DB076D5C1BAE807300E5AD6F /* InventoryViewController.xib in Resources */,
 				611496C41BADB1D600E4AF04 /* burger.png in Resources */,
 				61704E351BAD619400617704 /* 9.jpg in Resources */,
 				611496BE1BADB0BF00E4AF04 /* star@2x.png in Resources */,
@@ -656,6 +686,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB076D4A1BAE7ACA00E5AD6F /* UIImage+ImageEffects.m in Sources */,
 				F99FC9C21BAD7B7500A34994 /* PurchaseDetailViewController.m in Sources */,
 				F969D9A71BAD903A00F8A532 /* PurchaseTableViewCell.m in Sources */,
 				61704E481BAD75F500617704 /* UUBar.m in Sources */,
@@ -663,12 +694,14 @@
 				61704E4C1BAD75F500617704 /* UUColor.m in Sources */,
 				DB076D3F1BADA32400E5AD6F /* SJDataTableView.m in Sources */,
 				61704E491BAD75F500617704 /* UUBarChart.m in Sources */,
+				DB076D5B1BAE807300E5AD6F /* InventoryViewController.m in Sources */,
 				F969D9BB1BAE5FFD00F8A532 /* BLEUtility.m in Sources */,
 				610F653A1BAD8A5F0083CC61 /* QntView.m in Sources */,
 				61F84DD01BAE503100096733 /* ASWOrderModel.m in Sources */,
 				611496C11BADB0F200E4AF04 /* RNFrostedSidebar.m in Sources */,
 				61704E4D1BAD75F500617704 /* UULineChart.m in Sources */,
 				F969D9BC1BAE5FFD00F8A532 /* DFBlunoDevice.m in Sources */,
+				DB076D5D1BAE807300E5AD6F /* UIColor+Inventory.m in Sources */,
 				F969D9BA1BAE5FFD00F8A532 /* BLEDevice.m in Sources */,
 				61704DE11BAD605A00617704 /* ViewController.m in Sources */,
 				DB076D401BADA32400E5AD6F /* SJDataTableViewCell.m in Sources */,
@@ -691,7 +724,6 @@
 				F969D9A91BADA89A00F8A532 /* PurchaseViewController.m in Sources */,
 				61704E4A1BAD75F500617704 /* UUChart.m in Sources */,
 				61704DDB1BAD605A00617704 /* main.m in Sources */,
-				DB076D431BADA35A00E5AD6F /* InventoryViewController.m in Sources */,
 				61F84DD11BAE503100096733 /* ASWOrderVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

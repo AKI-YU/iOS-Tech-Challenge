@@ -28,18 +28,26 @@
     
     
     self.title = @"進貨管理";
+    self.naviItem.topItem.title = @"進貨管理";
     
     UITapGestureRecognizer* addTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(add:)];
     self.addView.userInteractionEnabled = YES;
     addTap.numberOfTapsRequired = 1;
     [self.addView addGestureRecognizer:addTap];
     
+    [self reload];
+    
+}
+
+- (void)reload
+{
     PFQuery *query = [PFQuery queryWithClassName:@"purchase"];
     @weakify(self);
-//    query whereKey:equalTo:
+    //    query whereKey:equalTo:
     [query orderByDescending:@"arrive_date"];
     [query addAscendingOrder:@"item_index"];
     
+    [self showHud];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         
         @strongify(self);
@@ -49,19 +57,20 @@
         self.helper = [HFTableViewBindingHelper
                        bindingForTableView:self.tableView
                        sourceList:data
-                         didSelectionBlock:^(KVOMutableArray* model) {
-                             if ([model isKindOfClass:[KVOMutableArray class]]) {
-                                 // Lono
-                                 PurchaseDetailViewController* viewController = [[PurchaseDetailViewController alloc] initWithNibName:@"PurchaseDetailViewController" bundle:nil];
-                                 for (PFObject* ob in model) {
-                                     ob[@"checked"] = @(3);
-                                 }
-                                 viewController.data = model;
-                                 [self.navigationController pushViewController:viewController animated:YES];
-                             }
-                         }
-                              templateCell:nib
-                                  isNested:NO];
+                       didSelectionBlock:^(KVOMutableArray* model) {
+                           if ([model isKindOfClass:[KVOMutableArray class]]) {
+                               // Lono
+                               PurchaseDetailViewController* viewController = [[PurchaseDetailViewController alloc] initWithNibName:@"PurchaseDetailViewController" bundle:nil];
+                               for (PFObject* ob in model) {
+                                   ob[@"checked"] = @(3);
+                               }
+                               viewController.data = model;
+                               [self.navigationController pushViewController:viewController animated:YES];
+                           }
+                       }
+                       templateCell:nib
+                       isNested:NO];
+        [self hideHud];
     }];
 }
 
@@ -86,6 +95,7 @@
 }
 - (IBAction)add:(id)sender
 {
+    [self showHud];
     NSCalendar *cal = [NSCalendar currentCalendar];
     NSDateComponents *components = [cal components:(NSCalendarUnitEra | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:[NSDate date]];
     NSDate *today = [cal dateFromComponents:components];
@@ -132,8 +142,10 @@
            KVOMutableArray* expectedOrder = [KVOMutableArray new];
            for (PFObject* order in todayOrder) {
                for (PFObject* purchase in todayPurchase) {
-                   if ([order[@"order_id"] isEqualToNumber:purchase[@"order_id"]]
-                       && [order[@"name"] isEqualToString:purchase[@"name"]]) {
+                   if ([order[@"order_id"] isEqualToNumber:purchase[@"order_id"]] // same order
+                       && [order[@"name"] isEqualToString:purchase[@"name"]] // same item
+                       && ((NSNumber*)purchase[@"checked"]).integerValue == 1 // valid purchase
+                       ) {
                        
                        NSInteger orderAmount = [order[@"amount"] integerValue];
                        NSInteger purchaseAmount = [purchase[@"amount"] integerValue];
@@ -150,10 +162,12 @@
            }
            
            viewController.data = [self purchaseFromOrder:expectedOrder];
+           viewController.parentData = self.data;
            
            viewController.purchaseId = purchaseId;
            
            viewController.isNewPurchase = YES;
+           [self hideHud];
             [self.navigationController pushViewController:viewController animated:YES];
            
        }];

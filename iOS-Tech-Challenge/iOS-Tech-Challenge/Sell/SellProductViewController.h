@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SellProductViewController : UIViewController
-
+@interface SellProductViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+{
+    NSArray *mArray;
+    IBOutlet UITableView *mTable;
+}
 @end

@@ -12,6 +12,7 @@
 #import "PurchaseViewController.h"
 #import "InventoryViewController.h"
 #import "ASWOrderMagVC.h"
+#import "SellProductViewController.h"
 
 
 @interface ViewController ()
@@ -57,8 +58,8 @@
     NSArray *titles = @[
                         @"進貨",
                         @"訂單",
-                        @"profile",
-                        @"star",
+                        @"銷售",
+                        @"庫存",
                         ];
     NSArray *colors = @[
                         [UIColor colorWithRed:240/255.f green:159/255.f blue:254/255.f alpha:1],
@@ -83,9 +84,16 @@
         [self.navigationController pushViewController:purchase animated:YES];
         
     }else if (index == 1) {
-        ASWOrderMagVC *order = [[ASWOrderMagVC alloc] initWithNibName:@"ASWOrderMagVC" bundle:nil];
+        ASWOrderMagVC *order = [[ASWOrderMagVC alloc] init];
         [self.navigationController pushViewController:order animated:YES];
         
+    }else if (index==2){
+        SellProductViewController *sell = [[SellProductViewController alloc] initWithNibName:@"SellProductViewController" bundle:nil];
+        [self.navigationController pushViewController:sell animated:YES];
+        
+    }else if (index==3){
+        InventoryViewController *inventory = [[InventoryViewController alloc] init];
+        [self.navigationController pushViewController:inventory animated:YES];
     }
     
     [sidebar dismiss];

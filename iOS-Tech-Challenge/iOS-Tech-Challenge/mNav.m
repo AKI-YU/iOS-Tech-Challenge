@@ -16,7 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self.navigationBar setHidden:YES];
+    
+    
+    self.navigationBar.backgroundColor = [UIColor blackColor];//[UIColor colorWithRed:3.0f/255.0f green:48.0f/255.0f blue:30.0f/255.0f alpha:0.8];
+    
     
     if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
         self.interactivePopGestureRecognizer.enabled = NO;

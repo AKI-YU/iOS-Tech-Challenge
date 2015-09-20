@@ -7,6 +7,9 @@
 //
 
 #import "SellProductViewController.h"
+#import "MBProgressHUD.h"
+#import <Parse/Parse.h>
+
 
 @interface SellProductViewController ()
 
@@ -16,22 +19,66 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self performSelector:@selector(queryWareHouse) withObject:nil afterDelay:0.1];
 }
+
+#define ParseClassWareHouse @"warehouse"
+    - (void)queryWareHouse
+    {
+        PFQuery *query = [[PFQuery alloc] initWithClassName:ParseClassWareHouse];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
+            NSLog(@"%@",objects);
+            
+        }];
+    }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark --------------------------------------------------------
+#pragma mark UITableViewDelegate
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return mArray.count ;
 }
-*/
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 44;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    NSString *cellIDT = [NSString stringWithFormat:@"TableViewCell-%ld",(long)indexPath.row];
+    
+    UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:cellIDT];
+    
+    if (cell==nil){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIDT];
+        
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        
+        
+        
+    }
+    
+    cell.textLabel.text = [mArray objectAtIndex:indexPath.row];
+    
+    return  cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    
+}
+
+#pragma mark --------------------------------------------------------
 
 @end

@@ -26,6 +26,8 @@
         keyArray = headerArray;
         labelArray = [NSMutableArray new];
         bgArray = [NSMutableArray new];
+		self.backgroundColor = [UIColor clearColor];
+		self.contentView.backgroundColor = [UIColor clearColor];
         [self setupLabel];
     }
     return self;
@@ -36,10 +38,12 @@
     for (int i = 0; i < [keyArray count]-1; i++)
     {
         bgView = [[UIView alloc] initWithFrame:CGRectMake(i*itemSize.width, 0, itemSize.width, itemSize.height)];
+		bgView.backgroundColor = [UIColor clearColor];
         [self addSubview:bgView];
         
         headLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 10, bgView.frame.size.width - 40, bgView.frame.size.height - 20)];
         [headLabel setAdjustsFontSizeToFitWidth:YES];
+		headLabel.backgroundColor = [UIColor clearColor];
         [bgView addSubview:headLabel];
         [labelArray addObject:headLabel];
         [bgArray addObject:bgView];

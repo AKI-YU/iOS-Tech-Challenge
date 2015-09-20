@@ -27,6 +27,7 @@
         self.label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, size.height)];
         [self.label setTextAlignment:NSTextAlignmentCenter];
         [self.label setText:headstr];
+		self.label.backgroundColor = [UIColor clearColor];
         [self addSubview:self.label];
         
         self.itemTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, self.label.frame.origin.y
@@ -36,6 +37,7 @@
         self.itemTableView.dataSource=self;
         [self.itemTableView setShowsVerticalScrollIndicator:NO];
         [self.itemTableView setBounces:NO];
+		self.itemTableView.backgroundColor = [UIColor clearColor];
         [self addSubview: self.itemTableView];
         [self.itemTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     }
@@ -62,8 +64,11 @@
     }
     [cell.textLabel setText:[[self.items objectAtIndex:indexPath.row] objectForKey:_label.text]];
     [cell.textLabel setAdjustsFontSizeToFitWidth:YES];
+	cell.textLabel.backgroundColor = [UIColor clearColor];
     
     [cell.textLabel setTextAlignment:NSTextAlignmentCenter];
+	cell.contentView.backgroundColor = [UIColor clearColor];
+	cell.backgroundColor = [UIColor clearColor];
     return cell;
 }
 

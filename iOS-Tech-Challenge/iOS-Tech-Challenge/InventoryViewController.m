@@ -41,13 +41,13 @@
 	[self.view addSubview:self.table];
 	[self.table mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.leading.equalTo(self.view.mas_leading).offset(100);
-		make.trailing.equalTo(@0);
-		make.top.equalTo(@30);
-		make.bottom.equalTo(@0);
+		make.trailing.equalTo(self.view.mas_trailing).offset(-30);
+		make.top.equalTo(self.view.mas_top).offset(30);
+		make.bottom.equalTo(self.view.mas_bottom).offset(-30);
 	}];
 
-	self.view.backgroundColor = [UIColor whiteColor];
-
+	//self.view.backgroundColor = [UIColor whiteColor];
+	self.table.backgroundColor = [UIColor clearColor];
 	[self queryWareHouse];
 }
 
@@ -85,6 +85,9 @@
 //			}
 		}
 	}];
+}
+- (IBAction)showMenuInventory:(id)sender {
+	[self showMenu];
 }
 
 @end

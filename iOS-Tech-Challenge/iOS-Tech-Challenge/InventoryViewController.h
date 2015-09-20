@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ViewControllerBase.h"
 
-@interface InventoryViewController : UIViewController
+@interface InventoryViewController : ViewControllerBase
 
 @end

@@ -42,16 +42,6 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cak-5H-C5N">
-                                <rect key="frame" x="256" y="8" width="104" height="27"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="104" id="ovf-kX-Rg2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <color key="textColor" red="0.67843137249999996" green="0.054901960780000002" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIv-gF-q9z">
                                 <rect key="frame" x="368" y="8" width="64" height="27"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -87,6 +77,16 @@
                                         <exclude reference="mDX-73-Paf"/>
                                     </mask>
                                 </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cak-5H-C5N">
+                                <rect key="frame" x="256" y="8" width="104" height="27"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="104" id="ovf-kX-Rg2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" red="0.67843137249999996" green="0.054901960780000002" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -130,6 +130,14 @@
                     <constraint firstAttribute="trailing" secondItem="hym-9B-v0f" secondAttribute="trailing" id="vMk-ew-fdu"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="m_lbItemNo" destination="uSi-GQ-Fhe" id="7xH-FF-quO"/>
+                <outlet property="m_lbName" destination="Tkq-y1-vMe" id="ios-WS-Lrg"/>
+                <outlet property="m_lbPrice" destination="9D2-jR-HjA" id="J4d-Rv-qxb"/>
+                <outlet property="m_lbSubTotal" destination="Zrx-Tk-aXu" id="yZd-Io-aMi"/>
+                <outlet property="m_lbVolum" destination="kIv-gF-q9z" id="51z-zW-2zr"/>
+                <outlet property="m_lbpAriveDate" destination="cak-5H-C5N" id="pfm-0R-Aej"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

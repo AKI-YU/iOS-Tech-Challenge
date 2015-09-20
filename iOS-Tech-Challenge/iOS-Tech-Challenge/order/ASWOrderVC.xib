@@ -69,7 +69,7 @@
                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.015686274509803921" green="0.16862745098039217" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.019607843140000001" green="0.1647058824" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="jMP-da-GuP" firstAttribute="leading" secondItem="NhP-FF-iYi" secondAttribute="leading" constant="16" id="FEn-fv-Rs7"/>
                         <constraint firstAttribute="bottom" secondItem="jMP-da-GuP" secondAttribute="bottom" constant="16" id="OtF-vf-HgW"/>
@@ -406,7 +406,6 @@
                     </variation>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.88173264060000001" green="0.85555453920000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="wKO-RU-D9B" secondAttribute="trailing" constant="32" id="0E3-nd-Eyb"/>
                 <constraint firstAttribute="trailing" secondItem="NhP-FF-iYi" secondAttribute="trailing" id="1Fa-gu-0cM"/>

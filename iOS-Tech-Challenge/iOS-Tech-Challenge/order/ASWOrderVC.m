@@ -10,6 +10,7 @@
 #import "ASWOrderCell.h"
 #import "ASWOrderModel.h"
 #import "ASWOrderDraftSelectVC.h"
+#import "ParseAPI.h"
 
 #define ASW_KEY_LastEONumber @"LastEONumber"
 #define ASW_KEY_EODate @"EODate"
@@ -23,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *m_btnAddNew;
 @property (strong, nonatomic) ASWOrderModel *m_model;
 @property (strong, nonatomic) NSArray *m_aryTableData;
+@property (strong, nonatomic) NSString *m_strEONumber;
 @property (nonatomic) BOOL m_isEditing;
 @end
 
@@ -53,12 +55,13 @@
 }
 
 /** 檢視 */
-- (instancetype) initWithEONumber
+- (instancetype) initWithEONumber:(NSString *)strEONumber
 {
     self = [self init];
     if (nil != self)
     {
         self.m_isEditing = NO;
+        self.m_strEONumber = strEONumber;
     }
     return self;
 }
@@ -84,11 +87,18 @@
     
     self.m_btnAddNew.layer.cornerRadius = self.m_btnAddNew.frame.size.width/2;
     self.m_viewLine.layer.cornerRadius = 16;
+    
+    self.navigationController.navigationBarHidden = NO;
 }
 
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     [self aswReloadData];
 }
 
@@ -110,6 +120,11 @@
     return iSerial;
 }
 
+- (void) aswUpdateData
+{
+
+}
+
 /*
 #pragma mark - Navigation
 
@@ -124,7 +139,20 @@
 
 - (void) aswReloadData
 {
-    
+    [ParseAPI aws_OrderDetail:^(NSArray *array)
+     {
+         PFObject *pfDic = array[0];
+         NSString *strEONumber = [NSString stringWithFormat:@"%d",[[pfDic objectForKey:@"order_id"] integerValue]];
+         self.m_lbEONumber.text = strEONumber;
+         
+         NSDate *date = pfDic[@"EODate"];
+         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+         [formatter setDateFormat:@"YYYY/MM/dd"];
+         NSString *correctDate = [formatter stringFromDate:date];
+         self.m_lbEODate.text = correctDate;
+         self.m_aryTableData = array;
+         [self.m_tableView reloadData];
+     }];
 }
 
 - (void) setNavigationBar
@@ -228,10 +256,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //建立Cell
-    ASWOrderCell *cell;
-    Class cellClass = [cell class];
-    NSString *strCellIdentifier = NSStringFromClass(cellClass);
-    cell = [self.m_tableView dequeueReusableCellWithIdentifier:strCellIdentifier];
+    NSString *strCellIdentifier = NSStringFromClass([ASWOrderCell class]);
+    ASWOrderCell* cell = [self.m_tableView dequeueReusableCellWithIdentifier:strCellIdentifier];
     if (nil == cell)
     {
         NSArray *aryNib = [[NSBundle mainBundle] loadNibNamed:strCellIdentifier
@@ -239,14 +265,14 @@
                                        options:nil];
         for (UIView *view in aryNib)
         {
-            if ([view isKindOfClass:cellClass])
+            if ([view isKindOfClass:[ASWOrderCell class]])
             {
                 cell = (ASWOrderCell *)view;
                 break;
             }
         }
         
-        UINib *nibRegister = [UINib nibWithNibName:strCellIdentifier
+        UINib *nibRegister = [UINib nibWithNibName:NSStringFromClass([ASWOrderCell class])
                                             bundle:[NSBundle mainBundle]];
         [self.m_tableView registerNib:nibRegister forCellReuseIdentifier:strCellIdentifier];
     }

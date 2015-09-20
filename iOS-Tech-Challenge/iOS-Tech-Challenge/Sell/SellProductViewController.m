@@ -6,7 +6,10 @@
 //  Copyright © 2015年 AKI. All rights reserved.
 //
 
+
 #import "SellProductViewController.h"
+#import <Parse/Parse.h>
+#import "MBProgressHUD.h"
 
 @interface SellProductViewController ()
 
@@ -16,22 +19,82 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    
+    [self.navigationController.navigationBar setHidden:NO];
+    mArray = [[NSMutableArray alloc] init];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self performSelector:@selector(queryWareHouse) withObject:nil afterDelay:0.1f];
+    
 }
+
+-(IBAction)btnBack:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+
+
+
+#define ParseClassWareHouse @"warehouse"
+- (void)queryWareHouse
+{
+    PFQuery *query = [[PFQuery alloc] initWithClassName:ParseClassWareHouse];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
+        NSLog(@"%@",objects);
+        mArray = [[NSMutableArray alloc] initWithArray:objects];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [mTable reloadData];
+        });
+    }];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark --------------------------------------------------------
+#pragma mark UITableViewDelegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return mArray.count ;
 }
-*/
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 44;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    NSString *cellIDT = [NSString stringWithFormat:@"TableViewCell-%ld",(long)indexPath.row];
+    
+    UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:cellIDT];
+    
+    if (cell==nil){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIDT];
+        
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        
+        
+        
+    }
+    
+    cell.textLabel.text = [[mArray objectAtIndex:indexPath.row] objectForKey:@"product_name"];
+    
+    return  cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    
+}
+
+#pragma mark --------------------------------------------------------
 
 @end

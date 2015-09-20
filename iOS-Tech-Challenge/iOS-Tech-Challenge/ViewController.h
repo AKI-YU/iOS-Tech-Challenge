@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RNFrostedSidebar.h"
+#import "ViewControllerBase.h"
 
-@interface ViewController : UIViewController<RNFrostedSidebarDelegate>
+
+@interface ViewController : ViewControllerBase
+{
+    
+}
+
 
 
 

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CbR-HQ-Z02">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="XHz-wd-ekM">
+            <objects>
+                <viewController id="Hun-41-dFN" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hka-uU-Jl3"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ws7-R1-2q9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fcS-vl-c18">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="9F2-Cf-3hF">
+                                <rect key="frame" x="89" y="90" width="421" height="421"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="421" id="MfO-sW-d2b"/>
+                                    <constraint firstAttribute="height" constant="421" id="eGB-2m-BJ2"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ6-nY-2yI">
+                                <rect key="frame" x="11" y="72" width="70" height="70"/>
+                                <state key="normal" image="burger.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onBurger:" destination="Hun-41-dFN" eventType="touchUpInside" id="SYa-hM-fAa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.01176470588" green="0.18823529410000001" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="9F2-Cf-3hF" firstAttribute="centerX" secondItem="fcS-vl-c18" secondAttribute="centerX" id="Mli-on-Aa3"/>
+                            <constraint firstItem="9F2-Cf-3hF" firstAttribute="centerY" secondItem="fcS-vl-c18" secondAttribute="centerY" id="jxd-C0-RyT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="lgb-jm-RRZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K1D-fV-qsQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1117" y="243"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9AK-7v-7iq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CbR-HQ-Z02" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KBh-HV-uNZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Hun-41-dFN" kind="relationship" relationship="rootViewController" id="YVJ-rS-Do9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RmC-S1-6HC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="243"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="burger.png" width="19" height="17"/>
+        <image name="logo.png" width="836" height="836"/>
+    </resources>
+</document>

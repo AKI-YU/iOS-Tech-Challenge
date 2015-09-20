@@ -7,16 +7,10 @@
 //
 
 #import "ViewController.h"
-#import "ParseAPI.h"
-#import "QntView.h"
-#import "PurchaseViewController.h"
-#import "InventoryViewController.h"
-#import "ASWOrderMagVC.h"
+#import "KRKNN.h"
 
 
 @interface ViewController ()
-
-@property (nonatomic, strong) NSMutableIndexSet *optionIndices;
 
 @end
 
@@ -36,68 +30,61 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //[self.navigationController.navigationBar setHidden:YES];
+   
     
-    
-    
-    self.optionIndices = [NSMutableIndexSet indexSetWithIndex:1];
-
 
   
 }
 
 
 - (IBAction)onBurger:(id)sender {
-    NSArray *images = @[
-                        [UIImage imageNamed:@"gear"],
-                        [UIImage imageNamed:@"globe"],
-                        [UIImage imageNamed:@"profile"],
-                        [UIImage imageNamed:@"star"],
-                        ];
-    NSArray *titles = @[
-                        @"進貨",
-                        @"訂單",
-                        @"profile",
-                        @"star",
-                        ];
-    NSArray *colors = @[
-                        [UIColor colorWithRed:240/255.f green:159/255.f blue:254/255.f alpha:1],
-                        [UIColor colorWithRed:255/255.f green:137/255.f blue:167/255.f alpha:1],
-                        [UIColor colorWithRed:126/255.f green:242/255.f blue:195/255.f alpha:1],
-                        [UIColor colorWithRed:119/255.f green:152/255.f blue:255/255.f alpha:1],
-                        ];
+    [self showMenu];
+}
+
+
+-(void)setFreshDate{
     
-    RNFrostedSidebar *callout = [[RNFrostedSidebar alloc] initWithImages:images titles:titles selectedIndices:self.optionIndices borderColors:colors];
-    //    RNFrostedSidebar *callout = [[RNFrostedSidebar alloc] initWithImages:images];
-    callout.delegate = self;
-    //    callout.showFromRight = YES;
-    [callout show];
-}
-
-#pragma mark - RNFrostedSidebarDelegate
-
-- (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index {
-    NSLog(@"Tapped item at index %ld",index);
-    if (index == 0) {
-        PurchaseViewController *purchase = [[PurchaseViewController alloc] initWithNibName:@"PurchaseViewController" bundle:nil];
-        [self.navigationController pushViewController:purchase animated:YES];
-        
-    }else if (index == 1) {
-        ASWOrderMagVC *order = [[ASWOrderMagVC alloc] initWithNibName:@"ASWOrderMagVC" bundle:nil];
-        [self.navigationController pushViewController:order animated:YES];
-        
-    }
+    KRKNN *_knn = [KRKNN sharedInstance];
     
-    [sidebar dismiss];
+    // Features are wording appeared times on a paper as below like :
+    // Apple, OS, Mobile, Taiwan, Japan, Developer
+    [_knn addFeatures:@[@20, @9, @1, @3, @6, @2]
+                group:@"Apple Fans"
+           identifier:@"Smith"];
+    
+    [_knn addFeatures:@[@52, @32, @18, @7, @0, @1]
+                group:@"Apple Fans"
+           identifier:@"John"];
+    
+    [_knn addFeatures:@[@2, @20, @15, @5, @9, @16]
+                group:@"Linux Fans"
+           identifier:@"James"];
+    
+    [_knn addFeatures:@[@7, @11, @2, @12, @1, @0]
+                group:@"Linux Fans"
+           identifier:@"Terry"];
+    
+    [_knn addFeatures:@[@20, @8, @3, @21, @8, @25]
+                group:@"Android Fans"
+           identifier:@"Sam"];
+    
+    [_knn addFeatures:@[@2, @30, @8, @6, @33, @29]
+                group:@"Android Fans"
+           identifier:@"Amy"];
+    
+    [_knn classifyFeatures:@[@20, @1, @10, @2, @12, @3]
+                identifier:@"Bob"
+                 kNeighbor:3
+                completion:^(BOOL success, NSString *ownGroup, NSInteger groupCounts, NSDictionary *allData) {
+                    if( success )
+                    {
+                        NSLog(@"ownGroup : %@", ownGroup);
+                       
+                        
+                    }
+                }];
+    
 }
 
-- (void)sidebar:(RNFrostedSidebar *)sidebar didEnable:(BOOL)itemEnabled itemAtIndex:(NSUInteger)index {
-    if (itemEnabled) {
-        [self.optionIndices addIndex:index];
-    }
-    else {
-        [self.optionIndices removeIndex:index];
-    }
-}
 
 @end

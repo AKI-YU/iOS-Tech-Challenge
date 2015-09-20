@@ -27,7 +27,7 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jMP-da-GuP">
                             <rect key="frame" x="16" y="48" width="568" height="472"/>
-                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
                     </subviews>
                     <color key="backgroundColor" red="0.015686274509803921" green="0.16862745098039217" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>

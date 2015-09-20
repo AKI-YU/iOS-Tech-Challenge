@@ -23,6 +23,10 @@
     tap.numberOfTapsRequired = 1;
     
     [self.checkBoxLabel addGestureRecognizer:tap];
+    self.contentView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.8];
+    self.backgroundColor = [UIColor clearColor];
+
+    
 }
 
 - (void)checked:(id)sender

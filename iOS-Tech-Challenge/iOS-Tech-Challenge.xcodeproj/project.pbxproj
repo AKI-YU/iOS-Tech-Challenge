@@ -32,6 +32,20 @@
 		61704E4D1BAD75F500617704 /* UULineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704E471BAD75F500617704 /* UULineChart.m */; settings = {ASSET_TAGS = (); }; };
 		8B07EE1B1BAD8729006FBD6C /* ASWOrderMagVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B07EE191BAD8729006FBD6C /* ASWOrderMagVC.m */; settings = {ASSET_TAGS = (); }; };
 		8B07EE1C1BAD8729006FBD6C /* ASWOrderMagVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B07EE1A1BAD8729006FBD6C /* ASWOrderMagVC.xib */; settings = {ASSET_TAGS = (); }; };
+		8B07EE2F1BAD98D4006FBD6C /* ASWOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B07EE2E1BAD98D4006FBD6C /* ASWOrderModel.m */; settings = {ASSET_TAGS = (); }; };
+		8B07EE331BADA05A006FBD6C /* ASWOrderMagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B07EE311BADA05A006FBD6C /* ASWOrderMagCell.m */; settings = {ASSET_TAGS = (); }; };
+		8B07EE341BADA05A006FBD6C /* ASWOrderMagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B07EE321BADA05A006FBD6C /* ASWOrderMagCell.xib */; settings = {ASSET_TAGS = (); }; };
+		8B07EE3D1BADA0D2006FBD6C /* ASWOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B07EE3B1BADA0D2006FBD6C /* ASWOrderVC.m */; settings = {ASSET_TAGS = (); }; };
+		8B07EE3E1BADA0D2006FBD6C /* ASWOrderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B07EE3C1BADA0D2006FBD6C /* ASWOrderVC.xib */; settings = {ASSET_TAGS = (); }; };
+		8B07EE421BADA0F6006FBD6C /* ASWOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B07EE401BADA0F6006FBD6C /* ASWOrderCell.m */; settings = {ASSET_TAGS = (); }; };
+		8B07EE431BADA0F6006FBD6C /* ASWOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B07EE411BADA0F6006FBD6C /* ASWOrderCell.xib */; settings = {ASSET_TAGS = (); }; };
+		8B07EE4A1BADAC79006FBD6C /* ASWOrderDialogInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B07EE481BADAC79006FBD6C /* ASWOrderDialogInputViewController.m */; settings = {ASSET_TAGS = (); }; };
+		8B07EE4B1BADAC79006FBD6C /* ASWOrderDialogInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B07EE491BADAC79006FBD6C /* ASWOrderDialogInputViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		8B07EE571BADC691006FBD6C /* ASWOrderDraftSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B07EE551BADC691006FBD6C /* ASWOrderDraftSelectVC.m */; settings = {ASSET_TAGS = (); }; };
+		8B07EE581BADC691006FBD6C /* ASWOrderDraftSelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B07EE561BADC691006FBD6C /* ASWOrderDraftSelectVC.xib */; settings = {ASSET_TAGS = (); }; };
+		8B3775C01BAE078F006E099B /* Order.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B3775BF1BAE078F006E099B /* Order.jpg */; settings = {ASSET_TAGS = (); }; };
+		8B3775C41BAE0FB9006E099B /* Order2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B3775C31BAE0FB9006E099B /* Order2.jpg */; settings = {ASSET_TAGS = (); }; };
+		8B3775C61BAE1112006E099B /* Order3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B3775C51BAE1112006E099B /* Order3.jpg */; settings = {ASSET_TAGS = (); }; };
 		97F9EA688F924E00E284840B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 673C5616CED4C1F9B61E0753 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +92,26 @@
 		8B07EE181BAD8729006FBD6C /* ASWOrderMagVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASWOrderMagVC.h; sourceTree = "<group>"; };
 		8B07EE191BAD8729006FBD6C /* ASWOrderMagVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASWOrderMagVC.m; sourceTree = "<group>"; };
 		8B07EE1A1BAD8729006FBD6C /* ASWOrderMagVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ASWOrderMagVC.xib; sourceTree = "<group>"; };
+		8B07EE2D1BAD98D4006FBD6C /* ASWOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASWOrderModel.h; sourceTree = "<group>"; };
+		8B07EE2E1BAD98D4006FBD6C /* ASWOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASWOrderModel.m; sourceTree = "<group>"; };
+		8B07EE301BADA05A006FBD6C /* ASWOrderMagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASWOrderMagCell.h; sourceTree = "<group>"; };
+		8B07EE311BADA05A006FBD6C /* ASWOrderMagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASWOrderMagCell.m; sourceTree = "<group>"; };
+		8B07EE321BADA05A006FBD6C /* ASWOrderMagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ASWOrderMagCell.xib; sourceTree = "<group>"; };
+		8B07EE3A1BADA0D2006FBD6C /* ASWOrderVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASWOrderVC.h; sourceTree = "<group>"; };
+		8B07EE3B1BADA0D2006FBD6C /* ASWOrderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASWOrderVC.m; sourceTree = "<group>"; };
+		8B07EE3C1BADA0D2006FBD6C /* ASWOrderVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ASWOrderVC.xib; sourceTree = "<group>"; };
+		8B07EE3F1BADA0F6006FBD6C /* ASWOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASWOrderCell.h; sourceTree = "<group>"; };
+		8B07EE401BADA0F6006FBD6C /* ASWOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASWOrderCell.m; sourceTree = "<group>"; };
+		8B07EE411BADA0F6006FBD6C /* ASWOrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ASWOrderCell.xib; sourceTree = "<group>"; };
+		8B07EE471BADAC79006FBD6C /* ASWOrderDialogInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASWOrderDialogInputViewController.h; sourceTree = "<group>"; };
+		8B07EE481BADAC79006FBD6C /* ASWOrderDialogInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASWOrderDialogInputViewController.m; sourceTree = "<group>"; };
+		8B07EE491BADAC79006FBD6C /* ASWOrderDialogInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ASWOrderDialogInputViewController.xib; sourceTree = "<group>"; };
+		8B07EE541BADC691006FBD6C /* ASWOrderDraftSelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASWOrderDraftSelectVC.h; sourceTree = "<group>"; };
+		8B07EE551BADC691006FBD6C /* ASWOrderDraftSelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASWOrderDraftSelectVC.m; sourceTree = "<group>"; };
+		8B07EE561BADC691006FBD6C /* ASWOrderDraftSelectVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ASWOrderDraftSelectVC.xib; sourceTree = "<group>"; };
+		8B3775BF1BAE078F006E099B /* Order.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Order.jpg; sourceTree = "<group>"; };
+		8B3775C31BAE0FB9006E099B /* Order2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Order2.jpg; sourceTree = "<group>"; };
+		8B3775C51BAE1112006E099B /* Order3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Order3.jpg; sourceTree = "<group>"; };
 		B603D15988D12116523EF210 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D2D0FB9F3FA752C7E234A5E8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,7 +167,7 @@
 				61704DDD1BAD605A00617704 /* AppDelegate.m */,
 				61704DDF1BAD605A00617704 /* ViewController.h */,
 				61704DE01BAD605A00617704 /* ViewController.m */,
-				8B07EE171BAD8654006FBD6C /* New Group */,
+				8B07EE171BAD8654006FBD6C /* order */,
 				61704DE21BAD605A00617704 /* Main.storyboard */,
 				61704DE51BAD605A00617704 /* Assets.xcassets */,
 				61704DE71BAD605A00617704 /* LaunchScreen.storyboard */,
@@ -222,14 +256,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8B07EE171BAD8654006FBD6C /* New Group */ = {
+		8B07EE171BAD8654006FBD6C /* order */ = {
 			isa = PBXGroup;
 			children = (
+				8B3775BF1BAE078F006E099B /* Order.jpg */,
+				8B3775C31BAE0FB9006E099B /* Order2.jpg */,
+				8B3775C51BAE1112006E099B /* Order3.jpg */,
 				8B07EE181BAD8729006FBD6C /* ASWOrderMagVC.h */,
 				8B07EE191BAD8729006FBD6C /* ASWOrderMagVC.m */,
 				8B07EE1A1BAD8729006FBD6C /* ASWOrderMagVC.xib */,
+				8B07EE301BADA05A006FBD6C /* ASWOrderMagCell.h */,
+				8B07EE311BADA05A006FBD6C /* ASWOrderMagCell.m */,
+				8B07EE321BADA05A006FBD6C /* ASWOrderMagCell.xib */,
+				8B07EE3A1BADA0D2006FBD6C /* ASWOrderVC.h */,
+				8B07EE3B1BADA0D2006FBD6C /* ASWOrderVC.m */,
+				8B07EE3C1BADA0D2006FBD6C /* ASWOrderVC.xib */,
+				8B07EE3F1BADA0F6006FBD6C /* ASWOrderCell.h */,
+				8B07EE401BADA0F6006FBD6C /* ASWOrderCell.m */,
+				8B07EE411BADA0F6006FBD6C /* ASWOrderCell.xib */,
+				8B07EE541BADC691006FBD6C /* ASWOrderDraftSelectVC.h */,
+				8B07EE551BADC691006FBD6C /* ASWOrderDraftSelectVC.m */,
+				8B07EE561BADC691006FBD6C /* ASWOrderDraftSelectVC.xib */,
+				8B07EE2D1BAD98D4006FBD6C /* ASWOrderModel.h */,
+				8B07EE2E1BAD98D4006FBD6C /* ASWOrderModel.m */,
+				8B07EE471BADAC79006FBD6C /* ASWOrderDialogInputViewController.h */,
+				8B07EE481BADAC79006FBD6C /* ASWOrderDialogInputViewController.m */,
+				8B07EE491BADAC79006FBD6C /* ASWOrderDialogInputViewController.xib */,
 			);
-			name = "New Group";
+			name = order;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,16 +349,24 @@
 				61704E321BAD619400617704 /* 8.jpg in Resources */,
 				61704E2C1BAD619400617704 /* 6.jpg in Resources */,
 				8B07EE1C1BAD8729006FBD6C /* ASWOrderMagVC.xib in Resources */,
+				8B07EE4B1BADAC79006FBD6C /* ASWOrderDialogInputViewController.xib in Resources */,
 				61704DE91BAD605A00617704 /* LaunchScreen.storyboard in Resources */,
+				8B3775C01BAE078F006E099B /* Order.jpg in Resources */,
 				61704E291BAD619400617704 /* 5.jpg in Resources */,
+				8B07EE581BADC691006FBD6C /* ASWOrderDraftSelectVC.xib in Resources */,
 				61704E261BAD619400617704 /* 4.jpg in Resources */,
 				61704E1D1BAD619400617704 /* 1.jpg in Resources */,
 				61704E201BAD619400617704 /* 2.jpg in Resources */,
 				61704E231BAD619400617704 /* 3.jpg in Resources */,
+				8B07EE341BADA05A006FBD6C /* ASWOrderMagCell.xib in Resources */,
 				61704E2F1BAD619400617704 /* 7.jpg in Resources */,
+				8B3775C41BAE0FB9006E099B /* Order2.jpg in Resources */,
 				61704E351BAD619400617704 /* 9.jpg in Resources */,
 				61704DE61BAD605A00617704 /* Assets.xcassets in Resources */,
+				8B3775C61BAE1112006E099B /* Order3.jpg in Resources */,
 				61704DE41BAD605A00617704 /* Main.storyboard in Resources */,
+				8B07EE431BADA0F6006FBD6C /* ASWOrderCell.xib in Resources */,
+				8B07EE3E1BADA0D2006FBD6C /* ASWOrderVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,15 +411,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				61704E0F1BAD607300617704 /* RNBlurredSideViewController.m in Sources */,
+				8B07EE3D1BADA0D2006FBD6C /* ASWOrderVC.m in Sources */,
 				61704E481BAD75F500617704 /* UUBar.m in Sources */,
 				61704E4C1BAD75F500617704 /* UUColor.m in Sources */,
+				8B07EE4A1BADAC79006FBD6C /* ASWOrderDialogInputViewController.m in Sources */,
+				8B07EE331BADA05A006FBD6C /* ASWOrderMagCell.m in Sources */,
 				61704E491BAD75F500617704 /* UUBarChart.m in Sources */,
 				61704E4D1BAD75F500617704 /* UULineChart.m in Sources */,
 				8B07EE1B1BAD8729006FBD6C /* ASWOrderMagVC.m in Sources */,
+				8B07EE2F1BAD98D4006FBD6C /* ASWOrderModel.m in Sources */,
 				61704DE11BAD605A00617704 /* ViewController.m in Sources */,
+				8B07EE571BADC691006FBD6C /* ASWOrderDraftSelectVC.m in Sources */,
 				61704DDE1BAD605A00617704 /* AppDelegate.m in Sources */,
 				61704E4B1BAD75F500617704 /* UUChartLabel.m in Sources */,
 				61704E4A1BAD75F500617704 /* UUChart.m in Sources */,
+				8B07EE421BADA0F6006FBD6C /* ASWOrderCell.m in Sources */,
 				61704DDB1BAD605A00617704 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

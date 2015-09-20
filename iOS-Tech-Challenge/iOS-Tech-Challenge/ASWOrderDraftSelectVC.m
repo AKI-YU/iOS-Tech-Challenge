@@ -1,63 +1,47 @@
 //
-//  ASWOrderMagVC.m
+//  ASWOrderDraftSelectVC.m
 //  iOS-Tech-Challenge
 //
-//  Created by LaiKuan Wen on 2015/9/19.
+//  Created by LaiKuan Wen on 2015/9/20.
 //  Copyright © 2015年 AKI. All rights reserved.
 //
 
-#import "ASWOrderMagVC.h"
-#import "ASWOrderModel.h"
-#import "ASWOrderMagCell.h"
-#import "ASWOrderVC.h"
+#import "ASWOrderDraftSelectVC.h"
 
-@interface ASWOrderMagVC ()
-
-@property (weak, nonatomic) IBOutlet UIView *m_view;
-@property (weak, nonatomic) IBOutlet UIView *m_viewTitle;
+@interface ASWOrderDraftSelectVC ()
 @property (weak, nonatomic) IBOutlet UITableView *m_tableView;
-@property (weak, nonatomic) IBOutlet UIButton *m_btnAddNew;
 @property (strong, nonatomic) NSArray *m_aryTableData;
+@end
+
+@interface ASWOrderDraftSelectVC (UITableViewDelegate) <UITableViewDataSource, UITableViewDelegate >
 
 @end
 
-@interface ASWOrderMagVC (UITableView_Datasource)<UITableViewDataSource>
-@end
 
-@interface ASWOrderMagVC (UITableView_Delegate) <UITableViewDelegate>
+@implementation ASWOrderDraftSelectVC
 
-@end
-
-@implementation ASWOrderMagVC
+- (instancetype) init
+{
+    self = [super init];
+    if (nil != self)
+    {
+        NSUserDefaults *userdefault = [[NSUserDefaults alloc] init];
+        NSDictionary *dic = [userdefault objectForKey:ASW_KEY_DicOrderEditing];
+        self.m_aryTableData = [dic allKeys];
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = @"訂單管理";
-    self.m_btnAddNew.layer.cornerRadius = (self.m_btnAddNew.frame.size.width)/2;
-    [self.m_btnAddNew addTarget:self action:@selector(onBtnAddNewClick:) forControlEvents:UIControlEventTouchUpInside];
-    
-    self.m_view.layer.cornerRadius = 64;
-    self.m_viewTitle.layer.cornerRadius = 4;
-}
-
-- (void) viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    [self aswReloadData];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void) onBtnAddNewClick:(UIButton *)btn
-{
-    ASWOrderVC *pushVC = [[ASWOrderVC alloc] init];
-    [self.navigationController pushViewController:pushVC animated:YES];
 }
 
 /*
@@ -70,15 +54,9 @@
 }
 */
 
-/** 重新填label 和 table */
-- (void) aswReloadData
-{
-    [self.m_tableView reloadData];
-}
-
 @end
 
-@implementation ASWOrderMagVC (UITableView_Datasource)
+@implementation ASWOrderDraftSelectVC (UITableViewDelegate)
 
 /** Section Number */
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -96,7 +74,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //建立Cell
-    ASWOrderMagCell *cell;
+    UITableViewCell *cell;
     Class cellClass = [cell class];
     NSString *strCellIdentifier = NSStringFromClass(cellClass);
     cell = [self.m_tableView dequeueReusableCellWithIdentifier:strCellIdentifier];
@@ -109,7 +87,7 @@
         {
             if ([view isKindOfClass:cellClass])
             {
-                cell = (ASWOrderMagCell *)view;
+                cell = (UITableViewCell *)view;
                 break;
             }
         }
@@ -118,21 +96,15 @@
                                             bundle:[NSBundle mainBundle]];
         [self.m_tableView registerNib:nibRegister forCellReuseIdentifier:strCellIdentifier];
     }
+    cell.textLabel.text = self.m_aryTableData[indexPath.row];
     
-    [cell aswUpdateWithDictionary:self.m_aryTableData[indexPath.row]];
     return cell;
-    
 }
 
-@end
-
-@implementation ASWOrderMagVC (UITableView_Delegate)
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ASWOrderMagVC *pushVC = [[ASWOrderMagVC alloc] init];
-    [self.navigationController pushViewController:pushVC animated:YES];
+    NSString *strEONumber = self.m_aryTableData[indexPath.row];
+    [self.m_delegate aswDidSelectDraft:strEONumber];
 }
 
 @end
-

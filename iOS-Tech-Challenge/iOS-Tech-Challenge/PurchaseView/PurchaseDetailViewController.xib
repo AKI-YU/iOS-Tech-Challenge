@@ -55,9 +55,9 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="6P8-iM-q3b"/>
                                             <exclude reference="BJx-UH-ze3"/>
                                             <exclude reference="qvq-k6-c3m"/>
-                                            <exclude reference="6P8-iM-q3b"/>
                                         </mask>
                                     </variation>
                                 </view>
@@ -72,9 +72,9 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="6wf-cm-Xxq"/>
                                             <exclude reference="JWt-z4-tXm"/>
                                             <exclude reference="Rz9-qu-ibu"/>
-                                            <exclude reference="6wf-cm-Xxq"/>
                                         </mask>
                                     </variation>
                                 </view>

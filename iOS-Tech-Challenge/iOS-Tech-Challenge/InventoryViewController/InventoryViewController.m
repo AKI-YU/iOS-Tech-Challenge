@@ -13,14 +13,8 @@
 #import "Masonry.h"
 #import <Parse/Parse.h>
 #import "MLClass.h"
+#import "Constants.h"
 
-#define ParseClassWareHouse @"warehouse"
-#define ParseClassWareHouseProduct @"product_name"
-#define ParseClassWareHouseAmount @"amount"
-#define ParseClassWareHouseFresh @"p_fresh_time"
-#define ParseClassWareHousePurchase @"purchase"
-
-#define ParseClassPurchaseArriveDate @"arrive_date"
 
 @interface InventoryViewController () <SJDataTableViewDelegate>
 @property (nonatomic, strong) SJDataTableView *table;

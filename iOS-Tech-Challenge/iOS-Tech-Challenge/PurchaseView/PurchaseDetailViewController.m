@@ -10,6 +10,7 @@
 #import "HFTableViewBindingHelper.h"
 #import <Parse.h>
 #import "AppDelegate.h"
+#import "Constants.h"
 
 @interface PurchaseDetailViewController ()
 @property (nonatomic) HFTableViewBindingHelper* helper;
@@ -82,6 +83,20 @@
     if (toBeAdded.count <= 0) {
         [self alert:@"提示" msg:@"請檢核項目"];
     }
+	else {
+		for (PFObject *obj in toBeAdded) {
+			PFObject *wareHouseObj = [PFObject objectWithClassName:ParseClassWareHouse];
+			wareHouseObj[ParseClassWareHouseProduct] = obj[ParseClassPurchaseName];
+			wareHouseObj[ParseClassWareHouseAmount] = obj[ParseClassPurchaseAmount];
+			wareHouseObj[ParseClassWareHousePurchase] = obj;
+			wareHouseObj[ParseClassWareHousePurchaseID] = obj[ParseClassPurchasePurchaseID];
+			wareHouseObj[@"p_fresh_time"] = obj[@"p_fresh_time"];
+
+			[obj save];
+			[wareHouseObj save];
+		}
+	}
+
     if (isSuccess) {
         KVOMutableArray* newRow = [self mergeSameOrderId:toBeAdded];
         if (newRow.firstObject) {

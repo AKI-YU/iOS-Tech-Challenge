@@ -7,6 +7,7 @@
 //
 
 #import "SJDataTableViewCell.h"
+#import "UIColor+Inventory.h"
 
 @implementation SJDataTableViewCell
 {
@@ -38,12 +39,12 @@
     for (int i = 0; i < [keyArray count]-1; i++)
     {
         bgView = [[UIView alloc] initWithFrame:CGRectMake(i*itemSize.width, 0, itemSize.width, itemSize.height)];
-		bgView.backgroundColor = [UIColor clearColor];
+		bgView.backgroundColor = [UIColor colorDataBg];
         [self addSubview:bgView];
         
         headLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 10, bgView.frame.size.width - 40, bgView.frame.size.height - 20)];
         [headLabel setAdjustsFontSizeToFitWidth:YES];
-		headLabel.backgroundColor = [UIColor clearColor];
+		headLabel.textColor = [UIColor colorDataText];
         [bgView addSubview:headLabel];
         [labelArray addObject:headLabel];
         [bgArray addObject:bgView];

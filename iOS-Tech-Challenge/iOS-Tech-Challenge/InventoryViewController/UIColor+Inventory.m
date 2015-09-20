@@ -15,6 +15,9 @@
 + (UIColor *)colorFirstRowText { return [UIColor whiteColor]; }
 + (UIColor *)colorFirstRowBg { return [UIColor colorWithHex:0xFFE5B9 alpha:0.3]; }
 
++ (UIColor *)colorDataText { return [UIColor whiteColor]; }
++ (UIColor *)colorDataBg { return [UIColor colorWithHex:0x111111 alpha:0.3]; }
+
 + (UIColor *)colorWithHex:(int)hex
 {
 	return [UIColor colorWithHex:hex alpha:1.0f];

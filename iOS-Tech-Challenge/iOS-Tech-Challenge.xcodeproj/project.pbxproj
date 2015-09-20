@@ -74,6 +74,13 @@
 		F969D9A71BAD903A00F8A532 /* PurchaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F969D9A51BAD903A00F8A532 /* PurchaseTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		F969D9A81BAD903A00F8A532 /* PurchaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F969D9A61BAD903A00F8A532 /* PurchaseTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		F969D9A91BADA89A00F8A532 /* PurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F99FC9BB1BAD7B4400A34994 /* PurchaseViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F969D9AD1BADAD7500F8A532 /* PurchaseDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F969D9AB1BADAD7500F8A532 /* PurchaseDetailTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		F969D9AE1BADAD7500F8A532 /* PurchaseDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F969D9AC1BADAD7500F8A532 /* PurchaseDetailTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		F969D9AF1BADEC1600F8A532 /* PurchaseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99FC9C11BAD7B7500A34994 /* PurchaseDetailViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		F969D9BA1BAE5FFD00F8A532 /* BLEDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = F969D9B31BAE5FFD00F8A532 /* BLEDevice.m */; settings = {ASSET_TAGS = (); }; };
+		F969D9BB1BAE5FFD00F8A532 /* BLEUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = F969D9B51BAE5FFD00F8A532 /* BLEUtility.m */; settings = {ASSET_TAGS = (); }; };
+		F969D9BC1BAE5FFD00F8A532 /* DFBlunoDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = F969D9B71BAE5FFD00F8A532 /* DFBlunoDevice.m */; settings = {ASSET_TAGS = (); }; };
+		F969D9BD1BAE5FFD00F8A532 /* DFBlunoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F969D9B91BAE5FFD00F8A532 /* DFBlunoManager.m */; settings = {ASSET_TAGS = (); }; };
 		F99FC9BE1BAD7B4400A34994 /* PurchaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99FC9BC1BAD7B4400A34994 /* PurchaseViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		F99FC9C21BAD7B7500A34994 /* PurchaseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F99FC9C01BAD7B7500A34994 /* PurchaseDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -184,6 +191,17 @@
 		F969D9A41BAD903A00F8A532 /* PurchaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseTableViewCell.h; sourceTree = "<group>"; };
 		F969D9A51BAD903A00F8A532 /* PurchaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseTableViewCell.m; sourceTree = "<group>"; };
 		F969D9A61BAD903A00F8A532 /* PurchaseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseTableViewCell.xib; sourceTree = "<group>"; };
+		F969D9AA1BADAD7500F8A532 /* PurchaseDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseDetailTableViewCell.h; sourceTree = "<group>"; };
+		F969D9AB1BADAD7500F8A532 /* PurchaseDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseDetailTableViewCell.m; sourceTree = "<group>"; };
+		F969D9AC1BADAD7500F8A532 /* PurchaseDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseDetailTableViewCell.xib; sourceTree = "<group>"; };
+		F969D9B21BAE5FFD00F8A532 /* BLEDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEDevice.h; sourceTree = "<group>"; };
+		F969D9B31BAE5FFD00F8A532 /* BLEDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEDevice.m; sourceTree = "<group>"; };
+		F969D9B41BAE5FFD00F8A532 /* BLEUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEUtility.h; sourceTree = "<group>"; };
+		F969D9B51BAE5FFD00F8A532 /* BLEUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEUtility.m; sourceTree = "<group>"; };
+		F969D9B61BAE5FFD00F8A532 /* DFBlunoDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFBlunoDevice.h; sourceTree = "<group>"; };
+		F969D9B71BAE5FFD00F8A532 /* DFBlunoDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFBlunoDevice.m; sourceTree = "<group>"; };
+		F969D9B81BAE5FFD00F8A532 /* DFBlunoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFBlunoManager.h; sourceTree = "<group>"; };
+		F969D9B91BAE5FFD00F8A532 /* DFBlunoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFBlunoManager.m; sourceTree = "<group>"; };
 		F99FC9BA1BAD7B4400A34994 /* PurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseViewController.h; sourceTree = "<group>"; };
 		F99FC9BB1BAD7B4400A34994 /* PurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseViewController.m; sourceTree = "<group>"; };
 		F99FC9BC1BAD7B4400A34994 /* PurchaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseViewController.xib; sourceTree = "<group>"; };
@@ -289,6 +307,7 @@
 				611496C61BADB28F00E4AF04 /* MBProgressHUD */,
 				611496A81BADA92400E4AF04 /* Parse */,
 				611496A31BADA84A00E4AF04 /* ML */,
+				F969D9B01BAE5FFD00F8A532 /* Bluno */,
 				610F65371BAD8A5F0083CC61 /* QntView */,
 				61704E3B1BAD75F500617704 /* UUChart */,
 				F99FC9B91BAD7B4400A34994 /* PurchaseView */,
@@ -449,6 +468,29 @@
 			name = SJDataTableView;
 			sourceTree = "<group>";
 		};
+		F969D9B01BAE5FFD00F8A532 /* Bluno */ = {
+			isa = PBXGroup;
+			children = (
+				F969D9B11BAE5FFD00F8A532 /* Core */,
+				F969D9B61BAE5FFD00F8A532 /* DFBlunoDevice.h */,
+				F969D9B71BAE5FFD00F8A532 /* DFBlunoDevice.m */,
+				F969D9B81BAE5FFD00F8A532 /* DFBlunoManager.h */,
+				F969D9B91BAE5FFD00F8A532 /* DFBlunoManager.m */,
+			);
+			path = Bluno;
+			sourceTree = "<group>";
+		};
+		F969D9B11BAE5FFD00F8A532 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F969D9B21BAE5FFD00F8A532 /* BLEDevice.h */,
+				F969D9B31BAE5FFD00F8A532 /* BLEDevice.m */,
+				F969D9B41BAE5FFD00F8A532 /* BLEUtility.h */,
+				F969D9B51BAE5FFD00F8A532 /* BLEUtility.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		F99FC9B91BAD7B4400A34994 /* PurchaseView */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,6 +503,9 @@
 				F969D9A41BAD903A00F8A532 /* PurchaseTableViewCell.h */,
 				F969D9A51BAD903A00F8A532 /* PurchaseTableViewCell.m */,
 				F969D9A61BAD903A00F8A532 /* PurchaseTableViewCell.xib */,
+				F969D9AA1BADAD7500F8A532 /* PurchaseDetailTableViewCell.h */,
+				F969D9AB1BADAD7500F8A532 /* PurchaseDetailTableViewCell.m */,
+				F969D9AC1BADAD7500F8A532 /* PurchaseDetailTableViewCell.xib */,
 			);
 			path = PurchaseView;
 			sourceTree = "<group>";
@@ -525,6 +570,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				611496B81BADB0BF00E4AF04 /* gear@2x.png in Resources */,
+				F969D9AF1BADEC1600F8A532 /* PurchaseDetailViewController.xib in Resources */,
 				610F653C1BAD8B250083CC61 /* QntView.xib in Resources */,
 				61F84DD31BAE503100096733 /* Order.jpg in Resources */,
 				611496BC1BADB0BF00E4AF04 /* profile@2x.png in Resources */,
@@ -542,6 +588,7 @@
 				611496C51BADB1D600E4AF04 /* burger@2x.png in Resources */,
 				61704E2C1BAD619400617704 /* 6.jpg in Resources */,
 				61704E291BAD619400617704 /* 5.jpg in Resources */,
+				F969D9AE1BADAD7500F8A532 /* PurchaseDetailTableViewCell.xib in Resources */,
 				61704E261BAD619400617704 /* 4.jpg in Resources */,
 				6114968A1BAD8ECA00E4AF04 /* minus.png in Resources */,
 				61704E1D1BAD619400617704 /* 1.jpg in Resources */,
@@ -611,10 +658,13 @@
 				61704E4C1BAD75F500617704 /* UUColor.m in Sources */,
 				DB076D3F1BADA32400E5AD6F /* SJDataTableView.m in Sources */,
 				61704E491BAD75F500617704 /* UUBarChart.m in Sources */,
+				F969D9BB1BAE5FFD00F8A532 /* BLEUtility.m in Sources */,
 				610F653A1BAD8A5F0083CC61 /* QntView.m in Sources */,
 				61F84DD01BAE503100096733 /* ASWOrderModel.m in Sources */,
 				611496C11BADB0F200E4AF04 /* RNFrostedSidebar.m in Sources */,
 				61704E4D1BAD75F500617704 /* UULineChart.m in Sources */,
+				F969D9BC1BAE5FFD00F8A532 /* DFBlunoDevice.m in Sources */,
+				F969D9BA1BAE5FFD00F8A532 /* BLEDevice.m in Sources */,
 				61704DE11BAD605A00617704 /* ViewController.m in Sources */,
 				DB076D401BADA32400E5AD6F /* SJDataTableViewCell.m in Sources */,
 				DB076D3E1BADA32400E5AD6F /* SJDataFixItemTableView.m in Sources */,
@@ -623,6 +673,8 @@
 				61F84E1A1BAE665E00096733 /* ViewControllerBase.m in Sources */,
 				611496C91BADB28F00E4AF04 /* MBProgressHUD.m in Sources */,
 				61F84DCA1BAE503100096733 /* ASWOrderDraftSelectVC.m in Sources */,
+				F969D9BD1BAE5FFD00F8A532 /* DFBlunoManager.m in Sources */,
+				F969D9AD1BADAD7500F8A532 /* PurchaseDetailTableViewCell.m in Sources */,
 				6114968F1BADA47500E4AF04 /* mNav.m in Sources */,
 				61704DDE1BAD605A00617704 /* AppDelegate.m in Sources */,
 				61F84DCE1BAE503100096733 /* ASWOrderMagVC.m in Sources */,

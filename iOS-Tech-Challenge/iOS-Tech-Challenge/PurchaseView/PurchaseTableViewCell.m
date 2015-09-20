@@ -36,7 +36,7 @@
         }
     }
     NSString* str = [itemList componentsJoinedByString:@"、"];
-    str = @"       hihihihiohifhoihfaiohfiohaiohfoiahfoisahiofhoasihfioashfaiaf";
+//    str = @"       hihihihiohifhoihfaiohfiohaiohfoiahfoisahiofhoasihfioashfaiaf";
     self.itemNames.text = str;
 }
 

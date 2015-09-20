@@ -24,6 +24,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    [self.navigationController.navigationBar setHidden:NO];
+    
     self.title = @"進貨管理";
     
     PFQuery *query = [PFQuery queryWithClassName:@"purchase"];

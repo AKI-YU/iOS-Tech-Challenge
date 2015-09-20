@@ -9,8 +9,9 @@
 #import "ViewController.h"
 #import "ParseAPI.h"
 #import "QntView.h"
-
+#import "PurchaseViewController.h"
 #import "InventoryViewController.h"
+#import "ASWOrderMagVC.h"
 
 
 @interface ViewController ()
@@ -35,7 +36,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.navigationController.navigationBar setHidden:YES];
+    //[self.navigationController.navigationBar setHidden:YES];
     
     
     
@@ -54,8 +55,8 @@
                         [UIImage imageNamed:@"star"],
                         ];
     NSArray *titles = @[
-                        @"1",
-                        @"globe",
+                        @"進貨",
+                        @"訂單",
                         @"profile",
                         @"star",
                         ];
@@ -77,9 +78,17 @@
 
 - (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index {
     NSLog(@"Tapped item at index %ld",index);
-    if (index == 3) {
-        [sidebar dismiss];
+    if (index == 0) {
+        PurchaseViewController *purchase = [[PurchaseViewController alloc] initWithNibName:@"PurchaseViewController" bundle:nil];
+        [self.navigationController pushViewController:purchase animated:YES];
+        
+    }else if (index == 1) {
+        ASWOrderMagVC *order = [[ASWOrderMagVC alloc] initWithNibName:@"ASWOrderMagVC" bundle:nil];
+        [self.navigationController pushViewController:order animated:YES];
+        
     }
+    
+    [sidebar dismiss];
 }
 
 - (void)sidebar:(RNFrostedSidebar *)sidebar didEnable:(BOOL)itemEnabled itemAtIndex:(NSUInteger)index {

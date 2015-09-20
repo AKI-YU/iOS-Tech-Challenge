@@ -7,6 +7,7 @@
 //
 
 #import "SJDataFixItemTableView.h"
+#import "UIColor+Inventory.h"
 
 @interface SJDataFixItemTableView()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -27,7 +28,8 @@
         self.label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, size.height)];
         [self.label setTextAlignment:NSTextAlignmentCenter];
         [self.label setText:headstr];
-		self.label.backgroundColor = [UIColor clearColor];
+		self.label.backgroundColor = [UIColor colorTopLeftBg];
+		self.label.textColor = [UIColor colorTopLeftText];
         [self addSubview:self.label];
         
         self.itemTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, self.label.frame.origin.y

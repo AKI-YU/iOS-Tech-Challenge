@@ -7,6 +7,7 @@
 //
 
 #import "SJDataTableView.h"
+#import "UIColor+Inventory.h"
 
 @interface SJDataTableView ()
 {
@@ -121,7 +122,8 @@
         UILabel *headLabel=[[UILabel alloc]initWithFrame:CGRectMake((i-1)*_headerWidth, 0, _headerWidth, _headerHeight)];
         [headLabel setText:[_headerArray objectAtIndex:i]];
         [headLabel setTextAlignment:NSTextAlignmentCenter];
-		headLabel.backgroundColor = [UIColor clearColor];
+		headLabel.backgroundColor = [UIColor colorFirstRowBg];
+		headLabel.textColor = [UIColor colorFirstRowText];
         [tableViewHeadView addSubview:headLabel];
     }
     

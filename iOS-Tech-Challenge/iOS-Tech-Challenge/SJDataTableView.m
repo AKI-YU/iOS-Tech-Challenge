@@ -92,7 +92,10 @@
 #pragma mark -
 - (void)didTapDiscardBtn:(UIButton *)sender
 {
-	NSLog(@"%s %ld", __PRETTY_FUNCTION__, sender.tag);
+	//NSLog(@"%s %ld", __PRETTY_FUNCTION__, sender.tag);
+	if (self.cjDelegate) {
+		[self.cjDelegate didTapDiscardButton:sender];
+	}
 }
 
 #pragma mark -

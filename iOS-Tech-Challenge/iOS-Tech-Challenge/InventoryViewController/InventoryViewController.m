@@ -13,11 +13,17 @@
 #import "Masonry.h"
 #import <Parse/Parse.h>
 
-@interface InventoryViewController ()
+#define ParseClassWareHouse @"warehouse"
+#define ParseClassWareHouseProduct @"product_name"
+#define ParseClassWareHouseAmount @"amount"
+#define ParseClassWareHouseFresh @"p_fresh_time"
+
+@interface InventoryViewController () <SJDataTableViewDelegate>
 @property (nonatomic, strong) SJDataTableView *table;
 @property (nonatomic, strong) NSArray *headerAarray;
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
+@property (strong, nonatomic) NSArray *dataResult;
 @end
 
 @implementation InventoryViewController
@@ -40,6 +46,7 @@
 	//CGRect rect = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
 	self.table =[[SJDataTableView alloc] initWithFrame:self.view.bounds
 														headerSize:CGSizeMake(100, 70)];
+	self.table.cjDelegate = self;
 	[self.table setHeaderArray:self.headerAarray dataArray:dataArray];
 	[self.view addSubview:self.table];
 	[self.table mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -74,42 +81,63 @@
 	[self.table reloadDataTable];
 }
 
-#define ParseClassWareHouse @"warehouse"
-#define ParseClassWareHouseProduct @"product_name"
-#define ParseClassWareHouseAmount @"amount"
-#define ParseClassWareHouseFresh @"p_fresh_time"
+#pragma mark -
+- (void)didTapDiscardButton:(UIButton *)sender
+{
+	NSLog(@"%s %ld", __PRETTY_FUNCTION__, sender.tag);
+	PFObject *obj = self.dataResult[sender.tag];
+	obj[ParseClassWareHouseAmount] = @0;
+
+	[self setTableWithPFObjectsArr:self.dataResult];
+}
+
+#pragma mark -
+
+
 - (void)queryWareHouse
 {
 	PFQuery *query = [[PFQuery alloc] initWithClassName:ParseClassWareHouse];
 	query.cachePolicy = kPFCachePolicyCacheThenNetwork;
 	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
 		if (!error) {
-			NSMutableArray *dataArray = [[NSMutableArray alloc] initWithCapacity:objects.count];
-			for (NSInteger i = 0 ; i< objects.count; i++) {
-				PFObject *obj = objects[i];
-				NSMutableDictionary *dataDict = [NSMutableDictionary new];
-				NSString *productName = obj[ParseClassWareHouseProduct];
-				NSString *amount = [NSString stringWithFormat:@"%@", obj[ParseClassWareHouseAmount]];
-
-				NSDate *freshDate = obj[ParseClassWareHouseFresh];
-				NSString *strDate = @"";
-				if (freshDate) {
-					strDate = [self.dateFormatter stringFromDate:freshDate];
-				}
-
-				[dataDict setObject:productName forKey:[self.headerAarray objectAtIndex:0]];
-				[dataDict setObject:amount forKey:[self.headerAarray objectAtIndex:1]];
-				[dataDict setObject:strDate forKey:[self.headerAarray objectAtIndex:2]];
-				[dataDict setObject:@"" forKey:[self.headerAarray objectAtIndex:3]];
-				[dataArray addObject:dataDict];
-			}
-			[self.table setHeaderArray:self.headerAarray dataArray:dataArray];
-			[self.table reloadDataTable];
-//			for (PFObject *obj in objects) {
-//				NSLog(@"%s %@", __PRETTY_FUNCTION__, obj[ParseClassWareHouseProduct]);
-//			}
+			self.dataResult = objects;
+			[self setTableWithPFObjectsArr:self.dataResult];
 		}
 	}];
+}
+
+- (void)setTableWithPFObjectsArr:(NSArray *)objects
+{
+	NSMutableArray *dataArray = [[NSMutableArray alloc] initWithCapacity:objects.count];
+	for (NSInteger i = 0 ; i< objects.count; i++) {
+		PFObject *obj = objects[i];
+		NSMutableDictionary *dataDict = [NSMutableDictionary new];
+		NSString *productName = obj[ParseClassWareHouseProduct];
+		NSString *amount = [NSString stringWithFormat:@"%@", obj[ParseClassWareHouseAmount]];
+
+		NSDate *freshDate = obj[ParseClassWareHouseFresh];
+		NSString *strDate = @"";
+		if (freshDate) {
+			strDate = [self.dateFormatter stringFromDate:freshDate];
+		}
+
+		[dataDict setObject:productName forKey:[self.headerAarray objectAtIndex:0]];
+		[dataDict setObject:amount forKey:[self.headerAarray objectAtIndex:1]];
+		[dataDict setObject:strDate forKey:[self.headerAarray objectAtIndex:2]];
+		[dataDict setObject:@"" forKey:[self.headerAarray objectAtIndex:3]];
+		[dataArray addObject:dataDict];
+	}
+
+	[self.table setHeaderArray:self.headerAarray dataArray:dataArray];
+	[self.table reloadDataTable];
+}
+
+- (NSArray *)dataResult
+{
+	if (!_dataResult) {
+		_dataResult = [[NSArray alloc] init];
+	}
+	return _dataResult;
 }
 
 - (NSDateFormatter *)dateFormatter

@@ -13,6 +13,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.contentView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.8];
+    self.backgroundColor = [UIColor clearColor];
 }
 
 - (void)bindModel:(NSArray*)array

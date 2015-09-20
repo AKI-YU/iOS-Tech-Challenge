@@ -7,7 +7,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PurchaseViewController">
             <connections>
-                <outlet property="addView" destination="Ar7-zY-Leo" id="hCk-5E-fcW"/>
                 <outlet property="tableView" destination="vTB-g9-yYl" id="cBb-X0-NrE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,23 +19,6 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Order.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="0N2-Vr-O6R">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGr-oj-IRb">
-                    <rect key="frame" x="514" y="514" width="56" height="56"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ar7-zY-Leo">
-                            <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
-                        </imageView>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstItem="Ar7-zY-Leo" firstAttribute="leading" secondItem="eGr-oj-IRb" secondAttribute="leading" id="3wq-QX-EmU"/>
-                        <constraint firstAttribute="trailing" secondItem="Ar7-zY-Leo" secondAttribute="trailing" id="66T-M2-b45"/>
-                        <constraint firstAttribute="bottom" secondItem="Ar7-zY-Leo" secondAttribute="bottom" id="6NF-LN-wFn"/>
-                        <constraint firstAttribute="height" constant="56" id="JLj-Zb-eL4"/>
-                        <constraint firstAttribute="width" constant="56" id="b8q-hL-2WZ"/>
-                        <constraint firstItem="Ar7-zY-Leo" firstAttribute="top" secondItem="eGr-oj-IRb" secondAttribute="top" id="trw-NN-i49"/>
-                    </constraints>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="klV-Dy-57w">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                     <subviews>
@@ -81,6 +63,31 @@
                     </constraints>
                     <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGr-oj-IRb">
+                    <rect key="frame" x="514" y="514" width="56" height="56"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLE-2C-rzg">
+                            <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
+                            <color key="backgroundColor" red="1" green="0.41568627450000001" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                            <state key="normal" title="+">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="add:" destination="-1" eventType="touchUpInside" id="uwP-Ko-Yjd"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="JLj-Zb-eL4"/>
+                        <constraint firstItem="nLE-2C-rzg" firstAttribute="top" secondItem="eGr-oj-IRb" secondAttribute="top" id="MZn-gh-qY1"/>
+                        <constraint firstAttribute="trailing" secondItem="nLE-2C-rzg" secondAttribute="trailing" id="SFT-2J-w6a"/>
+                        <constraint firstAttribute="width" constant="56" id="b8q-hL-2WZ"/>
+                        <constraint firstAttribute="bottom" secondItem="nLE-2C-rzg" secondAttribute="bottom" id="n05-Q9-mv9"/>
+                        <constraint firstItem="nLE-2C-rzg" firstAttribute="leading" secondItem="eGr-oj-IRb" secondAttribute="leading" id="wzo-0R-SXP"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.01176470588" green="0.18823529410000001" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -109,7 +116,6 @@
     </objects>
     <resources>
         <image name="Order.jpg" width="1024" height="575"/>
-        <image name="add.png" width="42" height="42"/>
         <image name="burger.png" width="19" height="17"/>
     </resources>
 </document>

@@ -193,7 +193,11 @@
         ++index;
         res = [NSString stringWithFormat:@"po_%@%03ld", purchaseDate, (long)index];
         isLarger = [res compare:maxId];
+        if (index > 50) {
+            return res;
+        }
     }
+    
     return res;
 }
 

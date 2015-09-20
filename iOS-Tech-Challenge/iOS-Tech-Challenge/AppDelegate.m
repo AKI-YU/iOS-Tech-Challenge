@@ -75,8 +75,6 @@
                                                          UIRemoteNotificationTypeSound)];
     }
 
-    
-    
     return YES;
 }
 

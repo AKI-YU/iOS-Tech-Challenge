@@ -28,6 +28,7 @@
     
     
     self.title = @"進貨管理";
+    self.naviItem.topItem.title = @"進貨管理";
     
     UITapGestureRecognizer* addTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(add:)];
     self.addView.userInteractionEnabled = YES;

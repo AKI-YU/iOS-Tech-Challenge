@@ -15,4 +15,5 @@
 @property IBOutlet UILabel* purchaseDateLabel;
 @property BOOL isNewPurchase;
 @property NSString* purchaseId;
+@property IBOutlet UINavigationBar* naviItem;
 @end

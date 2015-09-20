@@ -22,6 +22,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.naviItem.topItem.title = @"進貨單";
+    
     PFObject* ob = self.data.firstObject;
     
     NSDate* date = ob[@"arrive_date"];
@@ -43,10 +45,10 @@
                               isNested:NO];
     
 //    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:nil];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancel:)];
+    self.naviItem.topItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancel:)];
     
     if (self.isNewPurchase) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"新增" style:UIBarButtonItemStylePlain target:self action:nil];
+        self.naviItem.topItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"新增" style:UIBarButtonItemStylePlain target:self action:nil];
     }
 }
 

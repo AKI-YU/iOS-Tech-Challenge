@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface PurchaseViewController : UIViewController
-
+@property IBOutlet UINavigationBar* naviItem;
 @end

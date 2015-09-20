@@ -601,6 +601,7 @@
 				TargetAttributes = {
 					61704DD51BAD605A00617704 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 6T25FRDJW3;
 					};
 				};
 			};
@@ -846,6 +847,7 @@
 			baseConfigurationReference = D2D0FB9F3FA752C7E234A5E8 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "iOS-Tech-Challenge/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -859,6 +861,7 @@
 			baseConfigurationReference = B603D15988D12116523EF210 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "iOS-Tech-Challenge/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

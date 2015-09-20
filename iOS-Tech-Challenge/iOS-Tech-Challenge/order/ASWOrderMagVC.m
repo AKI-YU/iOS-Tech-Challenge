@@ -167,5 +167,10 @@
     [self.navigationController pushViewController:pushVC animated:YES];
 }
 
+-(IBAction)btnMenu:(id)sender{
+    [self showMenu];
+    
+}
+
 @end
 

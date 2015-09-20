@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ASWOrderMagVC : UIViewController
+#import "ViewControllerBase.h"
+@interface ASWOrderMagVC : ViewControllerBase
 
 @end

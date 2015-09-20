@@ -45,10 +45,21 @@
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRe-3z-nXQ">
+                            <rect key="frame" x="491" y="21" width="96" height="30"/>
+                            <state key="normal" title="上傳"/>
+                            <connections>
+                                <action selector="totalUpload:" destination="-1" eventType="touchUpInside" id="2Lk-pL-Itc"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.01176470588" green="0.18823529410000001" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="JRe-3z-nXQ" secondAttribute="trailing" constant="13" id="0aU-cM-Vv5"/>
+                        <constraint firstAttribute="bottom" secondItem="JRe-3z-nXQ" secondAttribute="bottom" constant="13" id="DEA-ne-0TG"/>
+                        <constraint firstItem="JRe-3z-nXQ" firstAttribute="top" secondItem="vAQ-UQ-pDc" secondAttribute="top" constant="21" id="FYl-Te-S88"/>
                         <constraint firstItem="1yB-Dj-yfi" firstAttribute="top" secondItem="vAQ-UQ-pDc" secondAttribute="top" constant="1" id="OiI-rS-ak0"/>
+                        <constraint firstItem="JRe-3z-nXQ" firstAttribute="leading" secondItem="bOk-Ox-yFj" secondAttribute="trailing" constant="135" id="TGb-rC-tNW"/>
                         <constraint firstAttribute="height" constant="64" id="UeN-tG-LcW"/>
                         <constraint firstItem="1yB-Dj-yfi" firstAttribute="leading" secondItem="vAQ-UQ-pDc" secondAttribute="leading" id="Zvh-5P-uFs"/>
                         <constraint firstItem="bOk-Ox-yFj" firstAttribute="top" secondItem="vAQ-UQ-pDc" secondAttribute="top" constant="12" id="iAZ-fz-ZhQ"/>
@@ -79,7 +90,7 @@
                 <constraint firstItem="aVP-7z-ABB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jmi-Th-mDf"/>
                 <constraint firstItem="WHK-wM-EbA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="qWf-Pi-pJA"/>
             </constraints>
-            <point key="canvasLocation" x="-271" y="259"/>
+            <point key="canvasLocation" x="-430" y="259"/>
         </view>
     </objects>
     <resources>

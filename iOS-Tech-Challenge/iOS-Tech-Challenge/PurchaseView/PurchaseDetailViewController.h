@@ -11,6 +11,9 @@
 #import "ViewControllerBase.h"
 #import <KVOMutableArray.h>
 @interface PurchaseDetailViewController : ViewControllerBase
+{
+    IBOutlet UIButton *btnAdd;
+}
 @property (nonatomic) KVOMutableArray* data;
 @property (nonatomic) IBOutlet UITableView* tableView;
 @property IBOutlet UILabel* purchaseIdLabel;

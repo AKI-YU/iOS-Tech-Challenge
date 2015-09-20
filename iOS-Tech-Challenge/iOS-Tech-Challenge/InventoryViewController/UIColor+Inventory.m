@@ -18,6 +18,8 @@
 + (UIColor *)colorDataText { return [UIColor whiteColor]; }
 + (UIColor *)colorDataBg { return [UIColor colorWithHex:0x111111 alpha:0.3]; }
 
++ (UIColor *)colorFirstColumnBg { return [UIColor colorWithHex:0xFFAC91 alpha:0.3]; }
+
 + (UIColor *)colorWithHex:(int)hex
 {
 	return [UIColor colorWithHex:hex alpha:1.0f];

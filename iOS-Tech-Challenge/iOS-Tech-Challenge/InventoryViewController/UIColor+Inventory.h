@@ -17,6 +17,9 @@
 
 + (UIColor *)colorDataBg;
 + (UIColor *)colorDataText;
+
++ (UIColor *)colorFirstColumnBg;
+
 //
 + (UIColor *)colorWithHex:(int)hex;
 + (UIColor *)colorWithHex:(int)he3x alpha:(CGFloat)alpha;

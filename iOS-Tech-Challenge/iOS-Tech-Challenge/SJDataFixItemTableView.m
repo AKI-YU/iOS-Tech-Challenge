@@ -65,7 +65,7 @@
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
     }
     [cell.textLabel setText:[[self.items objectAtIndex:indexPath.row] objectForKey:_label.text]];
-    [cell.textLabel setAdjustsFontSizeToFitWidth:YES];
+    //[cell.textLabel setAdjustsFontSizeToFitWidth:YES];
 	cell.textLabel.backgroundColor = [UIColor clearColor];
     
     [cell.textLabel setTextAlignment:NSTextAlignmentCenter];

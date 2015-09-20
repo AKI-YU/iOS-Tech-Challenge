@@ -30,7 +30,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-	self.headerAarray = @[@"品項", @"現有數量", @"最近保存期限", @"單位"];
+	self.headerAarray = @[@"品項", @"現有數量", @"最近保存期限", @"功能"];
 	NSMutableArray *dataArray = [NSMutableArray new];
 	for (int i = 0 ; i< 20; i++) {
 		NSMutableDictionary *dataDict = [NSMutableDictionary new];

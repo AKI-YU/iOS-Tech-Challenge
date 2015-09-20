@@ -48,7 +48,7 @@
     self.naviItem.topItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancel:)];
     
     if (self.isNewPurchase) {
-        self.naviItem.topItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"新增" style:UIBarButtonItemStylePlain target:self action:nil];
+        self.naviItem.topItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"新增" style:UIBarButtonItemStylePlain target:self action:@selector(add:)];
     }
 }
 
@@ -60,6 +60,30 @@
 - (IBAction)cancel:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)add:(id)sender
+{
+    [self showHud];
+    BOOL isSuccess = NO;
+    
+    NSMutableArray* toBeAdded = [NSMutableArray new];
+    for (PFObject* ob in self.data) {
+        
+        NSNumber* checked = ob[@"checked"];
+        if (checked.integerValue == 0 || checked.integerValue == 1) {
+            [toBeAdded addObject:checked];
+            isSuccess = YES;
+        }
+    }
+    
+    if (toBeAdded.count <= 0) {
+        [self alert:@"提示" msg:@"請檢核項目"];
+    }
+    if (isSuccess) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    [self hideHud];
 }
 
 /*

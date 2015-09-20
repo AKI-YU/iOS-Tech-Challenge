@@ -41,9 +41,11 @@
     [query orderByDescending:@"arrive_date"];
     [query addAscendingOrder:@"item_index"];
     
+    [self showHud];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         
         @strongify(self);
+        [self hideHud];
         KVOMutableArray* data = [self mergeSameOrderId:objects];
         self.data = data;
         UINib* nib = [UINib nibWithNibName:@"PurchaseTableViewCell" bundle:nil];
@@ -87,6 +89,7 @@
 }
 - (IBAction)add:(id)sender
 {
+    [self showHud];
     NSCalendar *cal = [NSCalendar currentCalendar];
     NSDateComponents *components = [cal components:(NSCalendarUnitEra | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:[NSDate date]];
     NSDate *today = [cal dateFromComponents:components];
@@ -133,8 +136,10 @@
            KVOMutableArray* expectedOrder = [KVOMutableArray new];
            for (PFObject* order in todayOrder) {
                for (PFObject* purchase in todayPurchase) {
-                   if ([order[@"order_id"] isEqualToNumber:purchase[@"order_id"]]
-                       && [order[@"name"] isEqualToString:purchase[@"name"]]) {
+                   if ([order[@"order_id"] isEqualToNumber:purchase[@"order_id"]] // same order
+                       && [order[@"name"] isEqualToString:purchase[@"name"]] // same item
+                       && ((NSNumber*)purchase[@"checked"]).integerValue == 1 // valid purchase
+                       ) {
                        
                        NSInteger orderAmount = [order[@"amount"] integerValue];
                        NSInteger purchaseAmount = [purchase[@"amount"] integerValue];
@@ -155,6 +160,7 @@
            viewController.purchaseId = purchaseId;
            
            viewController.isNewPurchase = YES;
+           [self hideHud];
             [self.navigationController pushViewController:viewController animated:YES];
            
        }];

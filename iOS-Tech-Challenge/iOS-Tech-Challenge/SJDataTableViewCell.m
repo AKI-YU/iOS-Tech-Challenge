@@ -48,8 +48,20 @@
         [bgView addSubview:headLabel];
         [labelArray addObject:headLabel];
         [bgArray addObject:bgView];
-        
     }
+
+	[self.discardBtn setTitle:@"報廢" forState:UIControlStateNormal];
+	[self addSubview:self.discardBtn];
+}
+
+- (UIButton *)discardBtn
+{
+	if (!_discardBtn) {
+		_discardBtn = [[UIButton alloc] initWithFrame:CGRectMake(([keyArray count]-2)*itemSize.width, 0, itemSize.width-5, itemSize.height-5)];
+		_discardBtn.backgroundColor = [UIColor lightGrayColor];
+		[_discardBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+	}
+	return _discardBtn;
 }
 
 -(void)setDataDict:(NSDictionary *)dataDict

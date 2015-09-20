@@ -10,7 +10,7 @@
 
 @interface SJDataTableViewCell : UITableViewCell
 @property (nonatomic,strong) NSDictionary * dataDict;
-
+@property (nonatomic,strong) UIButton *discardBtn;
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier itemSize:(CGSize)size headerArray:(NSArray*)headerArray;
 
 @end

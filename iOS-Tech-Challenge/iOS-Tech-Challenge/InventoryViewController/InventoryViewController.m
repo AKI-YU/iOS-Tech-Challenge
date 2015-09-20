@@ -100,7 +100,7 @@
 				[dataDict setObject:productName forKey:[self.headerAarray objectAtIndex:0]];
 				[dataDict setObject:amount forKey:[self.headerAarray objectAtIndex:1]];
 				[dataDict setObject:strDate forKey:[self.headerAarray objectAtIndex:2]];
-				[dataDict setObject:[NSString stringWithFormat:@"value3_%ld",i] forKey:[self.headerAarray objectAtIndex:3]];
+				[dataDict setObject:@"" forKey:[self.headerAarray objectAtIndex:3]];
 				[dataArray addObject:dataDict];
 			}
 			[self.table setHeaderArray:self.headerAarray dataArray:dataArray];

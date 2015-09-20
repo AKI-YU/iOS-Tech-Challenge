@@ -89,7 +89,13 @@
     }
 }
 
-#pragma mark
+#pragma mark -
+- (void)didTapDiscardBtn:(UIButton *)sender
+{
+	NSLog(@"%s %ld", __PRETTY_FUNCTION__, sender.tag);
+}
+
+#pragma mark -
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -110,7 +116,10 @@
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
     }
     cell.dataDict=[_dataArray objectAtIndex:indexPath.row];
-    
+	cell.discardBtn.tag = indexPath.row;
+	[cell.discardBtn addTarget:self
+						action:@selector(didTapDiscardBtn:)
+			  forControlEvents:UIControlEventTouchUpInside];
     return cell;
 }
 

@@ -21,16 +21,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     
-    self.window=[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    ViewController *viewC = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    
-    nav = [[mNav alloc] initWithRootViewController:viewC];
-    
-    [self.window setRootViewController:nav];
-    
-    
-    [self.window makeKeyAndVisible];
+//    self.window=[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    
+//    ViewController *viewC = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+//    
+//    nav = [[mNav alloc] initWithRootViewController:viewC];
+//    
+//    [self.window setRootViewController:nav];
+//    
+//    
+//    [self.window makeKeyAndVisible];
 
     
     [Parse setApplicationId:@"J5WZOPN3ntsHOZqeuU6Mx5ciAGgsYNoIAPBhfCmT"
@@ -75,8 +75,6 @@
                                                          UIRemoteNotificationTypeSound)];
     }
 
-    
-    
     return YES;
 }
 

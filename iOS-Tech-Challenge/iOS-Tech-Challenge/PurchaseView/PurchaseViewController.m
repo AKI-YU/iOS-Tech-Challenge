@@ -26,6 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    
     self.title = @"進貨管理";
     
     UITapGestureRecognizer* addTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(add:)];

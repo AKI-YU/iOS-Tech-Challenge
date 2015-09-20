@@ -7,15 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "KRKNN.h"
 
-#import "QntView.h"
 
+@interface ViewController ()
 
-@interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
-{
-    UITableView *leftTableView;
-    NSArray *tableArr;
-}
 @end
 
 @implementation ViewController
@@ -24,9 +20,6 @@
     
     if(self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])
     {
-        self.backgroundImage = [UIImage imageNamed:@"1.jpg"];
-        self.leftWidth = 250;
-        tableArr = [[NSArray alloc] initWithObjects:@"管理",@"進貨訂貨",@"庫存盤點",@"其他", nil];
         
     }
     return self;
@@ -37,67 +30,61 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.navigationController.navigationBar setHidden:YES];
+   
     
-    //add left sidebar
-    leftTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, self.leftContentView.frame.size.width, self.leftContentView.frame.size.height-20)];
-    leftTableView.backgroundColor = [UIColor clearColor];
-    leftTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    leftTableView.dataSource = self;
-    leftTableView.delegate = self;
-    [self.leftContentView addSubview:leftTableView];
-    
-    QntView *view = [[QntView alloc] initWithFrame:CGRectMake(150, 150, 150, 60)];
-    UIButton *btnAdd = (UIButton *)[[view viewWithTag:99] viewWithTag:3];
-    [btnAdd addTarget:self action:@selector(btnAdd:) forControlEvents:UIControlEventTouchUpInside];
-    
-    
-    UIButton *btnMinus = (UIButton *)[[view viewWithTag:99] viewWithTag:1];
-    [btnMinus addTarget:self action:@selector(btnMinus:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:view];
-    
-    
-    [view setColor:[UIColor redColor]];
-}
 
--(void)btnAdd:(id)sender{
-    [((QntView *)[[sender superview] superview])Add];
-}
-
--(void)btnMinus:(id)sender{
-    [((QntView *)[[sender superview] superview])Minus];
+  
 }
 
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)onBurger:(id)sender {
+    [self showMenu];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
-}
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+-(void)setFreshDate{
     
-    if (cell == nil){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-        cell.backgroundColor = [UIColor clearColor];
-        cell.textLabel.textColor = [UIColor whiteColor];
-    }
+    KRKNN *_knn = [KRKNN sharedInstance];
     
-    cell.textLabel.text = [tableArr objectAtIndex:indexPath.row];
+    // Features are wording appeared times on a paper as below like :
+    // Apple, OS, Mobile, Taiwan, Japan, Developer
+    [_knn addFeatures:@[@20, @9, @1, @3, @6, @2]
+                group:@"Apple Fans"
+           identifier:@"Smith"];
     
-    return cell;
+    [_knn addFeatures:@[@52, @32, @18, @7, @0, @1]
+                group:@"Apple Fans"
+           identifier:@"John"];
+    
+    [_knn addFeatures:@[@2, @20, @15, @5, @9, @16]
+                group:@"Linux Fans"
+           identifier:@"James"];
+    
+    [_knn addFeatures:@[@7, @11, @2, @12, @1, @0]
+                group:@"Linux Fans"
+           identifier:@"Terry"];
+    
+    [_knn addFeatures:@[@20, @8, @3, @21, @8, @25]
+                group:@"Android Fans"
+           identifier:@"Sam"];
+    
+    [_knn addFeatures:@[@2, @30, @8, @6, @33, @29]
+                group:@"Android Fans"
+           identifier:@"Amy"];
+    
+    [_knn classifyFeatures:@[@20, @1, @10, @2, @12, @3]
+                identifier:@"Bob"
+                 kNeighbor:3
+                completion:^(BOOL success, NSString *ownGroup, NSInteger groupCounts, NSDictionary *allData) {
+                    if( success )
+                    {
+                        NSLog(@"ownGroup : %@", ownGroup);
+                       
+                        
+                    }
+                }];
+    
 }
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self closeSideView:YES];
-}
-
 
 
 @end

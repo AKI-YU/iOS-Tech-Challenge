@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RNBlurredSideViewController.h"
+#import "ViewControllerBase.h"
 
-@interface ViewController : RNBlurredSideViewController
+
+@interface ViewController : ViewControllerBase
+{
+    
+}
+
 
 
 

@@ -13,7 +13,7 @@
 #import <Parse/Parse.h>
 
 @interface InventoryViewController ()
-
+@property (nonatomic, strong) SJDataTableView *table;
 @end
 
 @implementation InventoryViewController
@@ -33,19 +33,26 @@
 		[dataArray addObject:dataDict];
 	}
 
-	CGRect rect = CGRectMake(100, 0, self.view.frame.size.width, self.view.frame.size.height);
-	SJDataTableView *table =[[SJDataTableView alloc] initWithFrame:rect
-														 headerSize:CGSizeMake(100, 70)];
-	[table setHeaderArray:headerAarray dataArray:dataArray];
-	[self.view addSubview:table];
-	[table mas_makeConstraints:^(MASConstraintMaker *make) {
+	//CGRect rect = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+	self.table =[[SJDataTableView alloc] initWithFrame:self.view.bounds
+														headerSize:CGSizeMake(100, 70)];
+	[self.table setHeaderArray:headerAarray dataArray:dataArray];
+	[self.view addSubview:self.table];
+	[self.table mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.leading.equalTo(self.view.mas_leading).offset(100);
 		make.trailing.equalTo(@0);
-		make.top.equalTo(@0);
+		make.top.equalTo(@30);
 		make.bottom.equalTo(@0);
 	}];
 
 	self.view.backgroundColor = [UIColor whiteColor];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+
+	[self.table reloadDataTable];
 }
 
 #define ParseClassWareHouse @"warehouse"

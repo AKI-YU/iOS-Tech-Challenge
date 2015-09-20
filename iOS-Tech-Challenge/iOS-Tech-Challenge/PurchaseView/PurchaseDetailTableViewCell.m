@@ -42,6 +42,8 @@
         return;
     }
     PFObject* model = theModel;
+    
+    self.itemNameLabel.text = model[@"name"];
     NSDate* date = model[@"p_fresh_time"];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"YYYY/MM/dd"];

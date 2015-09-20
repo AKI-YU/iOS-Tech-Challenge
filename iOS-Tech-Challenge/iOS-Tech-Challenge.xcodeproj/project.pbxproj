@@ -15,7 +15,6 @@
 		6114968F1BADA47500E4AF04 /* mNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 6114968E1BADA47500E4AF04 /* mNav.m */; settings = {ASSET_TAGS = (); }; };
 		611496A71BADA84A00E4AF04 /* KRKNN.m in Sources */ = {isa = PBXBuildFile; fileRef = 611496A61BADA84A00E4AF04 /* KRKNN.m */; settings = {ASSET_TAGS = (); }; };
 		611496AB1BADA92400E4AF04 /* ParseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 611496AA1BADA92400E4AF04 /* ParseAPI.m */; settings = {ASSET_TAGS = (); }; };
-		611496B71BADB0BF00E4AF04 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 611496AF1BADB0BF00E4AF04 /* gear.png */; settings = {ASSET_TAGS = (); }; };
 		611496B81BADB0BF00E4AF04 /* gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 611496B01BADB0BF00E4AF04 /* gear@2x.png */; settings = {ASSET_TAGS = (); }; };
 		611496B91BADB0BF00E4AF04 /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = 611496B11BADB0BF00E4AF04 /* globe.png */; settings = {ASSET_TAGS = (); }; };
 		611496BA1BADB0BF00E4AF04 /* globe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 611496B21BADB0BF00E4AF04 /* globe@2x.png */; settings = {ASSET_TAGS = (); }; };
@@ -27,6 +26,8 @@
 		611496C41BADB1D600E4AF04 /* burger.png in Resources */ = {isa = PBXBuildFile; fileRef = 611496C21BADB1D600E4AF04 /* burger.png */; settings = {ASSET_TAGS = (); }; };
 		611496C51BADB1D600E4AF04 /* burger@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 611496C31BADB1D600E4AF04 /* burger@2x.png */; settings = {ASSET_TAGS = (); }; };
 		611496C91BADB28F00E4AF04 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 611496C81BADB28F00E4AF04 /* MBProgressHUD.m */; settings = {ASSET_TAGS = (); }; };
+		611496CE1BAE479A00E4AF04 /* SellProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 611496CC1BAE479A00E4AF04 /* SellProductViewController.m */; settings = {ASSET_TAGS = (); }; };
+		611496CF1BAE479A00E4AF04 /* SellProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 611496CD1BAE479A00E4AF04 /* SellProductViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		61704DDB1BAD605A00617704 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704DDA1BAD605A00617704 /* main.m */; };
 		61704DDE1BAD605A00617704 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704DDD1BAD605A00617704 /* AppDelegate.m */; };
 		61704DE11BAD605A00617704 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61704DE01BAD605A00617704 /* ViewController.m */; };
@@ -87,6 +88,9 @@
 		611496C31BADB1D600E4AF04 /* burger@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "burger@2x.png"; sourceTree = "<group>"; };
 		611496C71BADB28F00E4AF04 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		611496C81BADB28F00E4AF04 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		611496CB1BAE479A00E4AF04 /* SellProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellProductViewController.h; sourceTree = "<group>"; };
+		611496CC1BAE479A00E4AF04 /* SellProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellProductViewController.m; sourceTree = "<group>"; };
+		611496CD1BAE479A00E4AF04 /* SellProductViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SellProductViewController.xib; sourceTree = "<group>"; };
 		61704DD61BAD605A00617704 /* iOS-Tech-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Tech-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61704DDA1BAD605A00617704 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		61704DDC1BAD605A00617704 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -203,6 +207,16 @@
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
+		611496CA1BAE477F00E4AF04 /* Sell */ = {
+			isa = PBXGroup;
+			children = (
+				611496CB1BAE479A00E4AF04 /* SellProductViewController.h */,
+				611496CC1BAE479A00E4AF04 /* SellProductViewController.m */,
+				611496CD1BAE479A00E4AF04 /* SellProductViewController.xib */,
+			);
+			path = Sell;
+			sourceTree = "<group>";
+		};
 		61704DCD1BAD605A00617704 = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +240,7 @@
 		61704DD81BAD605A00617704 /* iOS-Tech-Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				611496CA1BAE477F00E4AF04 /* Sell */,
 				611496C61BADB28F00E4AF04 /* MBProgressHUD */,
 				611496A81BADA92400E4AF04 /* Parse */,
 				611496A31BADA84A00E4AF04 /* ML */,
@@ -436,6 +451,7 @@
 				611496BC1BADB0BF00E4AF04 /* profile@2x.png in Resources */,
 				61704E381BAD619400617704 /* logo.png in Resources */,
 				611496BB1BADB0BF00E4AF04 /* profile.png in Resources */,
+				611496CF1BAE479A00E4AF04 /* SellProductViewController.xib in Resources */,
 				611496B91BADB0BF00E4AF04 /* globe.png in Resources */,
 				6114968C1BAD9D5500E4AF04 /* ViewController.xib in Resources */,
 				61704E321BAD619400617704 /* 8.jpg in Resources */,
@@ -503,6 +519,7 @@
 				F99FC9C21BAD7B7500A34994 /* PurchaseDetailViewController.m in Sources */,
 				F969D9A71BAD903A00F8A532 /* PurchaseTableViewCell.m in Sources */,
 				61704E481BAD75F500617704 /* UUBar.m in Sources */,
+				611496CE1BAE479A00E4AF04 /* SellProductViewController.m in Sources */,
 				61704E4C1BAD75F500617704 /* UUColor.m in Sources */,
 				DB076D3F1BADA32400E5AD6F /* SJDataTableView.m in Sources */,
 				61704E491BAD75F500617704 /* UUBarChart.m in Sources */,

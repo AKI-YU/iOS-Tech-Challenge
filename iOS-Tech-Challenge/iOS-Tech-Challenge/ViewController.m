@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "ParseAPI.h"
 #import "QntView.h"
-
+#import "PurchaseViewController.h"
 #import "InventoryViewController.h"
 
 
@@ -54,7 +54,7 @@
                         [UIImage imageNamed:@"star"],
                         ];
     NSArray *titles = @[
-                        @"1",
+                        @"進貨管理",
                         @"globe",
                         @"profile",
                         @"star",
@@ -77,9 +77,14 @@
 
 - (void)sidebar:(RNFrostedSidebar *)sidebar didTapItemAtIndex:(NSUInteger)index {
     NSLog(@"Tapped item at index %ld",index);
-    if (index == 3) {
-        [sidebar dismiss];
+    if (index == 0) {
+        PurchaseViewController *purchase = [[PurchaseViewController alloc] initWithNibName:@"PurchaseViewController" bundle:nil];
+        [self.navigationController pushViewController:purchase animated:YES];
+        
+    }else if (index == 3) {
     }
+    
+    [sidebar dismiss];
 }
 
 - (void)sidebar:(RNFrostedSidebar *)sidebar didEnable:(BOOL)itemEnabled itemAtIndex:(NSUInteger)index {

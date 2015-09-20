@@ -64,6 +64,8 @@
 		61F84DD31BAE503100096733 /* Order.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61F84DC31BAE503100096733 /* Order.jpg */; settings = {ASSET_TAGS = (); }; };
 		61F84DD41BAE503100096733 /* Order2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61F84DC41BAE503100096733 /* Order2.jpg */; settings = {ASSET_TAGS = (); }; };
 		61F84DD51BAE503100096733 /* Order3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61F84DC51BAE503100096733 /* Order3.jpg */; settings = {ASSET_TAGS = (); }; };
+		61F84DD81BAE61FC00096733 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61F84DD71BAE61FC00096733 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		61F84E1A1BAE665E00096733 /* ViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F84E191BAE665E00096733 /* ViewControllerBase.m */; settings = {ASSET_TAGS = (); }; };
 		97F9EA688F924E00E284840B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 673C5616CED4C1F9B61E0753 /* libPods.a */; };
 		DB076D3E1BADA32400E5AD6F /* SJDataFixItemTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB076D391BADA32400E5AD6F /* SJDataFixItemTableView.m */; settings = {ASSET_TAGS = (); }; };
 		DB076D3F1BADA32400E5AD6F /* SJDataTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB076D3B1BADA32400E5AD6F /* SJDataTableView.m */; settings = {ASSET_TAGS = (); }; };
@@ -164,6 +166,9 @@
 		61F84DC31BAE503100096733 /* Order.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Order.jpg; sourceTree = "<group>"; };
 		61F84DC41BAE503100096733 /* Order2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Order2.jpg; sourceTree = "<group>"; };
 		61F84DC51BAE503100096733 /* Order3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Order3.jpg; sourceTree = "<group>"; };
+		61F84DD71BAE61FC00096733 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		61F84E181BAE665E00096733 /* ViewControllerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerBase.h; sourceTree = "<group>"; };
+		61F84E191BAE665E00096733 /* ViewControllerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerBase.m; sourceTree = "<group>"; };
 		673C5616CED4C1F9B61E0753 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B603D15988D12116523EF210 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D2D0FB9F3FA752C7E234A5E8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -303,6 +308,9 @@
 				61704DD91BAD605A00617704 /* Supporting Files */,
 				6114968D1BADA47500E4AF04 /* mNav.h */,
 				6114968E1BADA47500E4AF04 /* mNav.m */,
+				61F84DD71BAE61FC00096733 /* Main.storyboard */,
+				61F84E181BAE665E00096733 /* ViewControllerBase.h */,
+				61F84E191BAE665E00096733 /* ViewControllerBase.m */,
 			);
 			path = "iOS-Tech-Challenge";
 			sourceTree = "<group>";
@@ -522,6 +530,7 @@
 				611496BC1BADB0BF00E4AF04 /* profile@2x.png in Resources */,
 				61704E381BAD619400617704 /* logo.png in Resources */,
 				611496BB1BADB0BF00E4AF04 /* profile.png in Resources */,
+				61F84DD81BAE61FC00096733 /* Main.storyboard in Resources */,
 				611496CF1BAE479A00E4AF04 /* SellProductViewController.xib in Resources */,
 				611496B91BADB0BF00E4AF04 /* globe.png in Resources */,
 				6114968C1BAD9D5500E4AF04 /* ViewController.xib in Resources */,
@@ -611,6 +620,7 @@
 				DB076D3E1BADA32400E5AD6F /* SJDataFixItemTableView.m in Sources */,
 				61F84DCC1BAE503100096733 /* ASWOrderMagCell.m in Sources */,
 				61F84DC81BAE503100096733 /* ASWOrderDialogInputViewController.m in Sources */,
+				61F84E1A1BAE665E00096733 /* ViewControllerBase.m in Sources */,
 				611496C91BADB28F00E4AF04 /* MBProgressHUD.m in Sources */,
 				61F84DCA1BAE503100096733 /* ASWOrderDraftSelectVC.m in Sources */,
 				6114968F1BADA47500E4AF04 /* mNav.m in Sources */,

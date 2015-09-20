@@ -167,6 +167,7 @@
         //获取最大最小位置
         CGFloat max = [childAry[0] floatValue];
         CGFloat min = [childAry[0] floatValue];
+
         NSInteger max_i = 0;
         NSInteger min_i = 0;
         

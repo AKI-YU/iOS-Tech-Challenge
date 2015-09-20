@@ -1,1 +1,6 @@
 pod 'Parse'
+
+pod 'ReactiveCocoa', '~> 2.0'
+pod 'Masonry'
+pod 'HFTableCollectionBindingHelper', '~> 0.8.0'
+

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  mNav.h
 //  iOS-Tech-Challenge
 //
 //  Created by AKI on 2015/9/19.
@@ -7,11 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RNFrostedSidebar.h"
 
-@interface ViewController : UIViewController<RNFrostedSidebarDelegate>
-
-
+@interface mNav : UINavigationController
 
 @end
-

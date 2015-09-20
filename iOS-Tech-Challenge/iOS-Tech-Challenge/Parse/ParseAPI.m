@@ -34,6 +34,26 @@
 #define P_FRESH_TIME @"p_fresh_time"
 
 
+
+//Parse Use Record  (使用記錄)
+
+#define FLOUR @"flour"
+#define MILK_A @"milk_a"
+#define MILK_B @"milk_b"
+#define OIL @"oil"
+#define SUGAR_A @"sugar_a"
+#define SUGAR_B @"sugar_b"
+#define TEA_A @"tea_a"
+#define TEA_B @"tea_b"
+#define BEE @"bee"
+#define CHEESE @"cheese"
+#define PRODUCT_ID @"product_id"
+#define DATE1 @"date"
+
+
+
+
+
 #define NO_DATA_LOG NSLog(@"Did Not Get Data");
 
 
@@ -190,6 +210,45 @@
             NO_DATA_LOG
             
     }];
+}
+
+
++(void)aws_uploadUsingRecord:(NSString*)product //產品名稱
+                      amount:(NSInteger)amount //當前產品數量
+                 andCallback:(void (^)(BOOL))callback{
+    
+    PFObject *newGroup = [PFObject objectWithClassName:USE];
+    newGroup[PRODUCT_ID] = product;
+    newGroup[DATE1] = [NSDate date];
+    
+
+    newGroup[AMOUNT] = [NSNumber numberWithInteger:amount];
+    
+    NSArray *ingredientsArray = [NSArray arrayWithObjects:FLOUR,MILK_A,MILK_B,OIL,SUGAR_A,SUGAR_B,TEA_A,TEA_B,BEE,CHEESE, nil];
+    
+    NSInteger randomIngredient_1 = arc4random() % ingredientsArray.count;
+    NSInteger randomIngredient_2 = arc4random() % ingredientsArray.count;
+    NSInteger randomComponent = arc4random() % 3;
+    
+    NSString *Ingredient_1 = ingredientsArray[randomIngredient_1];
+    NSString *Ingredient_2 = ingredientsArray[randomIngredient_2];
+    
+    for (int i = 0 ; i < [ingredientsArray count]; i++) {
+        
+        if ([ingredientsArray[i] isEqual:Ingredient_1]) {
+            newGroup[Ingredient_1] = [NSNumber numberWithInteger:randomIngredient_1*randomComponent];
+        }else if ([ingredientsArray[i] isEqual:Ingredient_2]){
+            newGroup[Ingredient_2] = [NSNumber numberWithInteger:randomIngredient_2*randomComponent];
+        }else{
+            newGroup[ingredientsArray[i]] = [NSNumber numberWithInteger:0];
+        }
+    }
+    
+    [newGroup saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+     {
+         return callback(succeeded);
+     }];
+    
 }
 
 

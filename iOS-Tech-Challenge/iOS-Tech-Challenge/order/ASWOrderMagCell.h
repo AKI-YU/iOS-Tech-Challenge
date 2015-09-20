@@ -10,5 +10,5 @@
 
 @interface ASWOrderMagCell : UITableViewCell
 - (void) aswUpdateWithDictionary:(NSDictionary *)dictionary;
-
+- (void) aswUpdateWithArray:(NSMutableArray *)array;
 @end

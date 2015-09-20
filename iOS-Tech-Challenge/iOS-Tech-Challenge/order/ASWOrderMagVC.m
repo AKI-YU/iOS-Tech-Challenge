@@ -10,6 +10,7 @@
 #import "ASWOrderModel.h"
 #import "ASWOrderMagCell.h"
 #import "ASWOrderVC.h"
+#import "ParseAPI.h"
 
 @interface ASWOrderMagVC ()
 
@@ -34,6 +35,8 @@
 {
     [super viewDidLoad];
     
+    CGRect frame = self.navigationController.navigationBar.frame;
+    NSLog(@"Navlocation: %f %f, %f %f",frame.origin.x,frame.origin.y,frame.size.height, frame.size.width);
     
     // Do any additional setup after loading the view from its nib.
     self.title = @"訂單管理";
@@ -47,6 +50,8 @@
 - (void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    CGRect frame = self.navigationController.navigationBar.frame;
+    NSLog(@"Navlocation: %f %f, %f %f",frame.origin.x,frame.origin.y,frame.size.height, frame.size.width);
     [self aswReloadData];
 }
 
@@ -75,8 +80,34 @@
 /** 重新填label 和 table */
 - (void) aswReloadData
 {
-    [self.m_tableView reloadData];
+    [ParseAPI aws_OrderDetail:^(NSArray *array)
+    {
+        self.m_aryTableData = [self mergeSameOrderId:array];
+        [self.m_tableView reloadData];
+    }];
 }
+- (NSMutableArray *)mergeSameOrderId:(NSArray*)data
+{
+    NSMutableArray* res = [NSMutableArray new];
+    NSMutableDictionary* orderIdMap = [NSMutableDictionary new];
+    for (PFObject* obj in data) {
+        NSNumber* orderId = obj[@"order_id"];
+        if (!orderId) {
+            continue;
+        }
+        
+        if (!orderIdMap[orderId]) {
+            orderIdMap[orderId] = [NSMutableArray new];
+            [res addObject:orderIdMap[orderId]];
+        }
+        if (orderIdMap[orderId]) {
+            NSMutableArray* array = orderIdMap[orderId];
+            [array addObject:obj];
+        }
+    }
+    return res;
+}
+
 
 @end
 
@@ -91,39 +122,39 @@
 /** Cell Number */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    NSLog(@"%d",[self.m_aryTableData count]);
     return [self.m_aryTableData count];
 }
 
 /** Cell View */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     //建立Cell
-    ASWOrderMagCell *cell;
-    Class cellClass = [cell class];
-    NSString *strCellIdentifier = NSStringFromClass(cellClass);
-    cell = [self.m_tableView dequeueReusableCellWithIdentifier:strCellIdentifier];
+    NSString *strCellIdentifier = @"aa";
+    ASWOrderMagCell *cell = [self.m_tableView dequeueReusableCellWithIdentifier:strCellIdentifier];
     if (nil == cell)
     {
-        NSArray *aryNib = [[NSBundle mainBundle] loadNibNamed:strCellIdentifier
+        NSArray *aryNib = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([ASWOrderMagCell class])
                                                         owner:self
                                                       options:nil];
         for (UIView *view in aryNib)
         {
-            if ([view isKindOfClass:cellClass])
+            if ([view isKindOfClass:[ASWOrderMagCell class]])
             {
                 cell = (ASWOrderMagCell *)view;
                 break;
             }
         }
         
-        UINib *nibRegister = [UINib nibWithNibName:strCellIdentifier
+        UINib *nibRegister = [UINib nibWithNibName:NSStringFromClass([ASWOrderMagCell class])
                                             bundle:[NSBundle mainBundle]];
         [self.m_tableView registerNib:nibRegister forCellReuseIdentifier:strCellIdentifier];
     }
     
-    [cell aswUpdateWithDictionary:self.m_aryTableData[indexPath.row]];
+    [cell aswUpdateWithArray:self.m_aryTableData[indexPath.row]];
+
     return cell;
-    
 }
 
 @end

@@ -60,6 +60,7 @@
 		_discardBtn = [[UIButton alloc] initWithFrame:CGRectMake(([keyArray count]-2)*itemSize.width, 0, itemSize.width-5, itemSize.height-5)];
 		_discardBtn.backgroundColor = [UIColor lightGrayColor];
 		[_discardBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_discardBtn.titleLabel setTextAlignment:NSTextAlignmentCenter];
 	}
 	return _discardBtn;
 }

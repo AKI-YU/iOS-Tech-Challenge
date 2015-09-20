@@ -118,6 +118,7 @@
                                            headerArray:_headerArray];
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
     }
+	cell.discardBtn.hidden = NO;
     cell.dataDict=[_dataArray objectAtIndex:indexPath.row];
 	cell.discardBtn.tag = indexPath.row;
 	[cell.discardBtn addTarget:self

@@ -101,7 +101,11 @@
                 break;
         }
     }
-    
+
+	NSString *amountNow = dataDict[@"現有數量"];
+	if (amountNow && [amountNow isEqualToString:@"0"]) {
+		self.discardBtn.hidden = YES;
+	}
 }
 
 @end

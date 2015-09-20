@@ -47,6 +47,31 @@
     });
 }
 
+-(void)alert:(NSString *)title msg:(NSString *)msg{
+    
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:title
+                                  message:msg
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction
+                         actionWithTitle:@"確認"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                             [alert dismissViewControllerAnimated:YES completion:nil];
+                             
+                          
+                         }];
+    
+    
+    [alert addAction:ok];
+    
+    
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 
 -(void)showMenu{
     NSArray *images = @[

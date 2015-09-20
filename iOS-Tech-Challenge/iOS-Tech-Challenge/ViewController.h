@@ -9,7 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "ViewControllerBase.h"
 
+
 @interface ViewController : ViewControllerBase
+{
+    
+}
+
 
 
 

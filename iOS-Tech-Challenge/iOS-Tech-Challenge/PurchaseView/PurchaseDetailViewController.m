@@ -7,8 +7,11 @@
 //
 
 #import "PurchaseDetailViewController.h"
+#import "HFTableViewBindingHelper.h"
+#import <Parse.h>
 
 @interface PurchaseDetailViewController ()
+@property (nonatomic) HFTableViewBindingHelper* helper;
 
 @end
 
@@ -18,7 +21,34 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:nil];
+    self.naviItem.topItem.title = @"進貨單";
+    
+    PFObject* ob = self.data.firstObject;
+    
+    NSDate* date = ob[@"arrive_date"];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"YYYY/MM/dd"];
+    NSString *purchaseDate = [formatter stringFromDate:date];
+    
+    self.purchaseDateLabel.text = purchaseDate;
+    self.purchaseIdLabel.text = self.purchaseId ?: ob[@"purchase_id"];
+    
+    UINib* nib = [UINib nibWithNibName:@"PurchaseDetailTableViewCell" bundle:nil];
+    self.helper = [HFTableViewBindingHelper
+                   bindingForTableView:self.tableView
+                            sourceList:self.data
+                     didSelectionBlock:^(id model) {
+        
+                    }
+                          templateCell:nib
+                              isNested:NO];
+    
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:nil];
+    self.naviItem.topItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancel:)];
+    
+    if (self.isNewPurchase) {
+        self.naviItem.topItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"新增" style:UIBarButtonItemStylePlain target:self action:@selector(add:)];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,6 +56,62 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)cancel:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)add:(id)sender
+{
+    [self showHud];
+    BOOL isSuccess = NO;
+    
+    NSMutableArray* toBeAdded = [NSMutableArray new];
+    for (PFObject* ob in self.data) {
+        
+        NSNumber* checked = ob[@"checked"];
+        ob[@"purchase_id"] = self.purchaseId;
+        ob[@"checker"] = @"店長";
+        if (checked.integerValue == 0 || checked.integerValue == 1) {
+            [toBeAdded addObject:ob];
+            isSuccess = YES;
+        }
+    }
+    
+    if (toBeAdded.count <= 0) {
+        [self alert:@"提示" msg:@"請檢核項目"];
+    }
+    if (isSuccess) {
+        KVOMutableArray* newRow = [self mergeSameOrderId:toBeAdded];
+        if (newRow.firstObject) {
+            [self.parentData insertObject:newRow.firstObject atIndex:0];
+        }
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    [self hideHud];
+}
+
+- (KVOMutableArray*)mergeSameOrderId:(NSArray*)data
+{
+    KVOMutableArray* res = [KVOMutableArray new];
+    NSMutableDictionary* orderIdMap = [NSMutableDictionary new];
+    for (PFObject* obj in data) {
+        NSNumber* orderId = obj[@"order_id"];
+        if (!orderId) {
+            continue;
+        }
+        
+        if (!orderIdMap[orderId]) {
+            orderIdMap[orderId] = [KVOMutableArray new];
+            [res addObject:orderIdMap[orderId]];
+        }
+        if (orderIdMap[orderId]) {
+            KVOMutableArray* array = orderIdMap[orderId];
+            [array addObject:obj];
+        }
+    }
+    return res;
+}
 /*
 #pragma mark - Navigation
 

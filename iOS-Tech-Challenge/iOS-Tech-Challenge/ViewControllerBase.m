@@ -117,7 +117,7 @@
         [self.navigationController pushViewController:sell animated:YES];
         
     }else if (index == 3) {
-        InventoryViewController *order = [[InventoryViewController alloc] init];
+		InventoryViewController *order = [[InventoryViewController alloc] initWithNibName:@"InventoryViewController" bundle:nil];
         [self.navigationController pushViewController:order animated:YES];
         
     }

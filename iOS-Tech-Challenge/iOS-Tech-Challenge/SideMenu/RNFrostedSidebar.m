@@ -199,7 +199,7 @@
     CGFloat inset = self.bounds.size.height/2;
     self.imageView.frame = CGRectMake(0, 0, inset, inset);
     self.imageView.center = CGPointMake(inset, inset);
-    [self.labelView setFrame:CGRectMake(0, self.imageView.frame.origin.y+self.imageView.frame.size.height-5, self.frame.size.width, 12)];
+    [self.labelView setFrame:CGRectMake(0, self.imageView.frame.origin.y+self.imageView.frame.size.height-2, self.frame.size.width, 12)];
     
 }
 

@@ -71,8 +71,10 @@
     for (PFObject* ob in self.data) {
         
         NSNumber* checked = ob[@"checked"];
+        ob[@"purchase_id"] = self.purchaseId;
+        ob[@"checker"] = @"店長";
         if (checked.integerValue == 0 || checked.integerValue == 1) {
-            [toBeAdded addObject:checked];
+            [toBeAdded addObject:ob];
             isSuccess = YES;
         }
     }
@@ -81,11 +83,36 @@
         [self alert:@"提示" msg:@"請檢核項目"];
     }
     if (isSuccess) {
+        KVOMutableArray* newRow = [self mergeSameOrderId:toBeAdded];
+        if (newRow.firstObject) {
+            [self.parentData insertObject:newRow.firstObject atIndex:0];
+        }
         [self.navigationController popViewControllerAnimated:YES];
     }
     [self hideHud];
 }
 
+- (KVOMutableArray*)mergeSameOrderId:(NSArray*)data
+{
+    KVOMutableArray* res = [KVOMutableArray new];
+    NSMutableDictionary* orderIdMap = [NSMutableDictionary new];
+    for (PFObject* obj in data) {
+        NSNumber* orderId = obj[@"order_id"];
+        if (!orderId) {
+            continue;
+        }
+        
+        if (!orderIdMap[orderId]) {
+            orderIdMap[orderId] = [KVOMutableArray new];
+            [res addObject:orderIdMap[orderId]];
+        }
+        if (orderIdMap[orderId]) {
+            KVOMutableArray* array = orderIdMap[orderId];
+            [array addObject:obj];
+        }
+    }
+    return res;
+}
 /*
 #pragma mark - Navigation
 

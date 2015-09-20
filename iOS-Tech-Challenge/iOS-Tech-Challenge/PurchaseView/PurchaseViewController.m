@@ -35,9 +35,15 @@
     addTap.numberOfTapsRequired = 1;
     [self.addView addGestureRecognizer:addTap];
     
+    [self reload];
+    
+}
+
+- (void)reload
+{
     PFQuery *query = [PFQuery queryWithClassName:@"purchase"];
     @weakify(self);
-//    query whereKey:equalTo:
+    //    query whereKey:equalTo:
     [query orderByDescending:@"arrive_date"];
     [query addAscendingOrder:@"item_index"];
     
@@ -45,26 +51,26 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         
         @strongify(self);
-        [self hideHud];
         KVOMutableArray* data = [self mergeSameOrderId:objects];
         self.data = data;
         UINib* nib = [UINib nibWithNibName:@"PurchaseTableViewCell" bundle:nil];
         self.helper = [HFTableViewBindingHelper
                        bindingForTableView:self.tableView
                        sourceList:data
-                         didSelectionBlock:^(KVOMutableArray* model) {
-                             if ([model isKindOfClass:[KVOMutableArray class]]) {
-                                 // Lono
-                                 PurchaseDetailViewController* viewController = [[PurchaseDetailViewController alloc] initWithNibName:@"PurchaseDetailViewController" bundle:nil];
-                                 for (PFObject* ob in model) {
-                                     ob[@"checked"] = @(3);
-                                 }
-                                 viewController.data = model;
-                                 [self.navigationController pushViewController:viewController animated:YES];
-                             }
-                         }
-                              templateCell:nib
-                                  isNested:NO];
+                       didSelectionBlock:^(KVOMutableArray* model) {
+                           if ([model isKindOfClass:[KVOMutableArray class]]) {
+                               // Lono
+                               PurchaseDetailViewController* viewController = [[PurchaseDetailViewController alloc] initWithNibName:@"PurchaseDetailViewController" bundle:nil];
+                               for (PFObject* ob in model) {
+                                   ob[@"checked"] = @(3);
+                               }
+                               viewController.data = model;
+                               [self.navigationController pushViewController:viewController animated:YES];
+                           }
+                       }
+                       templateCell:nib
+                       isNested:NO];
+        [self hideHud];
     }];
 }
 
@@ -156,6 +162,7 @@
            }
            
            viewController.data = [self purchaseFromOrder:expectedOrder];
+           viewController.parentData = self.data;
            
            viewController.purchaseId = purchaseId;
            

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "KVOMutableArray.h"
 #import "ViewControllerBase.h"
+#import <KVOMutableArray.h>
 @interface PurchaseDetailViewController : ViewControllerBase
 @property (nonatomic) KVOMutableArray* data;
 @property (nonatomic) IBOutlet UITableView* tableView;
@@ -16,5 +17,6 @@
 @property IBOutlet UILabel* purchaseDateLabel;
 @property BOOL isNewPurchase;
 @property NSString* purchaseId;
+@property KVOMutableArray* parentData;
 @property IBOutlet UINavigationBar* naviItem;
 @end
